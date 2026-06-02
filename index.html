@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Remedy — AI can prepare the work. People still own the judgment.</title>
+<meta name="description" content="Good Remedy helps teams review AI-assisted work, improve workflows, and make clearer next decisions before output becomes action.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:    #0A1628;
+  --navy2:   #0F2040;
+  --navy3:   #162840;
+  --gold:    #C9A84C;
+  --gold2:   #E8C96A;
+  --teal:    #0891B2;
+  --white:   #FFFFFF;
+  --off:     #F7F6F2;
+  --slate:   #94A3B8;
+  --slate2:  #64748B;
+  --text:    #1E293B;
+  --border:  rgba(201,168,76,0.2);
+  --radius:  4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(10,22,40,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+.nav-brand span { color: var(--gold); }
+.nav-cta {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 8px 20px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.nav-cta:hover { background: var(--gold); color: var(--navy); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 60px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(8,145,178,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,168,76,0.06) 0%, transparent 70%),
+    linear-gradient(180deg, #0A1628 0%, #0F2040 100%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 900px;
+}
+
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.2s;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.4s;
+}
+.hero-headline em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--slate);
+  max-width: 600px;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.6s;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.8s;
+}
+
+.btn-primary {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--gold);
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--gold2); transform: translateY(-1px); }
+
+.btn-ghost {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--slate);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+.btn-ghost:hover { color: var(--white); }
+.btn-ghost::after { content: '↓'; }
+
+.hero-rule {
+  position: absolute;
+  bottom: 48px;
+  left: 60px;
+  right: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold) 0%, transparent 60%);
+  opacity: 0.3;
+}
+
+/* ── CORE LINE ── */
+.core-line {
+  background: var(--navy2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 60px;
+  text-align: center;
+}
+.core-line p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--slate);
+  letter-spacing: 0.02em;
+}
+.core-line p strong {
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* ── SECTIONS ── */
+section {
+  padding: 100px 60px;
+}
+
+.section-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.section-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+}
+
+/* ── PROBLEM ── */
+.problem {
+  background: var(--navy);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.problem-left .section-headline { color: var(--white); }
+.problem-left p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--slate);
+  margin-bottom: 20px;
+}
+
+.problem-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 8px;
+}
+
+.problem-q {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.problem-q.visible { opacity: 1; transform: translateX(0); }
+
+.problem-q-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.problem-q-text {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.5;
+}
+
+/* ── OFFER ── */
+.offer {
+  background: var(--navy2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.offer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.offer-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 64px;
+}
+
+.offer-intro-left .section-headline { color: var(--white); }
+.offer-intro-left p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--slate);
+}
+
+.offer-intro-right {
+  padding-top: 12px;
+}
+
+.offer-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.offer-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.offer-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.offer-item:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+
+.offer-arrow {
+  color: var(--gold);
+  font-size: 13px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.offer-item-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--slate);
+  line-height: 1.5;
+}
+.offer-item-text strong { color: var(--white); font-weight: 400; }
+
+/* ── LANES ── */
+.lanes { background: var(--navy); }
+
+.lanes-inner { max-width: 1100px; margin: 0 auto; }
+
+.lanes-header {
+  margin-bottom: 56px;
+  max-width: 600px;
+}
+.lanes-header .section-headline { color: var(--white); }
+.lanes-header p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--slate);
+  line-height: 1.7;
+  margin-top: 16px;
+}
+
+.lanes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.lane {
+  background: var(--navy3);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  cursor: default;
+}
+.lane::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.lane:hover::before { transform: scaleX(1); }
+.lane:hover { background: #162840; }
+
+.lane-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 28px;
+  opacity: 0.7;
+}
+
+.lane-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.lane-body {
+  font-size: 13.5px;
+  font-weight: 300;
+  color: var(--slate);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.lane-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.lane-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate2);
+  border: 1px solid rgba(148,163,184,0.2);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+/* ── MEASURE ── */
+.measure {
+  background: var(--navy2);
+  border-top: 1px solid var(--border);
+}
+
+.measure-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.measure-left .section-headline { color: var(--white); }
+.measure-left p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--slate);
+  margin-top: 16px;
+}
+
+.measure-right { padding-top: 12px; }
+
+.measure-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.measure-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.measure-item:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+
+.measure-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.measure-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--slate);
+  line-height: 1.55;
+}
+
+/* ── CONTACT ── */
+.contact {
+  background: var(--navy);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.contact-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.contact .section-headline { color: var(--white); margin-bottom: 16px; }
+.contact-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--slate);
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  background: var(--navy2);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  -webkit-appearance: none;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: var(--slate2); }
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus { border-color: var(--gold); }
+.form-field select option { background: var(--navy2); }
+.form-field textarea { min-height: 120px; resize: vertical; }
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.form-note {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--slate2);
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 32px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--white);
+}
+.footer-brand span { color: var(--gold); }
+
+.footer-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--slate2);
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: var(--slate2);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .hero { padding: 120px 24px 80px; }
+  section { padding: 72px 24px; }
+  .problem,
+  .offer-intro,
+  .measure-inner { grid-template-columns: 1fr; gap: 48px; }
+  .lanes-grid { grid-template-columns: 1fr; gap: 2px; }
+  .form-row { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
+  .footer-line { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">Good<span>Remedy</span></a>
+  <a href="#contact" class="nav-cta">Start with one example</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Controlled AI workflow support</div>
+    <h1 class="hero-headline">
+      Make AI Work<br>for <em>Real Work.</em>
+    </h1>
+    <p class="hero-sub">Good Remedy helps teams use AI to improve workflows, review outputs, clarify decisions, and move work forward — without losing human judgment.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Start with one example</a>
+      <a href="#problem" class="btn-ghost">See how it works</a>
+    </div>
+  </div>
+  <div class="hero-rule"></div>
+</section>
+
+<!-- CORE LINE -->
+<div class="core-line">
+  <p><strong>AI can prepare the work.</strong> People still own the judgment.</p>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="problem-left">
+    <div class="section-eyebrow">The problem</div>
+    <h2 class="section-headline reveal">AI makes more output.<br>That does not automatically<br>mean better work.</h2>
+    <p class="reveal" style="transition-delay:0.1s">Teams still need to know what is ready to move and what isn't — before output becomes action.</p>
+  </div>
+  <div class="problem-questions">
+    <div class="problem-q">
+      <span class="problem-q-num">01</span>
+      <span class="problem-q-text">What is ready to move?</span>
+    </div>
+    <div class="problem-q">
+      <span class="problem-q-num">02</span>
+      <span class="problem-q-text">What needs review before it goes anywhere?</span>
+    </div>
+    <div class="problem-q">
+      <span class="problem-q-num">03</span>
+      <span class="problem-q-text">Who owns the decision?</span>
+    </div>
+    <div class="problem-q">
+      <span class="problem-q-num">04</span>
+      <span class="problem-q-text">Where can AI genuinely help?</span>
+    </div>
+    <div class="problem-q">
+      <span class="problem-q-num">05</span>
+      <span class="problem-q-text">Where should a human judge?</span>
+    </div>
+    <div class="problem-q">
+      <span class="problem-q-num">06</span>
+      <span class="problem-q-text">What is the next responsible action?</span>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="offer">
+  <div class="offer-inner">
+    <div class="offer-intro">
+      <div class="offer-intro-left">
+        <div class="section-eyebrow">The offer</div>
+        <h2 class="section-headline reveal">Bring us one<br>messy workflow.</h2>
+        <p class="reveal" style="transition-delay:0.1s">A workflow, AI-assisted output, campaign, review process, or business bottleneck. We return a decision-ready work packet your team can actually act on.</p>
+      </div>
+      <div class="offer-intro-right reveal" style="transition-delay:0.15s">
+        <div class="offer-tag">The packet shows</div>
+        <div class="offer-items">
+          <div class="offer-item">
+            <span class="offer-arrow">→</span>
+            <span class="offer-item-text"><strong>What is happening</strong> in the workflow</span>
+          </div>
+          <div class="offer-item">
+            <span class="offer-arrow">→</span>
+            <span class="offer-item-text"><strong>What needs review</strong> before it moves</span>
+          </div>
+          <div class="offer-item">
+            <span class="offer-arrow">→</span>
+            <span class="offer-item-text"><strong>What is risky or unsupported</strong> in the output</span>
+          </div>
+          <div class="offer-item">
+            <span class="offer-arrow">→</span>
+            <span class="offer-item-text"><strong>Who owns</strong> the next decision</span>
+          </div>
+          <div class="offer-item">
+            <span class="offer-arrow">→</span>
+            <span class="offer-item-text"><strong>What can move now</strong></span>
+          </div>
+          <div class="offer-item">
+            <span class="offer-arrow">→</span>
+            <span class="offer-item-text"><strong>What must not move yet</strong></span>
+          </div>
+          <div class="offer-item">
+            <span class="offer-arrow">→</span>
+            <span class="offer-item-text"><strong>What the next safe action</strong> should be</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANES -->
+<section class="lanes" id="lanes">
+  <div class="lanes-inner">
+    <div class="lanes-header">
+      <div class="section-eyebrow">Service lanes</div>
+      <h2 class="section-headline reveal">Three places<br>we start.</h2>
+      <p class="reveal" style="transition-delay:0.1s">Each lane begins with one bounded example. One workflow, one output, one packet back. No platform required.</p>
+    </div>
+    <div class="lanes-grid">
+      <div class="lane reveal" style="transition-delay:0.05s">
+        <div class="lane-num">01 /</div>
+        <div class="lane-title">Workflow Readiness Review</div>
+        <div class="lane-body">For messy processes, handoffs, bottlenecks, or places where AI could genuinely help — but nobody has defined the rules yet.</div>
+        <div class="lane-tags">
+          <span class="lane-tag">Handoffs</span>
+          <span class="lane-tag">Bottlenecks</span>
+          <span class="lane-tag">Process gaps</span>
+          <span class="lane-tag">AI opportunities</span>
+        </div>
+      </div>
+      <div class="lane reveal" style="transition-delay:0.1s">
+        <div class="lane-num">02 /</div>
+        <div class="lane-title">AI Output Readiness Review</div>
+        <div class="lane-body">For AI-generated drafts, documents, emails, content, or work products that need to be reviewed before they become business action.</div>
+        <div class="lane-tags">
+          <span class="lane-tag">Drafts</span>
+          <span class="lane-tag">Documents</span>
+          <span class="lane-tag">Communications</span>
+          <span class="lane-tag">Content</span>
+        </div>
+      </div>
+      <div class="lane reveal" style="transition-delay:0.15s">
+        <div class="lane-num">03 /</div>
+        <div class="lane-title">Advertising Readiness Review</div>
+        <div class="lane-body">For AI-assisted ads, landing pages, campaign drafts, claims, brand fit, synthetic content, and launch readiness before anything reaches an audience.</div>
+        <div class="lane-tags">
+          <span class="lane-tag">Ad claims</span>
+          <span class="lane-tag">Brand fit</span>
+          <span class="lane-tag">Launch review</span>
+          <span class="lane-tag">Synthetic content</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEASURE -->
+<section class="measure" id="measure">
+  <div class="measure-inner">
+    <div class="measure-left">
+      <div class="section-eyebrow">What we help teams track</div>
+      <h2 class="section-headline reveal">Built around measurable work improvement.<br><em>Not abstract AI advice.</em></h2>
+      <p class="reveal" style="transition-delay:0.1s">Good Remedy helps teams track whether AI-assisted work is becoming clearer, more reviewable, and easier to move responsibly. The goal is not magic productivity gains. The goal is work that can be judged, moved, and owned with confidence.</p>
+    </div>
+    <div class="measure-right reveal" style="transition-delay:0.15s">
+      <div class="measure-items">
+        <div class="measure-item">
+          <span class="measure-dot"></span>
+          <span class="measure-text">Time from draft to next responsible action</span>
+        </div>
+        <div class="measure-item">
+          <span class="measure-dot"></span>
+          <span class="measure-text">Unsupported claims identified before use</span>
+        </div>
+        <div class="measure-item">
+          <span class="measure-dot"></span>
+          <span class="measure-text">Source gaps found before client or public movement</span>
+        </div>
+        <div class="measure-item">
+          <span class="measure-dot"></span>
+          <span class="measure-text">Reviewer and authority gaps clarified</span>
+        </div>
+        <div class="measure-item">
+          <span class="measure-dot"></span>
+          <span class="measure-text">Work held, revised, routed, or moved after review</span>
+        </div>
+        <div class="measure-item">
+          <span class="measure-dot"></span>
+          <span class="measure-text">Rework avoided before sending, publishing, or launching</span>
+        </div>
+        <div class="measure-item">
+          <span class="measure-dot"></span>
+          <span class="measure-text">Owner confidence in the next safe action</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-eyebrow" style="justify-content:center">Get started</div>
+    <h2 class="section-headline reveal">Start with one<br>bounded example.</h2>
+    <p class="contact-sub reveal" style="transition-delay:0.1s">Have a workflow, AI output, campaign, or work product you want reviewed? Send a note and we'll start with one non-sensitive example.</p>
+
+    <form class="contact-form reveal" style="transition-delay:0.15s" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Name" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="org">Organization</label>
+          <input type="text" id="org" name="org" placeholder="Company or team">
+        </div>
+        <div class="form-field">
+          <label for="lane">Where do you want to start?</label>
+          <select id="lane" name="lane">
+            <option value="" disabled selected>Select a lane</option>
+            <option>Workflow Readiness Review</option>
+            <option>AI Output Readiness Review</option>
+            <option>Advertising Readiness Review</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="message">Describe the workflow or output</label>
+        <textarea id="message" name="message" placeholder="Tell us what you're working with. One messy workflow, AI output, campaign, or decision point is enough to start." required></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn-primary">Contact Good Remedy</button>
+      </div>
+      <p class="form-note">We start with one non-sensitive example. No platform required. No commitment beyond a first conversation.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Good<span>Remedy</span></div>
+  <div class="footer-line">AI can prepare the work. People still own the judgment.</div>
+  <div class="footer-copy">© 2026 Good Remedy</div>
+</footer>
+
+<script>
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal, .problem-q');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, entry.target.dataset.delay || 0);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach((el, i) => {
+  if (el.classList.contains('problem-q')) {
+    el.dataset.delay = i * 80;
+  }
+  observer.observe(el);
+});
+
+// Form submit
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-primary');
+  btn.textContent = 'Message sent — we\'ll be in touch.';
+  btn.style.background = '#1A7A4A';
+  btn.disabled = true;
+}
+
+// Smooth nav
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
