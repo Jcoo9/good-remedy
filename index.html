@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Good Remedy — Make work reviewable before it moves.</title>
+  <meta name="description" content="Good Remedy creates movement packets that help teams see what is supported, what is missing, who should review, and what should happen next.">
+  <style>
+    :root{
+      --forest:#06251d;
+      --evergreen:#0b3d2e;
+      --green:#2f7d5c;
+      --mint:#b8d8c4;
+      --cream:#f6f1e6;
+      --paper:#fffaf0;
+      --gold:#c6a24a;
+      --ink:#12201a;
+      --muted:#617067;
+      --line:rgba(47,125,92,.22);
+      --white:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(246,241,230,.9);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      height:70px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .brand{
+      font-family:Georgia,serif;
+      font-size:24px;
+      text-decoration:none;
+      color:var(--forest);
+      letter-spacing:.01em;
+    }
+    .brand span{color:var(--green)}
+    .nav-cta{
+      font-size:14px;
+      font-weight:700;
+      text-decoration:none;
+      padding:10px 16px;
+      border:1px solid var(--green);
+      border-radius:999px;
+      color:var(--forest);
+    }
+    .hero{
+      min-height:680px;
+      display:flex;
+      align-items:center;
+      color:var(--white);
+      background:
+        radial-gradient(circle at 78% 28%, rgba(184,216,196,.22), transparent 32%),
+        linear-gradient(135deg,var(--forest),var(--evergreen));
+      border-bottom:5px solid var(--green);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.06fr .94fr;
+      gap:54px;
+      align-items:center;
+    }
+    .eyebrow{
+      color:var(--mint);
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-weight:800;
+      font-size:12px;
+      margin-bottom:18px;
+    }
+    h1{
+      font-family:Georgia,serif;
+      font-size:clamp(48px,7vw,84px);
+      line-height:.98;
+      letter-spacing:-.045em;
+      margin:0 0 24px;
+      font-weight:400;
+    }
+    h1 em{color:var(--mint);font-style:italic}
+    .lead{
+      max-width:620px;
+      margin:0 0 34px;
+      color:#e5efe8;
+      font-size:20px;
+      line-height:1.55;
+    }
+    .actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      min-height:48px;
+      align-items:center;
+      justify-content:center;
+      padding:0 22px;
+      border-radius:999px;
+      font-size:15px;
+      font-weight:800;
+      text-decoration:none;
+    }
+    .btn.primary{background:var(--mint);color:var(--forest)}
+    .btn.secondary{border:1px solid rgba(255,255,255,.25);color:var(--white)}
+    .packet{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(184,216,196,.34);
+      border-radius:24px;
+      padding:30px;
+      box-shadow:0 28px 90px rgba(0,0,0,.24);
+    }
+    .packet h2{
+      font-family:Georgia,serif;
+      font-size:30px;
+      line-height:1.1;
+      margin:0 0 8px;
+      font-weight:400;
+    }
+    .packet p{margin:0;color:#d9e8df;line-height:1.5}
+    .packet-rows{margin-top:22px}
+    .packet-row{
+      display:grid;
+      grid-template-columns:112px 1fr;
+      gap:16px;
+      padding:13px 0;
+      border-top:1px solid rgba(255,255,255,.13);
+      font-size:14px;
+      color:#edf6f0;
+    }
+    .packet-row strong{color:var(--mint)}
+    section{padding:88px 0}
+    .section-head{max-width:720px;margin-bottom:34px}
+    .kicker{
+      color:var(--green);
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:12px;
+      font-weight:850;
+      margin-bottom:12px;
+    }
+    h2{
+      font-family:Georgia,serif;
+      font-size:clamp(36px,4.5vw,56px);
+      line-height:1.03;
+      letter-spacing:-.035em;
+      margin:0 0 14px;
+      color:var(--forest);
+      font-weight:400;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.58;
+    }
+    .three{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:26px;
+      min-height:190px;
+      box-shadow:0 14px 44px rgba(6,37,29,.06);
+    }
+    .num{
+      color:var(--green);
+      font-weight:850;
+      font-size:12px;
+      letter-spacing:.12em;
+      margin-bottom:24px;
+    }
+    .card h3{margin:0 0 10px;color:var(--forest);font-size:22px}
+    .card p{margin:0;color:var(--muted);line-height:1.55}
+    .dark{
+      background:var(--forest);
+      color:var(--white);
+      border-top:5px solid var(--green);
+    }
+    .dark h2{color:var(--white)}
+    .dark .section-head p{color:#cfe0d5}
+    .uses{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:18px;
+    }
+    .use{
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(184,216,196,.2);
+      border-radius:20px;
+      padding:26px;
+    }
+    .use h3{margin:0 0 10px;font-size:22px;color:var(--white)}
+    .use p{margin:0;color:#cfe0d5;line-height:1.55}
+    .boundary{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:start;
+    }
+    .note{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:28px;
+    }
+    .note h3{margin:0 0 10px;font-size:24px;color:var(--forest)}
+    .note p{margin:0;color:var(--muted);line-height:1.62}
+    .contact{
+      text-align:center;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(184,216,196,.18), transparent 30%),
+        linear-gradient(135deg,var(--evergreen),var(--forest));
+      color:var(--white);
+      padding:82px 0;
+    }
+    .contact h2{color:var(--white)}
+    .contact p{
+      color:#d7e7dd;
+      max-width:640px;
+      margin:0 auto 28px;
+      font-size:18px;
+      line-height:1.58;
+    }
+    footer{
+      background:var(--forest);
+      color:#aac5b5;
+      padding:26px 0;
+      font-size:14px;
+    }
+    footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:860px){
+      .hero{min-height:auto;padding:84px 0}
+      .hero-grid,.three,.uses,.boundary{grid-template-columns:1fr}
+      .packet-row{grid-template-columns:1fr;gap:4px}
+      .nav-cta{display:none}
+      section{padding:64px 0}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#">Good<span>Remedy</span></a>
+      <a class="nav-cta" href="#contact">Start with one work object</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">GRMove by Good Remedy</div>
+          <h1>Make work <em>reviewable</em> before it moves.</h1>
+          <p class="lead">Good Remedy turns one messy work object into a movement packet so your team can see what is supported, what is missing, who should review, and what should happen next.</p>
+          <div class="actions">
+            <a class="btn primary" href="#contact">Start with one work object</a>
+            <a class="btn secondary" href="#packet">See the packet</a>
+          </div>
+        </div>
+
+        <div class="packet" id="packet">
+          <h2>The movement packet</h2>
+          <p>Not approval. Not certification. A clearer object for human judgment.</p>
+          <div class="packet-rows">
+            <div class="packet-row"><strong>Object</strong><span>What exactly is trying to move?</span></div>
+            <div class="packet-row"><strong>Support</strong><span>What is sourced, assumed, missing, or unclear?</span></div>
+            <div class="packet-row"><strong>Review</strong><span>Who should check it before action?</span></div>
+            <div class="packet-row"><strong>Posture</strong><span>Move, revise, hold, escalate, reject, or authority required.</span></div>
+            <div class="packet-row"><strong>Next move</strong><span>The next safe step before business action.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">How it works</div>
+          <h2>One object. One packet. One next move.</h2>
+          <p>We start small because that is where judgment becomes usable. Bring one draft, claim, handoff, output, or workflow item that is hard to trust or move.</p>
+        </div>
+        <div class="three">
+          <div class="card">
+            <div class="num">01</div>
+            <h3>Bring the object</h3>
+            <p>A draft, campaign, handoff, data package, AI output, vendor response, or workflow problem.</p>
+          </div>
+          <div class="card">
+            <div class="num">02</div>
+            <h3>We map the movement</h3>
+            <p>What it is, what it claims, what supports it, what is missing, and who should review.</p>
+          </div>
+          <div class="card">
+            <div class="num">03</div>
+            <h3>Your team decides</h3>
+            <p>The packet prepares the work. The proper person decides what moves.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Where we start</div>
+          <h2>Useful before the work reaches someone else.</h2>
+          <p>No platform required. Start with one bounded example.</p>
+        </div>
+        <div class="uses">
+          <div class="use">
+            <h3>Workflow movement</h3>
+            <p>For messy handoffs, bottlenecks, repeated rework, and unclear ownership.</p>
+          </div>
+          <div class="use">
+            <h3>Output-to-action review</h3>
+            <p>For AI-assisted drafts, summaries, recommendations, emails, or documents that sound ready too soon.</p>
+          </div>
+          <div class="use">
+            <h3>Campaign movement</h3>
+            <p>For ads, landing pages, claims, launch material, and brand messages before they go live.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap boundary">
+        <div>
+          <div class="kicker">Boundary</div>
+          <h2>Start without oversharing.</h2>
+        </div>
+        <div class="note">
+          <h3>First-review rule</h3>
+          <p>Do not send confidential, regulated, identifying, legal, HR, clinical, financial, credential, or customer-record material through the public form. Start with a redacted, synthetic, public-source, or representative work story.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="kicker">Get started</div>
+        <h2>Bring one work object.</h2>
+        <p>Tell us what is trying to move, where it gets hard to trust, and what you are comfortable sharing.</p>
+        <a class="btn primary" href="mailto:hello@grmove.com?subject=Good%20Remedy%20inquiry%20%E2%80%94%20work%20object">Start the first review</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Good Remedy / GRMove</span>
+      <span>The packet prepares the work. Proper authority decides what moves.</span>
+    </div>
+  </footer>
+</body>
+</html>
