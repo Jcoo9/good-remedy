@@ -1,0 +1,1476 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Good Remedy | Pressure-Test Important AI-Assisted Work Before It Moves</title>
+  <meta name="description" content="Good Remedy pressure-tests important AI-assisted work before it is sent, implemented, published, approved, or relied upon. See what holds up, what remains unresolved, who needs to decide, and what must happen next.">
+  <meta name="theme-color" content="#0a1b2a">
+  <meta property="og:title" content="Good Remedy | Make AI-Assisted Work Reviewable Before It Moves">
+  <meta property="og:description" content="Send Good Remedy one important piece of AI-assisted work. We show what holds up, what does not, who still needs to decide, and what has to happen next.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://grmove.com/">
+  <link rel="canonical" href="https://grmove.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy-950: #071521;
+      --navy-900: #0a1b2a;
+      --navy-850: #0e2234;
+      --navy-800: #122b40;
+      --navy-700: #1d3e55;
+      --ink: #17222b;
+      --ink-soft: #4d5a63;
+      --cream: #f3efe5;
+      --paper: #fbf8f1;
+      --white: #ffffff;
+      --gold: #c4a357;
+      --gold-light: #e0c983;
+      --gold-deep: #9e7d35;
+      --sage: #dce5de;
+      --green: #214b3e;
+      --line-dark: rgba(255,255,255,.12);
+      --line-light: rgba(23,34,43,.14);
+      --shadow: 0 18px 60px rgba(7,21,33,.12);
+      --radius-sm: 5px;
+      --radius-md: 12px;
+      --radius-lg: 22px;
+      --max: 1180px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    body.menu-open { overflow: hidden; }
+
+    a { color: inherit; }
+
+    img, svg { display: block; max-width: 100%; }
+
+    button, input, textarea, select { font: inherit; }
+
+    ::selection { background: var(--gold-light); color: var(--navy-950); }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 1000;
+      transform: translateY(-140%);
+      background: var(--gold-light);
+      color: var(--navy-950);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 18px;
+      font-family: "DM Mono", monospace;
+      font-size: .72rem;
+      font-weight: 400;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+      opacity: .9;
+    }
+
+    .eyebrow.gold { color: var(--gold-light); }
+    .eyebrow.ink { color: var(--gold-deep); }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      letter-spacing: -.02em;
+    }
+
+    h1 {
+      max-width: 980px;
+      margin-bottom: 28px;
+      font-size: clamp(3.6rem, 7.8vw, 7.2rem);
+      line-height: .94;
+      color: var(--white);
+    }
+
+    h2 {
+      margin-bottom: 24px;
+      font-size: clamp(2.45rem, 5vw, 4.9rem);
+      line-height: 1;
+    }
+
+    h3 {
+      margin-bottom: 12px;
+      font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+      line-height: 1.08;
+    }
+
+    .lede {
+      max-width: 760px;
+      font-size: clamp(1.08rem, 1.8vw, 1.35rem);
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 22px;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-size: .84rem;
+      font-weight: 600;
+      letter-spacing: .055em;
+      text-transform: uppercase;
+      transition: transform .2s ease, color .2s ease, background .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn:focus-visible,
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      outline: 3px solid var(--gold-light);
+      outline-offset: 3px;
+    }
+
+    .btn-gold {
+      color: var(--navy-950);
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    .btn-outline-light {
+      color: var(--white);
+      border-color: rgba(255,255,255,.35);
+      background: transparent;
+    }
+
+    .btn-outline-light:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+    .btn-outline-dark {
+      color: var(--navy-900);
+      border-color: rgba(7,21,33,.35);
+      background: transparent;
+    }
+
+    .btn-outline-dark:hover { border-color: var(--gold-deep); color: var(--gold-deep); }
+
+    /* Navigation */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      background: rgba(7,21,33,.91);
+      border-bottom: 1px solid rgba(196,163,87,.22);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-wrap {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      text-decoration: none;
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      width: 34px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(196,163,87,.65);
+      border-radius: 50%;
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .brand-copy { display: grid; gap: 1px; }
+
+    .brand-name {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.28rem;
+      font-weight: 600;
+      letter-spacing: .015em;
+      line-height: 1;
+    }
+
+    .brand-descriptor {
+      font-family: "DM Mono", monospace;
+      font-size: .58rem;
+      font-weight: 300;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      color: #a8b5be;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 2vw, 26px);
+      margin-left: auto;
+    }
+
+    .nav-links > a:not(.btn) {
+      color: #cad3d9;
+      text-decoration: none;
+      font-size: .78rem;
+      letter-spacing: .02em;
+      transition: color .2s ease;
+    }
+
+    .nav-links > a:not(.btn):hover { color: var(--gold-light); }
+
+    .nav-links .btn { min-height: 40px; padding: 9px 15px; font-size: .7rem; }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,.23);
+      border-radius: var(--radius-sm);
+      background: transparent;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 1px;
+      margin: 5px auto;
+      background: currentColor;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .menu-open .menu-toggle span { opacity: 0; }
+    .menu-open .menu-toggle::before { transform: translateY(6px) rotate(45deg); }
+    .menu-open .menu-toggle::after { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 820px;
+      padding: 170px 0 94px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 78% 30%, rgba(42,95,112,.24), transparent 32%),
+        radial-gradient(circle at 14% 85%, rgba(196,163,87,.13), transparent 33%),
+        linear-gradient(145deg, var(--navy-950), var(--navy-800));
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image:
+        linear-gradient(rgba(224,201,131,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(224,201,131,.045) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.75), transparent 95%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: min(44vw, 600px);
+      aspect-ratio: 1;
+      right: -12vw;
+      top: 120px;
+      z-index: -1;
+      border: 1px solid rgba(196,163,87,.12);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 90px rgba(196,163,87,.018),
+        0 0 0 180px rgba(196,163,87,.012);
+    }
+
+    .hero-inner { position: relative; }
+
+    .hero .eyebrow { max-width: 860px; }
+
+    .hero-copy {
+      max-width: 790px;
+      margin-bottom: 38px;
+      font-size: clamp(1.14rem, 2vw, 1.42rem);
+      font-weight: 300;
+      line-height: 1.67;
+      color: #c6d0d7;
+    }
+
+    .hero-copy strong { color: var(--white); font-weight: 500; }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 46px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      max-width: 710px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      color: #aebbc4;
+      font-size: .88rem;
+      line-height: 1.55;
+    }
+
+    .hero-note svg { flex: 0 0 18px; margin-top: 2px; color: var(--gold-light); }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 70px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+
+    .proof-item {
+      min-height: 112px;
+      padding: 24px 22px;
+      border-right: 1px solid rgba(255,255,255,.14);
+    }
+
+    .proof-item:last-child { border-right: 0; }
+
+    .proof-label {
+      display: block;
+      margin-bottom: 8px;
+      font-family: "DM Mono", monospace;
+      font-size: .62rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .proof-text { color: #d7dfe4; font-size: .96rem; line-height: 1.45; }
+
+    /* Thesis band */
+    .thesis-band {
+      padding: 46px 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .thesis-band blockquote {
+      max-width: 980px;
+      margin: 0 auto;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.7rem, 3.2vw, 2.75rem);
+      line-height: 1.22;
+      text-align: center;
+      color: var(--navy-900);
+    }
+
+    .thesis-band em { color: var(--gold-deep); }
+
+    /* Shared sections */
+    .section { padding: 112px 0; }
+
+    .section-dark { color: var(--white); background: var(--navy-900); }
+    .section-cream { background: var(--cream); }
+    .section-paper { background: var(--paper); }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+      gap: 70px;
+      align-items: end;
+      margin-bottom: 58px;
+    }
+
+    .section-dark .lede { color: #b8c5cd; }
+
+    .section-intro { max-width: 700px; }
+
+    .section-note {
+      align-self: end;
+      padding: 20px 0 4px 24px;
+      border-left: 1px solid var(--gold);
+      color: var(--ink-soft);
+      font-size: 1rem;
+    }
+
+    .section-dark .section-note { color: #b8c5cd; }
+
+    /* Problem */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--line-light);
+      border-left: 1px solid var(--line-light);
+    }
+
+    .problem-card {
+      min-height: 330px;
+      padding: 34px 28px 30px;
+      background: rgba(255,255,255,.42);
+      border-right: 1px solid var(--line-light);
+      border-bottom: 1px solid var(--line-light);
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .problem-card:hover { background: var(--white); transform: translateY(-4px); }
+
+    .card-kicker {
+      display: inline-block;
+      margin-bottom: 35px;
+      font-family: "DM Mono", monospace;
+      font-size: .64rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+    }
+
+    .problem-card p { color: var(--ink-soft); font-size: .98rem; }
+
+    /* How it works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 2px;
+      background: rgba(255,255,255,.1);
+    }
+
+    .step {
+      position: relative;
+      min-height: 330px;
+      padding: 34px 28px;
+      background: var(--navy-850);
+      overflow: hidden;
+    }
+
+    .step::after {
+      content: attr(data-step);
+      position: absolute;
+      right: 12px;
+      bottom: -24px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 8rem;
+      line-height: 1;
+      color: rgba(255,255,255,.035);
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(196,163,87,.55);
+      border-radius: 50%;
+      font-family: "DM Mono", monospace;
+      font-size: .7rem;
+      color: var(--gold-light);
+    }
+
+    .step h3 { color: var(--white); }
+    .step p { position: relative; z-index: 1; color: #b8c5cd; }
+
+    .plain-rule {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 34px;
+      padding: 22px 24px;
+      border: 1px solid rgba(196,163,87,.35);
+      background: rgba(196,163,87,.06);
+      color: #d7e0e5;
+    }
+
+    .plain-rule strong { color: var(--gold-light); }
+
+    /* Work examples */
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .example-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 305px;
+      padding: 31px;
+      border: 1px solid var(--line-light);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: 0 8px 34px rgba(7,21,33,.05);
+    }
+
+    .example-card.featured {
+      color: var(--white);
+      background: var(--navy-900);
+      border-color: var(--navy-900);
+      box-shadow: var(--shadow);
+    }
+
+    .example-price {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 26px;
+      padding: 5px 9px;
+      border: 1px solid rgba(158,125,53,.35);
+      border-radius: 999px;
+      font-family: "DM Mono", monospace;
+      font-size: .63rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+    }
+
+    .featured .example-price { color: var(--gold-light); border-color: rgba(224,201,131,.38); }
+
+    .example-card p { color: var(--ink-soft); }
+    .featured p { color: #becbd3; }
+
+    .example-result {
+      margin-top: auto;
+      padding-top: 22px;
+      border-top: 1px solid var(--line-light);
+      font-size: .92rem;
+      color: var(--green);
+    }
+
+    .featured .example-result { color: var(--gold-light); border-color: rgba(255,255,255,.13); }
+
+    /* Send / return */
+    .exchange {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .exchange-panel {
+      padding: 46px 42px;
+      border-radius: var(--radius-lg);
+    }
+
+    .exchange-panel.send {
+      background: var(--cream);
+      border: 1px solid var(--line-light);
+    }
+
+    .exchange-panel.return {
+      color: var(--white);
+      background: var(--navy-900);
+      box-shadow: var(--shadow);
+    }
+
+    .exchange-panel h2 { font-size: clamp(2.3rem, 4vw, 3.8rem); }
+
+    .exchange-panel > p { max-width: 560px; color: var(--ink-soft); }
+    .exchange-panel.return > p { color: #bcc8d0; }
+
+    .clean-list {
+      display: grid;
+      gap: 0;
+      margin: 34px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .clean-list li {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 12px;
+      padding: 15px 0;
+      border-top: 1px solid var(--line-light);
+      color: var(--ink-soft);
+    }
+
+    .return .clean-list li { color: #d4dde2; border-color: rgba(255,255,255,.13); }
+
+    .list-mark {
+      color: var(--gold-deep);
+      font-family: "DM Mono", monospace;
+      font-size: .74rem;
+      padding-top: 2px;
+    }
+
+    .return .list-mark { color: var(--gold-light); }
+
+    .formal-name {
+      margin-top: 28px;
+      padding: 17px 18px;
+      border-left: 2px solid var(--gold);
+      background: rgba(196,163,87,.08);
+      color: #d7e1e6;
+      font-size: .92rem;
+    }
+
+    /* States */
+    .state-intro {
+      max-width: 790px;
+      margin-bottom: 44px;
+    }
+
+    .states {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .state-card {
+      min-height: 230px;
+      padding: 26px;
+      border: 1px solid var(--line-light);
+      border-top: 4px solid var(--gold);
+      background: rgba(255,255,255,.55);
+    }
+
+    .state-word {
+      display: block;
+      margin-bottom: 20px;
+      font-family: "DM Mono", monospace;
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      color: var(--navy-900);
+    }
+
+    .state-card p { color: var(--ink-soft); font-size: .95rem; }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 490px;
+      padding: 34px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-md);
+      background: var(--navy-850);
+    }
+
+    .price-card.primary {
+      position: relative;
+      border-color: rgba(196,163,87,.68);
+      background: linear-gradient(155deg, #17364b, #0d2131);
+      transform: translateY(-10px);
+    }
+
+    .price-card.primary::before {
+      content: "One important workflow";
+      position: absolute;
+      top: -15px;
+      left: 25px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--navy-950);
+      font-family: "DM Mono", monospace;
+      font-size: .58rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .price-label {
+      font-family: "DM Mono", monospace;
+      font-size: .68rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .price {
+      margin: 18px 0 22px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 4.1rem;
+      line-height: .9;
+      color: var(--white);
+    }
+
+    .price-title { color: var(--white); }
+
+    .price-card > p { color: #b8c5cd; }
+
+    .price-list {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0 30px;
+      padding: 0;
+      list-style: none;
+      color: #d7e0e5;
+      font-size: .94rem;
+    }
+
+    .price-list li { display: flex; gap: 10px; }
+    .price-list li::before { content: "—"; color: var(--gold-light); }
+
+    .price-card .btn { margin-top: auto; }
+
+    .pricing-note {
+      max-width: 880px;
+      margin: 36px auto 0;
+      color: #aebcc5;
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    /* Boundary */
+    .boundary-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .boundary-lead {
+      position: sticky;
+      top: 120px;
+    }
+
+    .boundary-list { display: grid; gap: 14px; }
+
+    .boundary-item {
+      padding: 26px 28px;
+      border: 1px solid var(--line-light);
+      background: rgba(255,255,255,.55);
+    }
+
+    .boundary-item h3 { margin-bottom: 8px; font-size: 1.75rem; }
+    .boundary-item p { margin-bottom: 0; color: var(--ink-soft); }
+
+    .boundary-alert {
+      margin-top: 18px;
+      padding: 20px 22px;
+      border-left: 3px solid var(--gold-deep);
+      background: #ebe4d5;
+      color: #33414a;
+      font-size: .9rem;
+    }
+
+    /* CTA */
+    .final-cta {
+      position: relative;
+      padding: 118px 0;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 85% 5%, rgba(196,163,87,.14), transparent 30%),
+        linear-gradient(145deg, var(--navy-950), var(--navy-800));
+      overflow: hidden;
+    }
+
+    .final-cta::after {
+      content: "GR";
+      position: absolute;
+      right: 1.5vw;
+      bottom: -13vw;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(15rem, 34vw, 34rem);
+      line-height: .8;
+      color: rgba(255,255,255,.025);
+      pointer-events: none;
+    }
+
+    .cta-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 70px;
+      align-items: end;
+    }
+
+    .final-cta h2 { max-width: 760px; }
+    .final-cta .lede { color: #bac7cf; }
+
+    .contact-box {
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.17);
+      background: rgba(255,255,255,.045);
+      backdrop-filter: blur(8px);
+    }
+
+    .contact-box h3 { color: var(--white); }
+    .contact-box p { color: #bac7cf; }
+
+    .contact-actions { display: grid; gap: 12px; margin-top: 24px; }
+    .contact-actions .btn { width: 100%; }
+
+    .message-template {
+      margin-top: 30px;
+      padding: 22px 24px;
+      border-left: 2px solid var(--gold);
+      background: rgba(196,163,87,.07);
+      color: #d7e0e5;
+      font-size: .92rem;
+    }
+
+    .message-template strong { color: var(--gold-light); }
+
+    /* Footer */
+    .site-footer {
+      padding: 42px 0;
+      color: #aebbc4;
+      background: #050f18;
+      border-top: 1px solid rgba(196,163,87,.18);
+      font-size: .82rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: end;
+    }
+
+    .footer-tagline {
+      margin: 12px 0 0;
+      color: #d7e0e5;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.3rem;
+    }
+
+    .footer-meta { text-align: right; }
+    .footer-meta p { margin: 4px 0; }
+    .footer-meta a { color: #d7e0e5; text-decoration-color: rgba(224,201,131,.6); }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 1040px) {
+      .nav-links > a:not(.btn) { display: none; }
+
+      .problem-grid,
+      .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .problem-card,
+      .step { min-height: 280px; }
+
+      .example-grid,
+      .pricing-grid { grid-template-columns: 1fr; }
+
+      .price-card,
+      .price-card.primary { min-height: auto; transform: none; }
+
+      .example-card { min-height: 270px; }
+    }
+
+    @media (max-width: 800px) {
+      .shell { width: min(calc(100% - 30px), var(--max)); }
+
+      .site-header { background: rgba(7,21,33,.97); }
+      .nav-wrap { min-height: 68px; }
+      .brand-descriptor { display: none; }
+
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        position: fixed;
+        inset: 68px 0 auto;
+        display: grid;
+        gap: 0;
+        padding: 18px 20px 26px;
+        background: var(--navy-950);
+        border-bottom: 1px solid rgba(196,163,87,.25);
+        transform: translateY(-130%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform .24s ease, opacity .24s ease;
+      }
+
+      .menu-open .nav-links { transform: translateY(0); opacity: 1; pointer-events: auto; }
+
+      .nav-links > a:not(.btn) {
+        display: block;
+        padding: 14px 4px;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+        font-size: .9rem;
+      }
+
+      .nav-links .btn { margin-top: 16px; min-height: 46px; }
+
+      .hero { min-height: auto; padding: 135px 0 70px; }
+      h1 { font-size: clamp(3.4rem, 15vw, 5.4rem); }
+
+      .hero-proof { grid-template-columns: 1fr 1fr; }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.14); }
+
+      .section { padding: 86px 0; }
+
+      .section-head,
+      .exchange,
+      .boundary-wrap,
+      .cta-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .section-note { padding: 18px 0 0; border-left: 0; border-top: 1px solid var(--gold); }
+      .boundary-lead { position: static; }
+      .footer-meta { text-align: left; }
+
+      .exchange-panel { padding: 38px 28px; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-actions { display: grid; }
+      .hero-actions .btn { width: 100%; }
+
+      .hero-proof,
+      .problem-grid,
+      .steps,
+      .states { grid-template-columns: 1fr; }
+
+      .proof-item { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+      .proof-item:last-child { border-bottom: 0; }
+
+      .problem-card,
+      .step,
+      .state-card { min-height: auto; }
+
+      .problem-grid { border-left: 0; }
+      .problem-card { border-left: 1px solid var(--line-light); }
+
+      .example-card,
+      .price-card { padding: 28px 24px; }
+      .price { font-size: 3.5rem; }
+
+      .contact-box { padding: 25px 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+    GOOD REMEDY HOMEPAGE — PLAIN-LANGUAGE PUBLIC VERSION v1.0
+    Date: 2026-08-10
+    Release posture: public-copy candidate; human deployment decision required.
+    Copy ruling: preserve the method underneath, but do not require a first-time visitor
+    to learn the internal grammar before understanding the service.
+  -->
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top" aria-label="Good Remedy home">
+        <span class="brand-mark" aria-hidden="true">GR</span>
+        <span class="brand-copy">
+          <span class="brand-name">Good Remedy</span>
+          <span class="brand-descriptor">Applied AI diligence &amp; release control</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+        <a href="#problem">Problem</a>
+        <a href="#how">How it works</a>
+        <a href="#examples">Examples</a>
+        <a href="#readout">What you get</a>
+        <a href="#pricing">Ways to start</a>
+        <a href="#boundary">Boundary</a>
+        <a class="btn btn-gold" href="#contact">Start a review</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-inner">
+        <p class="eyebrow gold">For important AI-assisted work before it gets sent, implemented, published, or relied on</p>
+        <h1>AI work looks finished before it is ready to move.</h1>
+        <p class="hero-copy">
+          Send Good Remedy one important piece of AI-assisted work before it goes to a client, into a product, or into a real decision. We check <strong>what is supported, what remains unresolved, who still needs to review it, and what has to happen next.</strong>
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#contact">Start with one piece of work</a>
+          <a class="btn btn-outline-light" href="#how">See how the review works</a>
+        </div>
+
+        <p class="hero-note">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2 3.5 5.7v5.6c0 5.2 3.6 10 8.5 11.7 4.9-1.7 8.5-6.5 8.5-11.7V5.7L12 2Zm0 2.2 6.4 2.8v4.3c0 4.1-2.7 8-6.4 9.5-3.7-1.5-6.4-5.4-6.4-9.5V7L12 4.2Z"/></svg>
+          Start with non-sensitive, redacted, public, or de-identified material. Scope and turnaround are confirmed before the review begins.
+        </p>
+
+        <div class="hero-proof" aria-label="Good Remedy review focus">
+          <div class="proof-item">
+            <span class="proof-label">One piece of work</span>
+            <span class="proof-text">A proposal, workflow, deck, recommendation, claim set, or important handoff.</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-label">One real purpose</span>
+            <span class="proof-text">What the work is supposed to accomplish and where it is trying to go.</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-label">One clear readout</span>
+            <span class="proof-text">What holds up, what does not, what is unresolved, and what happens next.</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-label">Human decision</span>
+            <span class="proof-text">Good Remedy prepares the work. The proper owner or reviewer decides what moves.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="thesis-band" aria-label="Good Remedy thesis">
+      <div class="shell">
+        <blockquote>
+          AI is making finished-looking work cheap and abundant. The scarce thing is knowing <em>what another person can responsibly rely on.</em>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="problem">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="section-intro">
+            <p class="eyebrow ink">The problem</p>
+            <h2>The risk usually appears after the work looks done.</h2>
+            <p class="lede">In practice, this tends to show up in four places. The work may be useful. It may even be very good. But the conditions for relying on it have not traveled with it.</p>
+          </div>
+          <p class="section-note">A polished artifact can hide open assumptions, unsupported claims, missing review, or a decision no one clearly owns.</p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem-card reveal">
+            <span class="card-kicker">Proposal to delivery</span>
+            <h3>The proposal sounds complete.</h3>
+            <p>The assumptions, dependencies, reviewer commitments, and delivery conditions may disappear once the work moves into implementation.</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <span class="card-kicker">Product or workflow</span>
+            <h3>The feature works in a demo.</h3>
+            <p>No one has fully settled where the system stops, where a person must decide, who owns corrections, or what happens when the normal path fails.</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <span class="card-kicker">Client or executive material</span>
+            <h3>The narrative is polished.</h3>
+            <p>The claims, sources, limitations, approvals, or intended reliance may not support the send that is about to happen.</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <span class="card-kicker">Vendor, model, or agent</span>
+            <h3>The output sounds confident.</h3>
+            <p>The team still needs to know what supports it, what changed, what can be relied on, and who is actually allowed to act.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="how">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="section-intro">
+            <p class="eyebrow gold">How the review works</p>
+            <h2>We do not judge the work in the abstract.</h2>
+            <p class="lede">We check it against what it is supposed to accomplish, who will rely on it, and what needs to be true before it moves.</p>
+          </div>
+          <p class="section-note">The review has four parts. The point is not to add governance theater. It is to make the real decision easier to see and own.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step reveal" data-step="1">
+            <span class="step-number">01</span>
+            <h3>Tell us what it is.</h3>
+            <p>Name the piece of work, what it is supposed to become, who will receive or act on it, and any deadline or consequence attached.</p>
+          </article>
+
+          <article class="step reveal" data-step="2">
+            <span class="step-number">02</span>
+            <h3>Send the record behind it.</h3>
+            <p>Include the work itself and the sources, brief, requirements, policies, prior decisions, assumptions, or constraints that matter.</p>
+          </article>
+
+          <article class="step reveal" data-step="3">
+            <span class="step-number">03</span>
+            <h3>We pressure-test the gaps.</h3>
+            <p>We look for unsupported claims, conflicts, changed assumptions, missing dependencies, unclear ownership, weak exception paths, and conditions lost in the handoff.</p>
+          </article>
+
+          <article class="step reveal" data-step="4">
+            <span class="step-number">04</span>
+            <h3>You get a clear next position.</h3>
+            <p>We show what can move, what needs to narrow, what remains held, who needs to decide, and the smallest responsible next step.</p>
+          </article>
+        </div>
+
+        <p class="plain-rule reveal"><strong>Good Remedy prepares the work for decision.</strong> The authorized client, legal, clinical, policy, technical, security, compliance, procurement, editorial, or executive reviewer makes the substantive judgment.</p>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="examples">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="section-intro">
+            <p class="eyebrow ink">Start with one piece of work</p>
+            <h2>Small enough to inspect. Important enough to matter.</h2>
+            <p class="lede">A first review should be easy to picture. These are three straightforward examples of what someone might actually hand Good Remedy.</p>
+          </div>
+          <p class="section-note">The starting point is not “fix our AI.” It is one real object approaching a client, implementation, publication, approval, or decision.</p>
+        </div>
+
+        <div class="example-grid">
+          <article class="example-card reveal">
+            <span class="example-price">$500 example</span>
+            <h3>An AI-assisted client proposal before it goes out.</h3>
+            <p>Check the claims, assumptions, delivery promises, sources, dependencies, and any review the proposal still needs.</p>
+            <p class="example-result">Result: a concise outside read showing what holds up and what should change before the send.</p>
+          </article>
+
+          <article class="example-card featured reveal">
+            <span class="example-price">$1,250 example</span>
+            <h3>An AI-assisted workflow before the company implements it.</h3>
+            <p>Check the human decision points, data or privacy limits, exception handling, correction ownership, and what the system should not be allowed to do on its own.</p>
+            <p class="example-result">Result: a focused review of one important workflow and the conditions needed for a responsible implementation decision.</p>
+          </article>
+
+          <article class="example-card reveal">
+            <span class="example-price">$2,500 example</span>
+            <h3>Complex work where the claims, sources, reviewers, and ownership are tangled.</h3>
+            <p>Build a developed record of what is supported, what remains unresolved, who owns each decision, and how the work can be corrected, narrowed, held, or escalated.</p>
+            <p class="example-result">Result: a full readout that another responsible person can review without reconstructing the whole project.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="readout">
+      <div class="shell">
+        <div class="exchange">
+          <article class="exchange-panel send reveal">
+            <p class="eyebrow ink">What you send</p>
+            <h2>Send us the work and what it needs to accomplish.</h2>
+            <p>You do not need to prepare a governance packet. A useful review can begin with a small, honest record.</p>
+
+            <ul class="clean-list">
+              <li><span class="list-mark">01</span><span>The piece of work itself.</span></li>
+              <li><span class="list-mark">02</span><span>What it is supposed to accomplish or become.</span></li>
+              <li><span class="list-mark">03</span><span>The sources, brief, requirements, policies, screenshots, data notes, or prior decisions that matter.</span></li>
+              <li><span class="list-mark">04</span><span>The person responsible for the next decision and anyone who must review.</span></li>
+              <li><span class="list-mark">05</span><span>Any deadline, known concern, constraint, or sensitive-data limit.</span></li>
+            </ul>
+          </article>
+
+          <article class="exchange-panel return reveal">
+            <p class="eyebrow gold">What Good Remedy returns</p>
+            <h2>We show you what is ready, what is not, and what needs to happen next.</h2>
+            <p>The readout is built for the person who has to own the next move—not for uncontrolled circulation or abstract commentary.</p>
+
+            <ul class="clean-list">
+              <li><span class="list-mark">01</span><span>What holds up and can be carried forward.</span></li>
+              <li><span class="list-mark">02</span><span>What needs evidence, correction, confirmation, or a clearer limitation.</span></li>
+              <li><span class="list-mark">03</span><span>What remains unresolved or belongs to another reviewer.</span></li>
+              <li><span class="list-mark">04</span><span>Who still needs to decide and what authority that decision requires.</span></li>
+              <li><span class="list-mark">05</span><span>The clearest responsible next action available now.</span></li>
+            </ul>
+
+            <p class="formal-name">Your review is delivered as a concise <strong>Controlled Movement Readout</strong> that can be carried into the next responsible review or decision.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream" aria-labelledby="states-title">
+      <div class="shell">
+        <div class="state-intro reveal">
+          <p class="eyebrow ink">The practical result</p>
+          <h2 id="states-title">Every review ends in one of four clear positions.</h2>
+          <p class="lede">These are not certifications. They are a plain way to show the owner what the current record supports and what the next decision requires.</p>
+        </div>
+
+        <div class="states">
+          <article class="state-card reveal">
+            <span class="state-word">MOVE</span>
+            <h3>The stated conditions are visible.</h3>
+            <p>The authorized reviewer has a sufficient record to decide whether the next movement may proceed.</p>
+          </article>
+
+          <article class="state-card reveal">
+            <span class="state-word">NARROW</span>
+            <h3>A smaller version can move.</h3>
+            <p>The claim, audience, use, feature, scope, or affected population should be reduced and the limits made explicit.</p>
+          </article>
+
+          <article class="state-card reveal">
+            <span class="state-word">HOLD</span>
+            <h3>Something required is still missing.</h3>
+            <p>A source, owner, review, decision, exception path, dependency, or release condition has not been completed.</p>
+          </article>
+
+          <article class="state-card reveal">
+            <span class="state-word">ESCALATE</span>
+            <h3>The issue belongs elsewhere.</h3>
+            <p>Legal, clinical, policy, technical, security, client, procurement, compliance, editorial, or executive authority must decide.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="pricing">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="section-intro">
+            <p class="eyebrow gold">Ways to start</p>
+            <h2>Choose the depth that matches the work.</h2>
+            <p class="lede">At these prices, the first engagement should feel easy to try. Scope is based on the actual piece of work, how many decisions and reviewers are involved, and what happens if the work is wrong.</p>
+          </div>
+          <p class="section-note">The cheapest option is not automatically the right one. The point is to choose a review small enough to finish and serious enough to answer a real question.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card reveal">
+            <span class="price-label">Outside Read</span>
+            <div class="price">$500</div>
+            <h3 class="price-title">One narrow piece of AI-assisted work.</h3>
+            <p>Best for a proposal, client deck, recommendation, claim set, or other bounded object approaching a real send or decision.</p>
+            <ul class="price-list">
+              <li>One narrow piece of work</li>
+              <li>Concise MOVE / NARROW / HOLD / ESCALATE readout</li>
+              <li>One follow-up call</li>
+              <li>Full $500 credited to a deeper review begun within 30 days</li>
+            </ul>
+            <a class="btn btn-outline-light" href="mailto:hello@grmove.com?subject=Good%20Remedy%20Outside%20Read">Ask about an Outside Read</a>
+          </article>
+
+          <article class="price-card primary reveal">
+            <span class="price-label">Focused Review</span>
+            <div class="price">$1,250</div>
+            <h3 class="price-title">One important workflow, handoff, or implementation question.</h3>
+            <p>Best when the work involves a meaningful issue such as claim support, privacy posture, human decision boundaries, exceptions, or release ownership.</p>
+            <ul class="price-list">
+              <li>One consequential workflow or review lane</li>
+              <li>Focused source, claim, ownership, and exception review</li>
+              <li>Clear conditions for the next decision</li>
+              <li>Readout and follow-up discussion</li>
+            </ul>
+            <a class="btn btn-gold" href="mailto:hello@grmove.com?subject=Good%20Remedy%20Focused%20Review">Ask about a Focused Review</a>
+          </article>
+
+          <article class="price-card reveal">
+            <span class="price-label">Full Review</span>
+            <div class="price">$2,500</div>
+            <h3 class="price-title">Complex work with several claims, sources, reviewers, or downstream consequences.</h3>
+            <p>Best when another responsible person needs a developed record without reconstructing the project from emails, drafts, prompts, and scattered decisions.</p>
+            <ul class="price-list">
+              <li>Developed review record</li>
+              <li>Multiple claims, sources, decisions, and reviewer needs</li>
+              <li>Unresolved questions and escalation path</li>
+              <li>Practical next-step plan</li>
+            </ul>
+            <a class="btn btn-outline-light" href="mailto:hello@grmove.com?subject=Good%20Remedy%20Full%20Review">Ask about a Full Review</a>
+          </article>
+        </div>
+
+        <p class="pricing-note">Recurring checkpoints or ongoing control work are scoped only after the first object shows a real repeated need. Turnaround is confirmed before work begins.</p>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="boundary">
+      <div class="shell boundary-wrap">
+        <div class="boundary-lead reveal">
+          <p class="eyebrow ink">Private, bounded, owner-controlled</p>
+          <h2>Outside scrutiny without surrendering authority.</h2>
+          <p class="lede">Good Remedy helps the responsible owner see the decision burden clearly. It does not take the decision away from the people who actually have the authority to make it.</p>
+          <p class="boundary-alert"><strong>Important:</strong> reviewable does not mean approved. A Good Remedy readout does not confer legal, clinical, compliance, policy, technical, security, procurement, client, editorial, safety, or executive authority.</p>
+        </div>
+
+        <div class="boundary-list">
+          <article class="boundary-item reveal">
+            <h3>Private by default</h3>
+            <p>The readout is prepared for the owner and the reviewer lane they designate. It is not designed for uncontrolled circulation.</p>
+          </article>
+
+          <article class="boundary-item reveal">
+            <h3>Bounded by the piece of work</h3>
+            <p>The first review stays with the actual object. It does not expand into a giant transformation program unless repeated work shows a real need.</p>
+          </article>
+
+          <article class="boundary-item reveal">
+            <h3>Authority remains outside Good Remedy</h3>
+            <p>Good Remedy identifies support, alignment, ownership, exception, review, and release gaps from the supplied record. Authorized professionals decide what is substantively right or required.</p>
+          </article>
+
+          <article class="boundary-item reveal">
+            <h3>Not autopilot</h3>
+            <p>An AI, vendor, or agent output does not authorize action. The proper owner remains responsible for what moves and why.</p>
+          </article>
+
+          <article class="boundary-item reveal">
+            <h3>Not sensitive-data first</h3>
+            <p>Begin with non-sensitive, redacted, public, synthetic, or de-identified work unless a formal data and sharing boundary has been established.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="contact">
+      <div class="shell cta-grid">
+        <div class="reveal">
+          <p class="eyebrow gold">Start a private review</p>
+          <h2>Bring the next important piece of AI work that is about to move.</h2>
+          <p class="lede">Tell us what it is supposed to accomplish, who owns the next decision, and what deadline or consequence is attached. Do not include sensitive information in the first message.</p>
+
+          <p class="message-template"><strong>A good first message:</strong><br>“I have an AI-assisted [proposal / workflow / deck / recommendation] that is supposed to [purpose]. It is approaching [client send / implementation / publication / approval]. The decision owner is [role], and the main concern is [brief concern].”</p>
+        </div>
+
+        <aside class="contact-box reveal" aria-label="Good Remedy contact information">
+          <h3>Start with the work story.</h3>
+          <p>Good Remedy will define the smallest useful review scope before any deeper material is shared.</p>
+          <div class="contact-actions">
+            <a class="btn btn-gold" href="mailto:hello@grmove.com?subject=Private%20Good%20Remedy%20review">Email hello@grmove.com</a>
+            <a class="btn btn-outline-light" href="tel:+19175545582">Call 917-554-5582</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand" href="#top" aria-label="Good Remedy home">
+          <span class="brand-mark" aria-hidden="true">GR</span>
+          <span class="brand-name">Good Remedy</span>
+        </a>
+        <p class="footer-tagline">Make AI-assisted work reviewable before it moves.</p>
+      </div>
+
+      <div class="footer-meta">
+        <p><a href="mailto:hello@grmove.com">hello@grmove.com</a> · <a href="tel:+19175545582">917-554-5582</a></p>
+        <p>Benjamin Lopez · 198 Harrison St #303 · Paterson, NJ 07501</p>
+        <p>© 2026 Good Remedy.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('primary-nav');
+
+    function closeMenu() {
+      body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open menu');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const open = body.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealElements = document.querySelectorAll('.reveal');
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealElements.forEach((el) => el.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -35px 0px' });
+
+      revealElements.forEach((el) => observer.observe(el));
+    }
+  </script>
+</body>
+</html>
