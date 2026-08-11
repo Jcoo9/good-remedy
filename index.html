@@ -3,28 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071521">
   <title>Good Remedy | Pressure-Test Important AI-Assisted Work Before It Moves</title>
-  <meta name="description" content="Good Remedy pressure-tests important AI-assisted work before it is sent, implemented, published, approved, or relied upon. See what holds up, what remains unresolved, who needs to decide, and what must happen next.">
-  <meta name="theme-color" content="#0a1b2a">
-  <meta property="og:title" content="Good Remedy | Make AI-Assisted Work Reviewable Before It Moves">
-  <meta property="og:description" content="Send Good Remedy one important piece of AI-assisted work. We show what holds up, what does not, who still needs to decide, and what has to happen next.">
+  <meta name="description" content="Good Remedy pressure-tests important AI-assisted proposals, decks, recommendations, and workflows before they reach a client, executive, system, or the public. See what is supported, what remains unresolved, who needs to decide, and what should happen next.">
+  <meta property="og:title" content="Good Remedy | Pressure-Test Important AI-Assisted Work Before It Moves">
+  <meta property="og:description" content="AI can produce work that looks finished before it is ready to be relied on. Good Remedy shows what is supported, what is unresolved, who needs to decide, and what should happen next.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://grmove.com/">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://grmove.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071521'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='24' fill='%23e0c983' font-family='Georgia,serif'%3EGR%3C/text%3E%3C/svg%3E" type="image/svg+xml">
 
   <style>
     :root {
+      --navy-975: #050f18;
       --navy-950: #071521;
+      --navy-925: #091a29;
       --navy-900: #0a1b2a;
       --navy-850: #0e2234;
       --navy-800: #122b40;
       --navy-700: #1d3e55;
       --ink: #17222b;
-      --ink-soft: #4d5a63;
+      --ink-2: #26343e;
+      --ink-soft: #52616b;
       --cream: #f3efe5;
+      --cream-2: #eee7d8;
       --paper: #fbf8f1;
       --white: #ffffff;
       --gold: #c4a357;
@@ -32,13 +38,22 @@
       --gold-deep: #9e7d35;
       --sage: #dce5de;
       --green: #214b3e;
-      --line-dark: rgba(255,255,255,.12);
-      --line-light: rgba(23,34,43,.14);
-      --shadow: 0 18px 60px rgba(7,21,33,.12);
-      --radius-sm: 5px;
-      --radius-md: 12px;
-      --radius-lg: 22px;
-      --max: 1180px;
+      --green-soft: #e3ede7;
+      --amber: #8d6725;
+      --amber-soft: #f5ead3;
+      --red: #7e3434;
+      --red-soft: #f3e3df;
+      --blue-soft: #e8f0f5;
+      --line-dark: rgba(255, 255, 255, .12);
+      --line-light: rgba(23, 34, 43, .14);
+      --shadow: 0 22px 70px rgba(7, 21, 33, .14);
+      --shadow-soft: 0 12px 42px rgba(7, 21, 33, .08);
+      --radius-xs: 4px;
+      --radius-sm: 7px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-xl: 34px;
+      --max: 1200px;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -47,22 +62,23 @@
 
     body {
       margin: 0;
-      font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
       background: var(--paper);
       color: var(--ink);
-      line-height: 1.6;
+      font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.62;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
-      overflow-x: hidden;
     }
 
-    body.menu-open { overflow: hidden; }
+    body.menu-open,
+    body.dialog-open { overflow: hidden; }
 
-    a { color: inherit; }
-
+    a { color: inherit; text-decoration: none; }
     img, svg { display: block; max-width: 100%; }
-
     button, input, textarea, select { font: inherit; }
+    button { color: inherit; }
 
     ::selection { background: var(--gold-light); color: var(--navy-950); }
 
@@ -70,32 +86,41 @@
       position: fixed;
       top: 8px;
       left: 8px;
-      z-index: 1000;
-      transform: translateY(-140%);
+      z-index: 5000;
+      transform: translateY(-150%);
+      border-radius: var(--radius-sm);
       background: var(--gold-light);
       color: var(--navy-950);
       padding: 10px 14px;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
       font-weight: 600;
+      transition: transform .2s ease;
     }
 
     .skip-link:focus { transform: translateY(0); }
 
     .shell {
-      width: min(calc(100% - 40px), var(--max));
+      width: min(calc(100% - 42px), var(--max));
       margin-inline: auto;
     }
+
+    .section { padding: 104px 0; }
+    .section.compact { padding: 78px 0; }
+    .section-dark { background: var(--navy-900); color: var(--white); }
+    .section-cream { background: var(--cream); }
+    .section-paper { background: var(--paper); }
+    .section-white { background: var(--white); }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 12px;
       margin: 0 0 18px;
+      color: var(--gold-deep);
       font-family: "DM Mono", monospace;
-      font-size: .72rem;
-      font-weight: 400;
-      letter-spacing: .16em;
+      font-size: .69rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      line-height: 1.4;
       text-transform: uppercase;
     }
 
@@ -104,613 +129,549 @@
       width: 30px;
       height: 1px;
       background: currentColor;
-      opacity: .9;
     }
 
     .eyebrow.gold { color: var(--gold-light); }
-    .eyebrow.ink { color: var(--gold-deep); }
+    .eyebrow.light { color: #c7d2d9; }
 
-    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3, h4, p { margin-top: 0; }
 
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
+      margin-bottom: 20px;
       font-family: "Cormorant Garamond", Georgia, serif;
       font-weight: 500;
-      letter-spacing: -.02em;
+      letter-spacing: -.025em;
     }
 
     h1 {
-      max-width: 980px;
-      margin-bottom: 28px;
-      font-size: clamp(3.6rem, 7.8vw, 7.2rem);
+      max-width: 740px;
+      font-size: clamp(3.55rem, 7.3vw, 6.75rem);
       line-height: .94;
-      color: var(--white);
     }
 
     h2 {
-      margin-bottom: 24px;
-      font-size: clamp(2.45rem, 5vw, 4.9rem);
-      line-height: 1;
+      font-size: clamp(2.7rem, 5.3vw, 5rem);
+      line-height: .99;
     }
 
     h3 {
-      margin-bottom: 12px;
-      font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+      font-size: clamp(1.75rem, 2.7vw, 2.45rem);
       line-height: 1.08;
     }
 
+    h4 {
+      font-size: 1.42rem;
+      line-height: 1.15;
+    }
+
     .lede {
-      max-width: 760px;
-      font-size: clamp(1.08rem, 1.8vw, 1.35rem);
-      line-height: 1.65;
+      max-width: 780px;
       color: var(--ink-soft);
+      font-size: clamp(1.08rem, 1.75vw, 1.34rem);
+      line-height: 1.64;
+    }
+
+    .section-dark .lede { color: #bac8d0; }
+
+    .micro {
+      font-family: "DM Mono", monospace;
+      font-size: .73rem;
+      letter-spacing: .05em;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      min-height: 48px;
-      padding: 12px 22px;
+      min-height: 50px;
       border: 1px solid transparent;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      font-size: .84rem;
+      border-radius: 999px;
+      padding: 13px 21px;
+      font-size: .91rem;
       font-weight: 600;
-      letter-spacing: .055em;
-      text-transform: uppercase;
-      transition: transform .2s ease, color .2s ease, background .2s ease, border-color .2s ease;
+      letter-spacing: .01em;
       cursor: pointer;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
     }
 
     .btn:hover { transform: translateY(-2px); }
-
-    .btn:focus-visible,
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible,
-    textarea:focus-visible,
-    select:focus-visible {
-      outline: 3px solid var(--gold-light);
-      outline-offset: 3px;
-    }
-
-    .btn-gold {
-      color: var(--navy-950);
-      background: var(--gold);
-      border-color: var(--gold);
-    }
-
-    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
-
-    .btn-outline-light {
-      color: var(--white);
-      border-color: rgba(255,255,255,.35);
-      background: transparent;
-    }
-
+    .btn:focus-visible { outline: 3px solid rgba(224, 201, 131, .45); outline-offset: 3px; }
+    .btn-gold { background: var(--gold); color: var(--navy-950); box-shadow: 0 12px 30px rgba(196, 163, 87, .22); }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-dark { background: var(--navy-900); color: var(--white); }
+    .btn-outline-light { border-color: rgba(255, 255, 255, .38); color: var(--white); background: transparent; }
     .btn-outline-light:hover { border-color: var(--gold-light); color: var(--gold-light); }
-
-    .btn-outline-dark {
-      color: var(--navy-900);
-      border-color: rgba(7,21,33,.35);
-      background: transparent;
-    }
-
+    .btn-outline-dark { border-color: rgba(23, 34, 43, .28); color: var(--ink); background: transparent; }
     .btn-outline-dark:hover { border-color: var(--gold-deep); color: var(--gold-deep); }
+    .btn-link { min-height: 0; padding: 0; border-radius: 0; color: var(--gold-deep); background: transparent; }
+    .btn-link::after { content: "→"; margin-left: 8px; }
 
-    /* Navigation */
     .site-header {
       position: fixed;
       inset: 0 0 auto;
-      z-index: 100;
-      background: rgba(7,21,33,.91);
-      border-bottom: 1px solid rgba(196,163,87,.22);
-      backdrop-filter: blur(16px);
+      z-index: 2000;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      background: rgba(7, 21, 33, .9);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
     .nav-wrap {
-      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      min-height: 78px;
+      gap: 28px;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 13px;
       color: var(--white);
-      text-decoration: none;
-      min-width: max-content;
     }
 
     .brand-mark {
-      width: 34px;
-      aspect-ratio: 1;
-      display: grid;
+      display: inline-grid;
       place-items: center;
-      border: 1px solid rgba(196,163,87,.65);
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(224, 201, 131, .48);
       border-radius: 50%;
       color: var(--gold-light);
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      line-height: 1;
+      font-size: 1.1rem;
+      letter-spacing: -.03em;
     }
 
-    .brand-copy { display: grid; gap: 1px; }
-
-    .brand-name {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 1.28rem;
-      font-weight: 600;
-      letter-spacing: .015em;
-      line-height: 1;
-    }
-
-    .brand-descriptor {
-      font-family: "DM Mono", monospace;
-      font-size: .58rem;
-      font-weight: 300;
-      letter-spacing: .11em;
-      text-transform: uppercase;
-      color: #a8b5be;
-    }
+    .brand-copy { display: grid; line-height: 1.05; }
+    .brand-name { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.48rem; font-weight: 600; }
+    .brand-descriptor { margin-top: 5px; color: #aebcc5; font-family: "DM Mono", monospace; font-size: .57rem; letter-spacing: .1em; text-transform: uppercase; }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: clamp(14px, 2vw, 26px);
-      margin-left: auto;
+      gap: 24px;
+      color: #d8e1e6;
+      font-size: .84rem;
     }
 
-    .nav-links > a:not(.btn) {
-      color: #cad3d9;
-      text-decoration: none;
-      font-size: .78rem;
-      letter-spacing: .02em;
-      transition: color .2s ease;
-    }
-
+    .nav-links > a:not(.btn) { transition: color .2s ease; }
     .nav-links > a:not(.btn):hover { color: var(--gold-light); }
-
-    .nav-links .btn { min-height: 40px; padding: 9px 15px; font-size: .7rem; }
 
     .menu-toggle {
       display: none;
       width: 44px;
       height: 44px;
-      border: 1px solid rgba(255,255,255,.23);
-      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
       background: transparent;
-      color: var(--white);
       cursor: pointer;
     }
 
-    .menu-toggle span,
     .menu-toggle::before,
-    .menu-toggle::after {
+    .menu-toggle::after,
+    .menu-toggle span {
       content: "";
-      display: block;
+      position: absolute;
+      left: 11px;
       width: 20px;
       height: 1px;
-      margin: 5px auto;
-      background: currentColor;
+      background: var(--white);
       transition: transform .2s ease, opacity .2s ease;
     }
 
+    .menu-toggle { position: relative; }
+    .menu-toggle::before { top: 14px; }
+    .menu-toggle span { top: 21px; }
+    .menu-toggle::after { top: 28px; }
+    .menu-open .menu-toggle::before { transform: translateY(7px) rotate(45deg); }
     .menu-open .menu-toggle span { opacity: 0; }
-    .menu-open .menu-toggle::before { transform: translateY(6px) rotate(45deg); }
-    .menu-open .menu-toggle::after { transform: translateY(-6px) rotate(-45deg); }
+    .menu-open .menu-toggle::after { transform: translateY(-7px) rotate(-45deg); }
 
-    /* Hero */
     .hero {
       position: relative;
-      isolation: isolate;
-      min-height: 820px;
-      padding: 170px 0 94px;
-      color: var(--white);
-      background:
-        radial-gradient(circle at 78% 30%, rgba(42,95,112,.24), transparent 32%),
-        radial-gradient(circle at 14% 85%, rgba(196,163,87,.13), transparent 33%),
-        linear-gradient(145deg, var(--navy-950), var(--navy-800));
+      min-height: 930px;
+      padding: 150px 0 88px;
       overflow: hidden;
+      background:
+        radial-gradient(circle at 84% 28%, rgba(196, 163, 87, .16), transparent 30%),
+        radial-gradient(circle at 8% 92%, rgba(46, 93, 126, .22), transparent 36%),
+        linear-gradient(150deg, var(--navy-975), var(--navy-900) 58%, #0c2638);
+      color: var(--white);
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      z-index: -2;
+      opacity: .15;
       background-image:
-        linear-gradient(rgba(224,201,131,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(224,201,131,.045) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.75), transparent 95%);
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: min(44vw, 600px);
-      aspect-ratio: 1;
-      right: -12vw;
-      top: 120px;
-      z-index: -1;
-      border: 1px solid rgba(196,163,87,.12);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 90px rgba(196,163,87,.018),
-        0 0 0 180px rgba(196,163,87,.012);
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.03fr) minmax(430px, .97fr);
+      gap: 62px;
+      align-items: center;
     }
-
-    .hero-inner { position: relative; }
-
-    .hero .eyebrow { max-width: 860px; }
 
     .hero-copy {
-      max-width: 790px;
-      margin-bottom: 38px;
-      font-size: clamp(1.14rem, 2vw, 1.42rem);
-      font-weight: 300;
-      line-height: 1.67;
-      color: #c6d0d7;
+      max-width: 750px;
+      color: #c2ced5;
+      font-size: clamp(1.13rem, 1.85vw, 1.42rem);
+      line-height: 1.62;
     }
 
     .hero-copy strong { color: var(--white); font-weight: 500; }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 46px;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin: 34px 0 30px; }
 
-    .hero-note {
+    .hero-boundary {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
-      max-width: 710px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(255,255,255,.14);
-      color: #aebbc4;
-      font-size: .88rem;
-      line-height: 1.55;
+      gap: 11px;
+      max-width: 660px;
+      margin: 0;
+      color: #9fb0ba;
+      font-size: .87rem;
     }
 
-    .hero-note svg { flex: 0 0 18px; margin-top: 2px; color: var(--gold-light); }
+    .hero-boundary svg { flex: 0 0 auto; margin-top: 3px; color: var(--gold-light); }
 
-    .hero-proof {
+    .before-list {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      margin-top: 70px;
-      border-top: 1px solid rgba(255,255,255,.14);
-      border-bottom: 1px solid rgba(255,255,255,.14);
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      max-width: 770px;
+      margin-top: 38px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.08);
     }
 
-    .proof-item {
-      min-height: 112px;
-      padding: 24px 22px;
-      border-right: 1px solid rgba(255,255,255,.14);
+    .before-item {
+      min-height: 86px;
+      padding: 18px 20px;
+      background: rgba(6, 19, 29, .68);
+      color: #d7e0e5;
+      font-size: .91rem;
     }
 
-    .proof-item:last-child { border-right: 0; }
+    .before-item strong { display: block; margin-bottom: 5px; color: var(--gold-light); font-weight: 500; }
 
-    .proof-label {
-      display: block;
-      margin-bottom: 8px;
+    .artifact-stage {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      place-items: center;
+    }
+
+    .artifact-glow {
+      position: absolute;
+      width: 82%;
+      height: 76%;
+      border-radius: 50%;
+      background: rgba(196, 163, 87, .11);
+      filter: blur(45px);
+    }
+
+    .document-mock {
+      position: relative;
+      width: min(100%, 500px);
+      min-height: 590px;
+      transform: rotate(1.4deg);
+      border-radius: 8px;
+      background: #fffdf7;
+      color: #202b33;
+      box-shadow: 0 34px 90px rgba(0, 0, 0, .37);
+      overflow: visible;
+    }
+
+    .document-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 23px 26px;
+      border-bottom: 1px solid #e5dfd4;
+    }
+
+    .document-brand { display: flex; align-items: center; gap: 10px; }
+    .doc-logo { width: 25px; height: 25px; border-radius: 50%; background: var(--navy-900); }
+    .doc-title { font-size: .81rem; font-weight: 600; letter-spacing: .04em; }
+    .doc-subtitle { color: #78848d; font-family: "DM Mono", monospace; font-size: .52rem; text-transform: uppercase; letter-spacing: .08em; }
+    .doc-page { color: #8a928f; font-family: "DM Mono", monospace; font-size: .57rem; }
+
+    .document-body { padding: 31px 36px 38px; }
+    .document-body h3 { margin-bottom: 13px; color: var(--navy-900); font-size: 2.25rem; }
+    .document-body > p { margin-bottom: 28px; color: #64717a; font-size: .85rem; }
+
+    .claim-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: start;
+      padding: 18px 0;
+      border-top: 1px solid #e8e2d6;
+    }
+
+    .claim-row:last-child { border-bottom: 1px solid #e8e2d6; }
+    .claim-copy { font-size: .9rem; line-height: 1.44; }
+    .claim-copy strong { display: block; margin-bottom: 4px; color: var(--navy-900); font-weight: 600; }
+    .claim-copy span { color: #707b83; }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      border-radius: 999px;
+      padding: 6px 9px;
       font-family: "DM Mono", monospace;
-      font-size: .62rem;
-      letter-spacing: .13em;
+      font-size: .53rem;
+      font-weight: 500;
+      letter-spacing: .07em;
       text-transform: uppercase;
-      color: var(--gold-light);
     }
 
-    .proof-text { color: #d7dfe4; font-size: .96rem; line-height: 1.45; }
+    .status.supported { background: var(--green-soft); color: var(--green); }
+    .status.evidence { background: var(--amber-soft); color: var(--amber); }
+    .status.decision { background: var(--blue-soft); color: #2f5c77; }
+    .status.hold { background: var(--red-soft); color: var(--red); }
 
-    /* Thesis band */
+    .annotation {
+      position: absolute;
+      z-index: 3;
+      width: 168px;
+      padding: 13px 14px;
+      border: 1px solid rgba(224, 201, 131, .45);
+      border-radius: 8px;
+      background: rgba(7, 21, 33, .95);
+      color: #d7e0e5;
+      box-shadow: 0 15px 34px rgba(0,0,0,.25);
+      font-size: .72rem;
+      line-height: 1.35;
+    }
+
+    .annotation b { display: block; margin-bottom: 5px; color: var(--gold-light); font-family: "DM Mono", monospace; font-size: .57rem; letter-spacing: .08em; text-transform: uppercase; }
+    .annotation.one { top: 96px; right: -63px; }
+    .annotation.two { top: 332px; left: -78px; }
+    .annotation.three { right: -55px; bottom: 68px; }
+    .annotation::after { content: ""; position: absolute; width: 35px; height: 1px; background: var(--gold); }
+    .annotation.one::after { left: -35px; top: 28px; }
+    .annotation.two::after { right: -35px; top: 28px; }
+    .annotation.three::after { left: -35px; top: 28px; }
+
     .thesis-band {
-      padding: 46px 0;
-      background: var(--cream);
-      border-bottom: 1px solid var(--line-light);
+      background: var(--gold);
+      color: var(--navy-950);
     }
 
     .thesis-band blockquote {
-      max-width: 980px;
+      max-width: 1050px;
       margin: 0 auto;
+      padding: 44px 0 46px;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(1.7rem, 3.2vw, 2.75rem);
-      line-height: 1.22;
+      font-size: clamp(1.95rem, 3.6vw, 3.55rem);
+      line-height: 1.09;
       text-align: center;
-      color: var(--navy-900);
     }
 
-    .thesis-band em { color: var(--gold-deep); }
-
-    /* Shared sections */
-    .section { padding: 112px 0; }
-
-    .section-dark { color: var(--white); background: var(--navy-900); }
-    .section-cream { background: var(--cream); }
-    .section-paper { background: var(--paper); }
+    .thesis-band em { font-style: italic; }
 
     .section-head {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+      grid-template-columns: 1fr minmax(240px, .36fr);
       gap: 70px;
       align-items: end;
-      margin-bottom: 58px;
+      margin-bottom: 54px;
     }
 
-    .section-dark .lede { color: #b8c5cd; }
+    .section-head.single { grid-template-columns: 1fr; }
+    .section-note { margin: 0; padding: 18px 0 0 24px; border-left: 1px solid var(--gold-deep); color: var(--ink-soft); font-size: .91rem; }
+    .section-dark .section-note { color: #aebcc5; border-left-color: var(--gold); }
 
-    .section-intro { max-width: 700px; }
-
-    .section-note {
-      align-self: end;
-      padding: 20px 0 4px 24px;
-      border-left: 1px solid var(--gold);
-      color: var(--ink-soft);
-      font-size: 1rem;
-    }
-
-    .section-dark .section-note { color: #b8c5cd; }
-
-    /* Problem */
-    .problem-grid {
+    .movement-visual {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      border-top: 1px solid var(--line-light);
-      border-left: 1px solid var(--line-light);
+      grid-template-columns: 1fr 76px 1fr 76px 1fr;
+      align-items: stretch;
+      gap: 0;
     }
 
-    .problem-card {
+    .movement-card {
       min-height: 330px;
-      padding: 34px 28px 30px;
-      background: rgba(255,255,255,.42);
-      border-right: 1px solid var(--line-light);
-      border-bottom: 1px solid var(--line-light);
-      transition: background .2s ease, transform .2s ease;
-    }
-
-    .problem-card:hover { background: var(--white); transform: translateY(-4px); }
-
-    .card-kicker {
-      display: inline-block;
-      margin-bottom: 35px;
-      font-family: "DM Mono", monospace;
-      font-size: .64rem;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      color: var(--gold-deep);
-    }
-
-    .problem-card p { color: var(--ink-soft); font-size: .98rem; }
-
-    /* How it works */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 2px;
-      background: rgba(255,255,255,.1);
-    }
-
-    .step {
-      position: relative;
-      min-height: 330px;
-      padding: 34px 28px;
-      background: var(--navy-850);
-      overflow: hidden;
-    }
-
-    .step::after {
-      content: attr(data-step);
-      position: absolute;
-      right: 12px;
-      bottom: -24px;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 8rem;
-      line-height: 1;
-      color: rgba(255,255,255,.035);
-    }
-
-    .step-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      margin-bottom: 28px;
-      border: 1px solid rgba(196,163,87,.55);
-      border-radius: 50%;
-      font-family: "DM Mono", monospace;
-      font-size: .7rem;
-      color: var(--gold-light);
-    }
-
-    .step h3 { color: var(--white); }
-    .step p { position: relative; z-index: 1; color: #b8c5cd; }
-
-    .plain-rule {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-top: 34px;
-      padding: 22px 24px;
-      border: 1px solid rgba(196,163,87,.35);
-      background: rgba(196,163,87,.06);
-      color: #d7e0e5;
-    }
-
-    .plain-rule strong { color: var(--gold-light); }
-
-    /* Work examples */
-    .example-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .example-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 305px;
-      padding: 31px;
+      padding: 34px 30px;
       border: 1px solid var(--line-light);
-      border-radius: var(--radius-md);
       background: var(--white);
-      box-shadow: 0 8px 34px rgba(7,21,33,.05);
+      box-shadow: var(--shadow-soft);
     }
 
-    .example-card.featured {
+    .movement-card.middle {
       color: var(--white);
       background: var(--navy-900);
       border-color: var(--navy-900);
-      box-shadow: var(--shadow);
     }
 
-    .example-price {
+    .movement-number {
       display: inline-flex;
-      width: fit-content;
-      margin-bottom: 26px;
-      padding: 5px 9px;
-      border: 1px solid rgba(158,125,53,.35);
-      border-radius: 999px;
-      font-family: "DM Mono", monospace;
-      font-size: .63rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
+      align-items: center;
+      justify-content: center;
+      width: 39px;
+      height: 39px;
+      margin-bottom: 30px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
       color: var(--gold-deep);
+      font-family: "DM Mono", monospace;
+      font-size: .65rem;
     }
 
-    .featured .example-price { color: var(--gold-light); border-color: rgba(224,201,131,.38); }
+    .movement-card.middle .movement-number { color: var(--gold-light); }
+    .movement-card p { color: var(--ink-soft); }
+    .movement-card.middle p { color: #b7c5cd; }
 
-    .example-card p { color: var(--ink-soft); }
-    .featured p { color: #becbd3; }
-
-    .example-result {
-      margin-top: auto;
-      padding-top: 22px;
-      border-top: 1px solid var(--line-light);
-      font-size: .92rem;
-      color: var(--green);
-    }
-
-    .featured .example-result { color: var(--gold-light); border-color: rgba(255,255,255,.13); }
-
-    /* Send / return */
-    .exchange {
+    .movement-mini {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      align-items: stretch;
+      gap: 9px;
+      margin-top: 26px;
     }
 
-    .exchange-panel {
-      padding: 46px 42px;
+    .movement-mini span {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--ink-2);
+      font-size: .87rem;
+    }
+
+    .movement-card.middle .movement-mini span { color: #d8e1e6; }
+    .movement-mini i { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+
+    .movement-arrow {
+      display: grid;
+      place-items: center;
+      color: var(--gold-deep);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 3.2rem;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .case-object {
+      position: sticky;
+      top: 118px;
       border-radius: var(--radius-lg);
-    }
-
-    .exchange-panel.send {
-      background: var(--cream);
-      border: 1px solid var(--line-light);
-    }
-
-    .exchange-panel.return {
-      color: var(--white);
       background: var(--navy-900);
+      color: var(--white);
       box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
-    .exchange-panel h2 { font-size: clamp(2.3rem, 4vw, 3.8rem); }
+    .case-object-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--line-dark);
+    }
 
-    .exchange-panel > p { max-width: 560px; color: var(--ink-soft); }
-    .exchange-panel.return > p { color: #bcc8d0; }
+    .case-object-header .micro { color: #b8c5cd; }
+    .synthetic-tag { border: 1px solid rgba(224,201,131,.52); border-radius: 999px; padding: 6px 10px; color: var(--gold-light); font-family: "DM Mono", monospace; font-size: .55rem; letter-spacing: .08em; text-transform: uppercase; }
 
-    .clean-list {
+    .proposal-page { margin: 28px; padding: 34px 32px; border-radius: 6px; background: #fffdf7; color: var(--ink); }
+    .proposal-page h3 { color: var(--navy-900); font-size: 2.2rem; }
+    .proposal-page .proposal-meta { margin-bottom: 30px; color: #7c878e; font-family: "DM Mono", monospace; font-size: .58rem; letter-spacing: .05em; text-transform: uppercase; }
+    .proposal-line { position: relative; margin: 0 0 16px; padding: 12px 46px 12px 14px; border-left: 3px solid #d8d3c8; background: #f6f2e9; font-size: .86rem; }
+    .proposal-line::after { position: absolute; top: 10px; right: 10px; border-radius: 999px; padding: 4px 7px; font-family: "DM Mono", monospace; font-size: .47rem; letter-spacing: .05em; text-transform: uppercase; }
+    .proposal-line.supported { border-left-color: var(--green); }
+    .proposal-line.supported::after { content: "Supported"; background: var(--green-soft); color: var(--green); }
+    .proposal-line.evidence { border-left-color: var(--amber); }
+    .proposal-line.evidence::after { content: "Evidence"; background: var(--amber-soft); color: var(--amber); }
+    .proposal-line.decision { border-left-color: #3c6c8b; }
+    .proposal-line.decision::after { content: "Decision"; background: var(--blue-soft); color: #2f5c77; }
+    .proposal-line.hold { border-left-color: var(--red); }
+    .proposal-line.hold::after { content: "Hold"; background: var(--red-soft); color: var(--red); }
+
+    .case-steps { display: grid; gap: 0; border-top: 1px solid var(--line-light); }
+    .case-step { display: grid; grid-template-columns: 48px 1fr; gap: 22px; padding: 28px 0; border-bottom: 1px solid var(--line-light); }
+    .case-step:last-child { border-bottom: 0; }
+    .case-step-num { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--gold-deep); border-radius: 50%; color: var(--gold-deep); font-family: "DM Mono", monospace; font-size: .65rem; }
+    .case-step h3 { margin-bottom: 9px; font-size: 1.95rem; }
+    .case-step p { margin-bottom: 0; color: var(--ink-soft); }
+    .case-result { margin-top: 30px; padding: 24px 26px; border-left: 3px solid var(--gold); background: var(--cream); }
+    .case-result strong { display: block; margin-bottom: 8px; color: var(--navy-900); }
+
+    .readout-layout {
       display: grid;
-      gap: 0;
-      margin: 34px 0 0;
-      padding: 0;
-      list-style: none;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, .65fr);
+      gap: 65px;
+      align-items: center;
     }
 
-    .clean-list li {
+    .readout-sheet {
+      border-radius: 8px;
+      background: #fffdf7;
+      color: var(--ink);
+      box-shadow: 0 30px 85px rgba(0,0,0,.28);
+      overflow: hidden;
+    }
+
+    .readout-head {
       display: grid;
-      grid-template-columns: 26px 1fr;
-      gap: 12px;
-      padding: 15px 0;
-      border-top: 1px solid var(--line-light);
-      color: var(--ink-soft);
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      padding: 25px 30px;
+      border-bottom: 1px solid #e6dfd1;
     }
 
-    .return .clean-list li { color: #d4dde2; border-color: rgba(255,255,255,.13); }
+    .readout-head h3 { margin-bottom: 4px; color: var(--navy-900); font-size: 2rem; }
+    .readout-head p { margin: 0; color: #76828a; font-size: .82rem; }
+    .readout-seal { align-self: start; border: 1px solid var(--gold-deep); border-radius: 999px; padding: 7px 10px; color: var(--gold-deep); font-family: "DM Mono", monospace; font-size: .55rem; letter-spacing: .07em; text-transform: uppercase; }
 
-    .list-mark {
-      color: var(--gold-deep);
-      font-family: "DM Mono", monospace;
-      font-size: .74rem;
-      padding-top: 2px;
-    }
+    .readout-body { display: grid; grid-template-columns: 1fr 1fr; }
+    .readout-block { min-height: 195px; padding: 25px 27px; border-right: 1px solid #e6dfd1; border-bottom: 1px solid #e6dfd1; }
+    .readout-block:nth-child(2n) { border-right: 0; }
+    .readout-block.full { grid-column: 1 / -1; min-height: auto; border-right: 0; }
+    .readout-label { display: block; margin-bottom: 13px; font-family: "DM Mono", monospace; font-size: .6rem; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; }
+    .readout-label.supported { color: var(--green); }
+    .readout-label.evidence { color: var(--amber); }
+    .readout-label.decision { color: #2f5c77; }
+    .readout-label.changed { color: var(--gold-deep); }
+    .readout-label.next { color: var(--red); }
+    .readout-block ul { margin: 0; padding-left: 18px; color: #58666f; font-size: .84rem; }
+    .readout-block li + li { margin-top: 8px; }
+    .readout-next { display: flex; align-items: flex-start; gap: 14px; padding: 22px 27px 25px; background: #f2ece0; }
+    .readout-next svg { flex: 0 0 auto; margin-top: 3px; color: var(--gold-deep); }
+    .readout-next p { margin: 0; color: #3d4a52; font-size: .9rem; }
 
-    .return .list-mark { color: var(--gold-light); }
+    .readout-copy h2 { color: var(--white); }
+    .readout-copy .lede { color: #bac8d0; }
+    .readout-points { display: grid; gap: 16px; margin: 30px 0 34px; }
+    .readout-point { display: flex; gap: 13px; align-items: flex-start; color: #d7e0e5; }
+    .readout-point span { display: grid; place-items: center; flex: 0 0 auto; width: 26px; height: 26px; border: 1px solid rgba(224,201,131,.55); border-radius: 50%; color: var(--gold-light); font-family: "DM Mono", monospace; font-size: .55rem; }
+    .readout-point p { margin: 0; }
 
-    .formal-name {
-      margin-top: 28px;
-      padding: 17px 18px;
-      border-left: 2px solid var(--gold);
-      background: rgba(196,163,87,.08);
-      color: #d7e1e6;
-      font-size: .92rem;
-    }
-
-    /* States */
-    .state-intro {
-      max-width: 790px;
-      margin-bottom: 44px;
-    }
-
-    .states {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .state-card {
-      min-height: 230px;
-      padding: 26px;
-      border: 1px solid var(--line-light);
-      border-top: 4px solid var(--gold);
-      background: rgba(255,255,255,.55);
-    }
-
-    .state-word {
-      display: block;
-      margin-bottom: 20px;
-      font-family: "DM Mono", monospace;
-      font-size: .78rem;
-      font-weight: 500;
-      letter-spacing: .16em;
-      color: var(--navy-900);
-    }
-
-    .state-card p { color: var(--ink-soft); font-size: .95rem; }
-
-    /* Pricing */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      align-items: stretch;
     }
 
     .price-card {
       display: flex;
       flex-direction: column;
-      min-height: 490px;
-      padding: 34px;
+      min-height: 640px;
+      padding: 34px 31px;
       border: 1px solid rgba(255,255,255,.16);
       border-radius: var(--radius-md);
       background: var(--navy-850);
@@ -718,299 +679,375 @@
 
     .price-card.primary {
       position: relative;
-      border-color: rgba(196,163,87,.68);
+      transform: translateY(-12px);
+      border-color: rgba(196, 163, 87, .72);
       background: linear-gradient(155deg, #17364b, #0d2131);
-      transform: translateY(-10px);
+      box-shadow: 0 25px 65px rgba(0,0,0,.2);
     }
 
     .price-card.primary::before {
-      content: "One important workflow";
+      content: "Most common starting point";
       position: absolute;
-      top: -15px;
-      left: 25px;
-      padding: 6px 10px;
+      top: -16px;
+      left: 24px;
       border-radius: 999px;
       background: var(--gold);
       color: var(--navy-950);
+      padding: 7px 11px;
       font-family: "DM Mono", monospace;
-      font-size: .58rem;
+      font-size: .54rem;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
 
-    .price-label {
-      font-family: "DM Mono", monospace;
-      font-size: .68rem;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-    }
+    .price-label { color: var(--gold-light); font-family: "DM Mono", monospace; font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; }
+    .price { margin: 20px 0 18px; color: var(--white); font-family: "Cormorant Garamond", Georgia, serif; font-size: 4.15rem; line-height: .9; }
+    .price-card h3 { color: var(--white); font-size: 2.05rem; }
+    .price-summary { min-height: 80px; color: #b8c5cd; }
 
-    .price {
-      margin: 18px 0 22px;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 4.1rem;
-      line-height: .9;
-      color: var(--white);
-    }
-
-    .price-title { color: var(--white); }
-
-    .price-card > p { color: #b8c5cd; }
-
-    .price-list {
-      display: grid;
-      gap: 12px;
-      margin: 24px 0 30px;
-      padding: 0;
-      list-style: none;
-      color: #d7e0e5;
-      font-size: .94rem;
-    }
-
-    .price-list li { display: flex; gap: 10px; }
-    .price-list li::before { content: "—"; color: var(--gold-light); }
-
+    .price-detail { margin: 25px 0 0; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.12); }
+    .price-detail dt { margin-top: 17px; color: var(--gold-light); font-family: "DM Mono", monospace; font-size: .59rem; letter-spacing: .08em; text-transform: uppercase; }
+    .price-detail dt:first-child { margin-top: 0; }
+    .price-detail dd { margin: 6px 0 0; color: #d4dde2; font-size: .9rem; }
     .price-card .btn { margin-top: auto; }
 
-    .pricing-note {
-      max-width: 880px;
-      margin: 36px auto 0;
-      color: #aebcc5;
-      text-align: center;
-      font-size: .9rem;
-    }
+    .pricing-note { max-width: 920px; margin: 38px auto 0; color: #aebcc5; text-align: center; font-size: .88rem; }
 
-    /* Boundary */
-    .boundary-wrap {
+    .founder-layout {
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 80px;
-      align-items: start;
+      grid-template-columns: minmax(330px, .72fr) minmax(0, 1.28fr);
+      gap: 78px;
+      align-items: center;
     }
 
-    .boundary-lead {
-      position: sticky;
-      top: 120px;
-    }
-
-    .boundary-list { display: grid; gap: 14px; }
-
-    .boundary-item {
-      padding: 26px 28px;
-      border: 1px solid var(--line-light);
-      background: rgba(255,255,255,.55);
-    }
-
-    .boundary-item h3 { margin-bottom: 8px; font-size: 1.75rem; }
-    .boundary-item p { margin-bottom: 0; color: var(--ink-soft); }
-
-    .boundary-alert {
-      margin-top: 18px;
-      padding: 20px 22px;
-      border-left: 3px solid var(--gold-deep);
-      background: #ebe4d5;
-      color: #33414a;
-      font-size: .9rem;
-    }
-
-    /* CTA */
-    .final-cta {
+    .portrait-frame {
       position: relative;
-      padding: 118px 0;
-      color: var(--white);
+      min-height: 570px;
+      border: 1px solid rgba(224,201,131,.38);
+      border-radius: var(--radius-lg);
       background:
-        radial-gradient(circle at 85% 5%, rgba(196,163,87,.14), transparent 30%),
-        linear-gradient(145deg, var(--navy-950), var(--navy-800));
+        radial-gradient(circle at 65% 23%, rgba(196,163,87,.17), transparent 28%),
+        linear-gradient(150deg, #102d43, #071521 70%);
+      box-shadow: var(--shadow);
       overflow: hidden;
     }
 
-    .final-cta::after {
-      content: "GR";
+    .portrait-frame::before {
+      content: "";
       position: absolute;
-      right: 1.5vw;
-      bottom: -13vw;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(15rem, 34vw, 34rem);
-      line-height: .8;
-      color: rgba(255,255,255,.025);
-      pointer-events: none;
+      inset: 0;
+      opacity: .22;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 44px 44px;
     }
 
-    .cta-grid {
-      position: relative;
-      z-index: 1;
+    .portrait-frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+
+    .portrait-frame.has-image img { opacity: 1; }
+    .portrait-frame.has-image .portrait-fallback { opacity: 0; }
+
+    .portrait-fallback {
+      position: absolute;
+      inset: 0;
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 70px;
-      align-items: end;
+      place-content: center;
+      gap: 18px;
+      color: var(--white);
+      text-align: center;
+      transition: opacity .25s ease;
     }
 
-    .final-cta h2 { max-width: 760px; }
-    .final-cta .lede { color: #bac7cf; }
-
-    .contact-box {
-      padding: 30px;
-      border: 1px solid rgba(255,255,255,.17);
-      background: rgba(255,255,255,.045);
-      backdrop-filter: blur(8px);
+    .portrait-monogram {
+      display: grid;
+      place-items: center;
+      width: 180px;
+      height: 180px;
+      margin-inline: auto;
+      border: 1px solid rgba(224,201,131,.55);
+      border-radius: 50%;
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 4.8rem;
+      letter-spacing: -.06em;
     }
 
-    .contact-box h3 { color: var(--white); }
-    .contact-box p { color: #bac7cf; }
+    .portrait-fallback p { margin: 0; color: #aebcc5; font-family: "DM Mono", monospace; font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; }
+    .portrait-caption { position: absolute; inset: auto 24px 22px; z-index: 2; color: #d7e0e5; font-size: .82rem; }
+    .portrait-caption b { display: block; color: var(--gold-light); font-family: "DM Mono", monospace; font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; }
 
-    .contact-actions { display: grid; gap: 12px; margin-top: 24px; }
-    .contact-actions .btn { width: 100%; }
+    .founder-copy h2 { color: var(--white); }
+    .founder-quote { max-width: 760px; margin: 28px 0 30px; color: var(--gold-light); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(2rem, 3.5vw, 3.35rem); font-style: italic; line-height: 1.12; }
+    .founder-copy > p { max-width: 730px; color: #bac8d0; }
+    .founder-meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 32px; }
+    .founder-chip { border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 7px 11px; color: #d8e1e6; font-family: "DM Mono", monospace; font-size: .57rem; letter-spacing: .06em; text-transform: uppercase; }
 
-    .message-template {
-      margin-top: 30px;
-      padding: 22px 24px;
-      border-left: 2px solid var(--gold);
-      background: rgba(196,163,87,.07);
-      color: #d7e0e5;
-      font-size: .92rem;
+    .insights-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 20px;
     }
 
-    .message-template strong { color: var(--gold-light); }
+    .insight-card {
+      position: relative;
+      min-height: 410px;
+      padding: 38px 36px;
+      border: 1px solid var(--line-light);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
 
-    /* Footer */
+    .insight-card.featured {
+      color: var(--white);
+      background: var(--navy-900);
+      border-color: var(--navy-900);
+    }
+
+    .insight-card::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -110px;
+      width: 240px;
+      height: 240px;
+      border: 1px solid rgba(196,163,87,.25);
+      border-radius: 50%;
+    }
+
+    .insight-type { display: inline-block; margin-bottom: 42px; color: var(--gold-deep); font-family: "DM Mono", monospace; font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; }
+    .featured .insight-type { color: var(--gold-light); }
+    .insight-card h3 { max-width: 620px; font-size: clamp(2.35rem, 4vw, 4rem); }
+    .insight-card p { max-width: 640px; color: var(--ink-soft); }
+    .featured p { color: #b9c6ce; }
+    .insight-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .insight-foot { position: absolute; left: 36px; bottom: 30px; color: #7a878f; font-family: "DM Mono", monospace; font-size: .55rem; letter-spacing: .06em; text-transform: uppercase; }
+    .featured .insight-foot { color: #91a3ae; }
+
+    .boundary-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line-light);
+      background: var(--line-light);
+    }
+
+    .boundary-card { min-height: 240px; padding: 30px 28px; background: rgba(255,255,255,.64); }
+    .boundary-card h3 { font-size: 1.9rem; }
+    .boundary-card p { color: var(--ink-soft); }
+
+    .contact-section {
+      position: relative;
+      padding: 112px 0;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(196,163,87,.16), transparent 28%),
+        linear-gradient(145deg, #071521, #0d2638);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(440px, 1.2fr);
+      gap: 75px;
+      align-items: start;
+    }
+
+    .contact-copy h2 { color: var(--white); }
+    .contact-copy .lede { color: #bac8d0; }
+    .contact-details { display: grid; gap: 10px; margin-top: 30px; color: #d7e0e5; }
+    .contact-details a { color: var(--gold-light); }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.055);
+      box-shadow: 0 24px 72px rgba(0,0,0,.18);
+    }
+
+    .form-field { display: grid; gap: 7px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label { color: #cbd6dc; font-family: "DM Mono", monospace; font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; }
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 8px;
+      background: rgba(4,15,24,.55);
+      color: var(--white);
+      padding: 13px 14px;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .form-field textarea { min-height: 100px; resize: vertical; }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: #7f939e; }
+    .form-field input:focus,
+    .form-field textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(196,163,87,.12); }
+    .form-note { grid-column: 1 / -1; margin: 0; color: #98a9b3; font-size: .78rem; }
+    .form-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 15px; }
+    .form-status { min-height: 1.4em; color: var(--gold-light); font-size: .82rem; }
+
     .site-footer {
-      padding: 42px 0;
-      color: #aebbc4;
-      background: #050f18;
-      border-top: 1px solid rgba(196,163,87,.18);
-      font-size: .82rem;
+      padding: 34px 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      background: var(--navy-975);
+      color: #9fb0ba;
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 30px;
-      align-items: end;
+      align-items: center;
     }
 
-    .footer-tagline {
-      margin: 12px 0 0;
-      color: #d7e0e5;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 1.3rem;
+    .footer-brand { color: var(--white); }
+    .footer-tagline { margin: 9px 0 0; color: #9fb0ba; font-size: .84rem; }
+    .footer-meta { text-align: right; font-size: .78rem; }
+    .footer-meta p { margin: 3px 0; }
+    .footer-meta a { color: var(--gold-light); }
+
+    dialog {
+      width: min(calc(100% - 34px), 920px);
+      max-height: calc(100vh - 40px);
+      border: 0;
+      border-radius: var(--radius-lg);
+      padding: 0;
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 35px 120px rgba(0,0,0,.44);
     }
 
-    .footer-meta { text-align: right; }
-    .footer-meta p { margin: 4px 0; }
-    .footer-meta a { color: #d7e0e5; text-decoration-color: rgba(224,201,131,.6); }
+    dialog::backdrop { background: rgba(3, 11, 18, .78); backdrop-filter: blur(4px); }
 
-    /* Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .65s ease, transform .65s ease;
+    .dialog-shell { position: relative; }
+    .dialog-top {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--line-light);
+      background: rgba(251,248,241,.95);
+      backdrop-filter: blur(14px);
     }
 
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .dialog-top span { color: var(--gold-deep); font-family: "DM Mono", monospace; font-size: .59rem; letter-spacing: .08em; text-transform: uppercase; }
+    .dialog-close { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--line-light); border-radius: 50%; background: transparent; cursor: pointer; font-size: 1.25rem; }
+    .essay-article { max-width: 720px; margin: 0 auto; padding: 64px 28px 78px; }
+    .essay-article h1 { max-width: none; color: var(--navy-900); font-size: clamp(3.1rem, 7vw, 5.6rem); }
+    .essay-article .essay-sub { color: var(--ink-soft); font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.6rem; font-style: italic; line-height: 1.22; }
+    .essay-byline { margin: 24px 0 42px; color: var(--gold-deep); font-family: "DM Mono", monospace; font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; }
+    .essay-article h2 { margin-top: 52px; font-size: 2.55rem; }
+    .essay-article p { font-family: Georgia, "Times New Roman", serif; font-size: 1.08rem; line-height: 1.75; }
+    .essay-article .essay-line { margin: 0 0 8px; font-family: "Cormorant Garamond", Georgia, serif; font-size: 2rem; line-height: 1.2; }
+    .essay-limit { margin-top: 42px; padding: 20px 22px; border-left: 3px solid var(--gold); background: var(--cream); color: var(--ink-soft); font-size: .92rem !important; }
 
-    /* Responsive */
-    @media (max-width: 1040px) {
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .62s ease, transform .62s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 1080px) {
+      .nav-links { gap: 16px; }
       .nav-links > a:not(.btn) { display: none; }
-
-      .problem-grid,
-      .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-      .problem-card,
-      .step { min-height: 280px; }
-
-      .example-grid,
-      .pricing-grid { grid-template-columns: 1fr; }
-
-      .price-card,
-      .price-card.primary { min-height: auto; transform: none; }
-
-      .example-card { min-height: 270px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 150px; }
+      .artifact-stage { min-height: 700px; }
+      .document-mock { width: min(78vw, 530px); }
+      .movement-visual { grid-template-columns: 1fr; gap: 14px; }
+      .movement-arrow { transform: rotate(90deg); height: 52px; }
+      .movement-card { min-height: auto; }
+      .case-grid,
+      .readout-layout,
+      .founder-layout,
+      .contact-layout { grid-template-columns: 1fr; }
+      .case-object { position: static; }
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+      .price-card:last-child { grid-column: 1 / -1; }
+      .price-card.primary { transform: none; }
+      .insights-grid { grid-template-columns: 1fr; }
+      .portrait-frame { min-height: 620px; }
     }
 
-    @media (max-width: 800px) {
-      .shell { width: min(calc(100% - 30px), var(--max)); }
-
-      .site-header { background: rgba(7,21,33,.97); }
-      .nav-wrap { min-height: 68px; }
-      .brand-descriptor { display: none; }
-
-      .menu-toggle { display: block; }
-
+    @media (max-width: 780px) {
+      .section { padding: 82px 0; }
+      .site-header { background: rgba(7,21,33,.96); }
       .nav-links {
         position: fixed;
-        inset: 68px 0 auto;
+        inset: 78px 0 auto;
         display: grid;
         gap: 0;
-        padding: 18px 20px 26px;
+        max-height: 0;
+        overflow: hidden;
         background: var(--navy-950);
-        border-bottom: 1px solid rgba(196,163,87,.25);
-        transform: translateY(-130%);
-        opacity: 0;
-        pointer-events: none;
-        transition: transform .24s ease, opacity .24s ease;
+        transition: max-height .28s ease;
       }
+      .menu-open .nav-links { max-height: 520px; border-bottom: 1px solid rgba(255,255,255,.12); }
+      .nav-links > a:not(.btn) { display: block; padding: 15px 21px; border-top: 1px solid rgba(255,255,255,.08); }
+      .nav-links .btn { margin: 14px 21px 20px; }
+      .menu-toggle { display: block; }
+      .brand-descriptor { display: none; }
 
-      .menu-open .nav-links { transform: translateY(0); opacity: 1; pointer-events: auto; }
+      .hero { min-height: auto; padding: 135px 0 74px; }
+      .before-list { grid-template-columns: 1fr; }
+      .artifact-stage { min-height: 640px; }
+      .document-mock { width: calc(100% - 18px); transform: none; }
+      .annotation { display: none; }
+      .document-body { padding: 27px 24px 32px; }
 
-      .nav-links > a:not(.btn) {
-        display: block;
-        padding: 14px 4px;
-        border-bottom: 1px solid rgba(255,255,255,.08);
-        font-size: .9rem;
-      }
-
-      .nav-links .btn { margin-top: 16px; min-height: 46px; }
-
-      .hero { min-height: auto; padding: 135px 0 70px; }
-      h1 { font-size: clamp(3.4rem, 15vw, 5.4rem); }
-
-      .hero-proof { grid-template-columns: 1fr 1fr; }
-      .proof-item:nth-child(2) { border-right: 0; }
-      .proof-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.14); }
-
-      .section { padding: 86px 0; }
-
-      .section-head,
-      .exchange,
-      .boundary-wrap,
-      .cta-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 34px;
-      }
-
-      .section-note { padding: 18px 0 0; border-left: 0; border-top: 1px solid var(--gold); }
-      .boundary-lead { position: static; }
+      .section-head { grid-template-columns: 1fr; gap: 26px; }
+      .section-note { border-left: 0; border-top: 1px solid var(--gold-deep); padding: 16px 0 0; }
+      .case-grid { gap: 42px; }
+      .readout-body { grid-template-columns: 1fr; }
+      .readout-block { border-right: 0; }
+      .readout-block.full { grid-column: auto; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .price-card:last-child { grid-column: auto; }
+      .price-card { min-height: auto; }
+      .portrait-frame { min-height: 510px; }
+      .boundary-strip { grid-template-columns: 1fr; }
+      .contact-form { grid-template-columns: 1fr; padding: 24px; }
+      .form-field.full,
+      .form-note,
+      .form-actions { grid-column: auto; }
+      .footer-grid { grid-template-columns: 1fr; }
       .footer-meta { text-align: left; }
-
-      .exchange-panel { padding: 38px 28px; }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 520px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
       .hero-actions { display: grid; }
       .hero-actions .btn { width: 100%; }
-
-      .hero-proof,
-      .problem-grid,
-      .steps,
-      .states { grid-template-columns: 1fr; }
-
-      .proof-item { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
-      .proof-item:last-child { border-bottom: 0; }
-
-      .problem-card,
-      .step,
-      .state-card { min-height: auto; }
-
-      .problem-grid { border-left: 0; }
-      .problem-card { border-left: 1px solid var(--line-light); }
-
-      .example-card,
-      .price-card { padding: 28px 24px; }
-      .price { font-size: 3.5rem; }
-
-      .contact-box { padding: 25px 22px; }
+      .artifact-stage { min-height: 590px; }
+      .document-mock { min-height: 540px; }
+      .claim-row { grid-template-columns: 1fr; }
+      .status { justify-self: start; }
+      .proposal-page { margin: 16px; padding: 28px 19px; }
+      .proposal-line { padding-right: 12px; padding-top: 38px; }
+      .proposal-line::after { left: 12px; right: auto; }
+      .readout-head { grid-template-columns: 1fr; }
+      .readout-seal { justify-self: start; }
+      .insight-card { min-height: 460px; padding: 31px 24px; }
+      .insight-foot { left: 24px; }
+      .portrait-monogram { width: 145px; height: 145px; font-size: 4rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1019,16 +1056,25 @@
       .reveal { opacity: 1; transform: none; }
     }
   </style>
-</head>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Good Remedy",
+    "url": "https://grmove.com/",
+    "email": "hello@grmove.com",
+    "telephone": "+1-917-554-5582",
+    "founder": {
+      "@type": "Person",
+      "name": "Benjamin Lopez"
+    },
+    "description": "Good Remedy pressure-tests important AI-assisted work before it reaches a client, executive, workflow, or the public."
+  }
+  </script>
+</head>
 <body>
-  <!--
-    GOOD REMEDY HOMEPAGE — PLAIN-LANGUAGE PUBLIC VERSION v1.0
-    Date: 2026-08-10
-    Release posture: public-copy candidate; human deployment decision required.
-    Copy ruling: preserve the method underneath, but do not require a first-time visitor
-    to learn the internal grammar before understanding the service.
-  -->
+  <!-- GOOD REMEDY — problem-first, product-visible public homepage. -->
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -1038,377 +1084,457 @@
         <span class="brand-mark" aria-hidden="true">GR</span>
         <span class="brand-copy">
           <span class="brand-name">Good Remedy</span>
-          <span class="brand-descriptor">Applied AI diligence &amp; release control</span>
+          <span class="brand-descriptor">Important AI work, independently pressure-tested</span>
         </span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
-        <span></span>
-      </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span></button>
 
       <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
-        <a href="#problem">Problem</a>
-        <a href="#how">How it works</a>
-        <a href="#examples">Examples</a>
-        <a href="#readout">What you get</a>
-        <a href="#pricing">Ways to start</a>
-        <a href="#boundary">Boundary</a>
-        <a class="btn btn-gold" href="#contact">Start a review</a>
+        <a href="#intervention">What we do</a>
+        <a href="#example">Example</a>
+        <a href="#readout">Readout</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#founder">Founder</a>
+        <a href="#insights">Insights</a>
+        <a class="btn btn-gold" href="#contact">Pressure-test your AI work</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="shell hero-inner">
-        <p class="eyebrow gold">For important AI-assisted work before it gets sent, implemented, published, or relied on</p>
-        <h1>AI work looks finished before it is ready to move.</h1>
-        <p class="hero-copy">
-          Send Good Remedy one important piece of AI-assisted work before it goes to a client, into a product, or into a real decision. We check <strong>what is supported, what remains unresolved, who still needs to review it, and what has to happen next.</strong>
-        </p>
+      <div class="shell hero-grid">
+        <div class="reveal">
+          <p class="eyebrow gold">Boutique review for important AI-assisted work</p>
+          <h1>AI work looks finished before it is ready to move.</h1>
+          <p class="hero-copy">Good Remedy pressure-tests important AI-assisted work before it reaches a client, executive, workflow, or the public. You get a clear read on <strong>what is supported, what is unresolved, who needs to decide, and what should happen next.</strong></p>
 
-        <div class="hero-actions">
-          <a class="btn btn-gold" href="#contact">Start with one piece of work</a>
-          <a class="btn btn-outline-light" href="#how">See how the review works</a>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#contact">Pressure-test your AI work</a>
+            <a class="btn btn-outline-light" href="#readout">See a sample readout</a>
+          </div>
+
+          <p class="hero-boundary">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2 3.5 5.7v5.6c0 5.2 3.6 10 8.5 11.7 4.9-1.7 8.5-6.5 8.5-11.7V5.7L12 2Zm0 2.2 6.4 2.8v4.3c0 4.1-2.7 8-6.4 9.5-3.7-1.5-6.4-5.4-6.4-9.5V7L12 4.2Z"/></svg>
+            Start with a description or redacted material. Do not send confidential, privileged, regulated, health, financial, employment, client-identifying, or other sensitive files in the first message.
+          </p>
+
+          <div class="before-list" aria-label="When Good Remedy can help">
+            <div class="before-item"><strong>Before you send</strong>the AI-assisted client deck.</div>
+            <div class="before-item"><strong>Before you launch</strong>the AI-enabled workflow.</div>
+            <div class="before-item"><strong>Before an executive acts</strong>on the AI-generated recommendation.</div>
+            <div class="before-item"><strong>Before polished output becomes</strong>a real-world commitment.</div>
+          </div>
         </div>
 
-        <p class="hero-note">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2 3.5 5.7v5.6c0 5.2 3.6 10 8.5 11.7 4.9-1.7 8.5-6.5 8.5-11.7V5.7L12 2Zm0 2.2 6.4 2.8v4.3c0 4.1-2.7 8-6.4 9.5-3.7-1.5-6.4-5.4-6.4-9.5V7L12 4.2Z"/></svg>
-          Start with non-sensitive, redacted, public, or de-identified material. Scope and turnaround are confirmed before the review begins.
-        </p>
+        <div class="artifact-stage reveal" aria-label="Illustration of an AI-assisted proposal with Good Remedy findings">
+          <div class="artifact-glow" aria-hidden="true"></div>
+          <article class="document-mock">
+            <div class="document-top">
+              <div class="document-brand">
+                <span class="doc-logo" aria-hidden="true"></span>
+                <div>
+                  <div class="doc-title">NORTHSTAR CLIENT PROPOSAL</div>
+                  <div class="doc-subtitle">AI-assisted draft · executive review copy</div>
+                </div>
+              </div>
+              <span class="doc-page">08 / 16</span>
+            </div>
 
-        <div class="hero-proof" aria-label="Good Remedy review focus">
-          <div class="proof-item">
-            <span class="proof-label">One piece of work</span>
-            <span class="proof-text">A proposal, workflow, deck, recommendation, claim set, or important handoff.</span>
-          </div>
-          <div class="proof-item">
-            <span class="proof-label">One real purpose</span>
-            <span class="proof-text">What the work is supposed to accomplish and where it is trying to go.</span>
-          </div>
-          <div class="proof-item">
-            <span class="proof-label">One clear readout</span>
-            <span class="proof-text">What holds up, what does not, what is unresolved, and what happens next.</span>
-          </div>
-          <div class="proof-item">
-            <span class="proof-label">Human decision</span>
-            <span class="proof-text">Good Remedy prepares the work. The proper owner or reviewer decides what moves.</span>
-          </div>
+            <div class="document-body">
+              <h3>Implementation commitment</h3>
+              <p>The page looks finished. The load-bearing parts do not all carry the same support or decision status.</p>
+
+              <div class="claim-row">
+                <div class="claim-copy"><strong>Current-state integration</strong><span>Existing platform inventory supports the described connection path.</span></div>
+                <span class="status supported">Supported</span>
+              </div>
+              <div class="claim-row">
+                <div class="claim-copy"><strong>Thirty-day launch</strong><span>The deadline appears in the draft, but no delivery plan or dependency record supports it.</span></div>
+                <span class="status evidence">Needs evidence</span>
+              </div>
+              <div class="claim-row">
+                <div class="claim-copy"><strong>No operational disruption</strong><span>The draft makes an outcome assurance that the available record does not establish.</span></div>
+                <span class="status hold">Hold</span>
+              </div>
+              <div class="claim-row">
+                <div class="claim-copy"><strong>Client approval path</strong><span>One scope commitment still belongs to the executive sponsor.</span></div>
+                <span class="status decision">Decision needed</span>
+              </div>
+            </div>
+          </article>
+
+          <aside class="annotation one"><b>Needs evidence</b>The sentence is polished. The delivery basis is missing.</aside>
+          <aside class="annotation two"><b>Hold</b>Outcome language cannot be created by better wording.</aside>
+          <aside class="annotation three"><b>Decision needed</b>The owner—not the draft—must close the commitment.</aside>
         </div>
       </div>
     </section>
 
-    <section class="thesis-band" aria-label="Good Remedy thesis">
+    <section class="thesis-band" aria-label="Good Remedy point of view">
       <div class="shell">
-        <blockquote>
-          AI is making finished-looking work cheap and abundant. The scarce thing is knowing <em>what another person can responsibly rely on.</em>
-        </blockquote>
+        <blockquote>AI is making finished-looking work cheap and abundant. The scarce thing is knowing <em>what another person can responsibly rely on.</em></blockquote>
       </div>
     </section>
 
-    <section class="section section-cream" id="problem">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div class="section-intro">
-            <p class="eyebrow ink">The problem</p>
-            <h2>The risk usually appears after the work looks done.</h2>
-            <p class="lede">In practice, this tends to show up in four places. The work may be useful. It may even be very good. But the conditions for relying on it have not traveled with it.</p>
-          </div>
-          <p class="section-note">A polished artifact can hide open assumptions, unsupported claims, missing review, or a decision no one clearly owns.</p>
-        </div>
-
-        <div class="problem-grid">
-          <article class="problem-card reveal">
-            <span class="card-kicker">Proposal to delivery</span>
-            <h3>The proposal sounds complete.</h3>
-            <p>The assumptions, dependencies, reviewer commitments, and delivery conditions may disappear once the work moves into implementation.</p>
-          </article>
-
-          <article class="problem-card reveal">
-            <span class="card-kicker">Product or workflow</span>
-            <h3>The feature works in a demo.</h3>
-            <p>No one has fully settled where the system stops, where a person must decide, who owns corrections, or what happens when the normal path fails.</p>
-          </article>
-
-          <article class="problem-card reveal">
-            <span class="card-kicker">Client or executive material</span>
-            <h3>The narrative is polished.</h3>
-            <p>The claims, sources, limitations, approvals, or intended reliance may not support the send that is about to happen.</p>
-          </article>
-
-          <article class="problem-card reveal">
-            <span class="card-kicker">Vendor, model, or agent</span>
-            <h3>The output sounds confident.</h3>
-            <p>The team still needs to know what supports it, what changed, what can be relied on, and who is actually allowed to act.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="how">
+    <section class="section section-cream" id="intervention">
       <div class="shell">
         <div class="section-head reveal">
-          <div class="section-intro">
-            <p class="eyebrow gold">How the review works</p>
-            <h2>We do not judge the work in the abstract.</h2>
-            <p class="lede">We check it against what it is supposed to accomplish, who will rely on it, and what needs to be true before it moves.</p>
+          <div>
+            <p class="eyebrow">The intervention</p>
+            <h2>Show the danger. Examine the work. Return a clear decision picture.</h2>
+            <p class="lede">Good Remedy is not another AI strategy deck. It is a founder-led review of one important piece of work at the point where polish is about to become reliance.</p>
           </div>
-          <p class="section-note">The review has four parts. The point is not to add governance theater. It is to make the real decision easier to see and own.</p>
+          <p class="section-note">The final state is not automatic approval. It is a clearer record for the human being who must own what happens next.</p>
         </div>
 
-        <div class="steps">
-          <article class="step reveal" data-step="1">
-            <span class="step-number">01</span>
-            <h3>Tell us what it is.</h3>
-            <p>Name the piece of work, what it is supposed to become, who will receive or act on it, and any deadline or consequence attached.</p>
+        <div class="movement-visual reveal" aria-label="Before, Good Remedy, ready for human decision">
+          <article class="movement-card">
+            <span class="movement-number">01</span>
+            <h3>Before</h3>
+            <p>A proposal, recommendation, workflow, report, or deck appears complete enough to move.</p>
+            <div class="movement-mini">
+              <span><i></i>Confident language</span>
+              <span><i></i>Scattered support</span>
+              <span><i></i>Open decisions hidden by polish</span>
+            </div>
           </article>
 
-          <article class="step reveal" data-step="2">
-            <span class="step-number">02</span>
-            <h3>Send the record behind it.</h3>
-            <p>Include the work itself and the sources, brief, requirements, policies, prior decisions, assumptions, or constraints that matter.</p>
+          <div class="movement-arrow" aria-hidden="true">→</div>
+
+          <article class="movement-card middle">
+            <span class="movement-number">02</span>
+            <h3>Good Remedy</h3>
+            <p>We pressure-test the claims, evidence, unresolved conditions, decision ownership, and intended use.</p>
+            <div class="movement-mini">
+              <span><i></i>Support made visible</span>
+              <span><i></i>Overstatement narrowed</span>
+              <span><i></i>Decisions separated from drafting</span>
+            </div>
           </article>
 
-          <article class="step reveal" data-step="3">
-            <span class="step-number">03</span>
-            <h3>We pressure-test the gaps.</h3>
-            <p>We look for unsupported claims, conflicts, changed assumptions, missing dependencies, unclear ownership, weak exception paths, and conditions lost in the handoff.</p>
-          </article>
+          <div class="movement-arrow" aria-hidden="true">→</div>
 
-          <article class="step reveal" data-step="4">
-            <span class="step-number">04</span>
-            <h3>You get a clear next position.</h3>
-            <p>We show what can move, what needs to narrow, what remains held, who needs to decide, and the smallest responsible next step.</p>
+          <article class="movement-card">
+            <span class="movement-number">03</span>
+            <h3>Ready for human decision</h3>
+            <p>The responsible person can see what holds up, what remains open, and what can responsibly happen next.</p>
+            <div class="movement-mini">
+              <span><i></i>Revised work where possible</span>
+              <span><i></i>Concise readout</span>
+              <span><i></i>Clear next action</span>
+            </div>
           </article>
         </div>
-
-        <p class="plain-rule reveal"><strong>Good Remedy prepares the work for decision.</strong> The authorized client, legal, clinical, policy, technical, security, compliance, procurement, editorial, or executive reviewer makes the substantive judgment.</p>
       </div>
     </section>
 
-    <section class="section section-paper" id="examples">
+    <section class="section section-white" id="example">
       <div class="shell">
         <div class="section-head reveal">
-          <div class="section-intro">
-            <p class="eyebrow ink">Start with one piece of work</p>
-            <h2>Small enough to inspect. Important enough to matter.</h2>
-            <p class="lede">A first review should be easy to picture. These are three straightforward examples of what someone might actually hand Good Remedy.</p>
+          <div>
+            <p class="eyebrow">One concrete example</p>
+            <h2>An AI-assisted proposal is about to go to a client.</h2>
+            <p class="lede">The example is synthetic, but the business problem is ordinary: a polished draft is close to becoming a promise someone else has to own.</p>
           </div>
-          <p class="section-note">The starting point is not “fix our AI.” It is one real object approaching a client, implementation, publication, approval, or decision.</p>
+          <p class="section-note"><strong>Synthetic example.</strong> No real client, company, project, or confidential material is represented.</p>
         </div>
 
-        <div class="example-grid">
-          <article class="example-card reveal">
-            <span class="example-price">$500 example</span>
-            <h3>An AI-assisted client proposal before it goes out.</h3>
-            <p>Check the claims, assumptions, delivery promises, sources, dependencies, and any review the proposal still needs.</p>
-            <p class="example-result">Result: a concise outside read showing what holds up and what should change before the send.</p>
+        <div class="case-grid">
+          <article class="case-object reveal">
+            <div class="case-object-header">
+              <span class="micro">AI-assisted proposal · pre-send review</span>
+              <span class="synthetic-tag">Synthetic</span>
+            </div>
+            <div class="proposal-page">
+              <p class="proposal-meta">Implementation approach · client-facing section</p>
+              <h3>What the draft asks the client to rely on</h3>
+              <div class="proposal-line supported">The current systems inventory supports the stated integration path.</div>
+              <div class="proposal-line evidence">The thirty-day timeline is not yet tied to staffing, dependencies, or acceptance criteria.</div>
+              <div class="proposal-line decision">The scope language includes one commitment the executive sponsor has not closed.</div>
+              <div class="proposal-line hold">The draft promises “no disruption” without an operating basis for that assurance.</div>
+            </div>
           </article>
 
-          <article class="example-card featured reveal">
-            <span class="example-price">$1,250 example</span>
-            <h3>An AI-assisted workflow before the company implements it.</h3>
-            <p>Check the human decision points, data or privacy limits, exception handling, correction ownership, and what the system should not be allowed to do on its own.</p>
-            <p class="example-result">Result: a focused review of one important workflow and the conditions needed for a responsible implementation decision.</p>
-          </article>
+          <div class="reveal">
+            <div class="case-steps">
+              <article class="case-step">
+                <span class="case-step-num">01</span>
+                <div><h3>What the team brings</h3><p>The substantive proposal, the available source materials, the intended client use, the deadline, and the person who must own the send.</p></div>
+              </article>
+              <article class="case-step">
+                <span class="case-step-num">02</span>
+                <div><h3>What Good Remedy finds</h3><p>A timeline with no support path, an outcome assurance that outruns the record, one unreconciled figure, and one commitment with no completed owner decision.</p></div>
+              </article>
+              <article class="case-step">
+                <span class="case-step-num">03</span>
+                <div><h3>What gets repaired</h3><p>Load-bearing language is corrected or narrowed, sources and figures are reconciled where possible, and the unresolved commitment is returned to the person who actually decides it.</p></div>
+              </article>
+              <article class="case-step">
+                <span class="case-step-num">04</span>
+                <div><h3>What comes back</h3><p>The revised proposal plus a concise readout showing what changed, what still needs evidence, who must decide, and the shortest responsible path to the client send.</p></div>
+              </article>
+            </div>
 
-          <article class="example-card reveal">
-            <span class="example-price">$2,500 example</span>
-            <h3>Complex work where the claims, sources, reviewers, and ownership are tangled.</h3>
-            <p>Build a developed record of what is supported, what remains unresolved, who owns each decision, and how the work can be corrected, narrowed, held, or escalated.</p>
-            <p class="example-result">Result: a full readout that another responsible person can review without reconstructing the whole project.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-paper" id="readout">
-      <div class="shell">
-        <div class="exchange">
-          <article class="exchange-panel send reveal">
-            <p class="eyebrow ink">What you send</p>
-            <h2>Send us the work and what it needs to accomplish.</h2>
-            <p>You do not need to prepare a governance packet. A useful review can begin with a small, honest record.</p>
-
-            <ul class="clean-list">
-              <li><span class="list-mark">01</span><span>The piece of work itself.</span></li>
-              <li><span class="list-mark">02</span><span>What it is supposed to accomplish or become.</span></li>
-              <li><span class="list-mark">03</span><span>The sources, brief, requirements, policies, screenshots, data notes, or prior decisions that matter.</span></li>
-              <li><span class="list-mark">04</span><span>The person responsible for the next decision and anyone who must review.</span></li>
-              <li><span class="list-mark">05</span><span>Any deadline, known concern, constraint, or sensitive-data limit.</span></li>
-            </ul>
-          </article>
-
-          <article class="exchange-panel return reveal">
-            <p class="eyebrow gold">What Good Remedy returns</p>
-            <h2>We show you what is ready, what is not, and what needs to happen next.</h2>
-            <p>The readout is built for the person who has to own the next move—not for uncontrolled circulation or abstract commentary.</p>
-
-            <ul class="clean-list">
-              <li><span class="list-mark">01</span><span>What holds up and can be carried forward.</span></li>
-              <li><span class="list-mark">02</span><span>What needs evidence, correction, confirmation, or a clearer limitation.</span></li>
-              <li><span class="list-mark">03</span><span>What remains unresolved or belongs to another reviewer.</span></li>
-              <li><span class="list-mark">04</span><span>Who still needs to decide and what authority that decision requires.</span></li>
-              <li><span class="list-mark">05</span><span>The clearest responsible next action available now.</span></li>
-            </ul>
-
-            <p class="formal-name">Your review is delivered as a concise <strong>Controlled Movement Readout</strong> that can be carried into the next responsible review or decision.</p>
-          </article>
+            <div class="case-result"><strong>The value is not another findings list.</strong>The buyer gets a more defensible piece of work and a decision picture that another responsible person can understand without reconstructing the project from prompts, emails, and scattered drafts.</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-cream" aria-labelledby="states-title">
-      <div class="shell">
-        <div class="state-intro reveal">
-          <p class="eyebrow ink">The practical result</p>
-          <h2 id="states-title">Every review ends in one of four clear positions.</h2>
-          <p class="lede">These are not certifications. They are a plain way to show the owner what the current record supports and what the next decision requires.</p>
-        </div>
+    <section class="section section-dark" id="readout">
+      <div class="shell readout-layout">
+        <article class="readout-sheet reveal" aria-label="Sample Good Remedy readout">
+          <div class="readout-head">
+            <div>
+              <h3>Good Remedy readout</h3>
+              <p>AI-assisted client proposal · intended use: external client send</p>
+            </div>
+            <span class="readout-seal">Illustrative sample</span>
+          </div>
 
-        <div class="states">
-          <article class="state-card reveal">
-            <span class="state-word">MOVE</span>
-            <h3>The stated conditions are visible.</h3>
-            <p>The authorized reviewer has a sufficient record to decide whether the next movement may proceed.</p>
-          </article>
+          <div class="readout-body">
+            <section class="readout-block">
+              <span class="readout-label supported">Supported</span>
+              <ul>
+                <li>Current-state platform inventory</li>
+                <li>Named implementation components</li>
+                <li>Previously approved client objective</li>
+              </ul>
+            </section>
+            <section class="readout-block">
+              <span class="readout-label evidence">Needs evidence</span>
+              <ul>
+                <li>Thirty-day delivery commitment</li>
+                <li>Two quantified benefit statements</li>
+                <li>One dependency assumption</li>
+              </ul>
+            </section>
+            <section class="readout-block">
+              <span class="readout-label decision">Decision needed</span>
+              <ul>
+                <li>Executive owner for scope exception</li>
+                <li>Commercial acceptance of revised timeline</li>
+                <li>Specialist review of one contractual statement</li>
+              </ul>
+            </section>
+            <section class="readout-block">
+              <span class="readout-label changed">What changed</span>
+              <ul>
+                <li>Unsupported assurance removed</li>
+                <li>Timeline language narrowed</li>
+                <li>Figure and source reconciled</li>
+              </ul>
+            </section>
+            <section class="readout-block full">
+              <span class="readout-label next">What should happen next</span>
+              <div class="readout-next">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>
+                <p>Return the open scope commitment to the executive owner, obtain the missing timeline basis, then make the client-send decision. The readout does not itself approve or authorize the proposal.</p>
+              </div>
+            </section>
+          </div>
+        </article>
 
-          <article class="state-card reveal">
-            <span class="state-word">NARROW</span>
-            <h3>A smaller version can move.</h3>
-            <p>The claim, audience, use, feature, scope, or affected population should be reduced and the limits made explicit.</p>
-          </article>
+        <div class="readout-copy reveal">
+          <p class="eyebrow gold">What you receive</p>
+          <h2>A visible result—not abstract commentary.</h2>
+          <p class="lede">Good Remedy returns the work in the strongest condition the supplied record permits, together with a concise explanation of the remaining decision burden.</p>
 
-          <article class="state-card reveal">
-            <span class="state-word">HOLD</span>
-            <h3>Something required is still missing.</h3>
-            <p>A source, owner, review, decision, exception path, dependency, or release condition has not been completed.</p>
-          </article>
+          <div class="readout-points">
+            <div class="readout-point"><span>01</span><p><strong>What holds up</strong> and can be carried forward.</p></div>
+            <div class="readout-point"><span>02</span><p><strong>What needs evidence, correction, or a clearer limitation.</strong></p></div>
+            <div class="readout-point"><span>03</span><p><strong>What still belongs to another decision-maker or specialist.</strong></p></div>
+            <div class="readout-point"><span>04</span><p><strong>What should happen next</strong> before the work moves.</p></div>
+          </div>
 
-          <article class="state-card reveal">
-            <span class="state-word">ESCALATE</span>
-            <h3>The issue belongs elsewhere.</h3>
-            <p>Legal, clinical, policy, technical, security, client, procurement, compliance, editorial, or executive authority must decide.</p>
-          </article>
+          <a class="btn btn-outline-light" href="#pricing">See ways to start</a>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="pricing">
+    <section class="section section-cream" id="pricing">
       <div class="shell">
         <div class="section-head reveal">
-          <div class="section-intro">
-            <p class="eyebrow gold">Ways to start</p>
-            <h2>Choose the depth that matches the work.</h2>
-            <p class="lede">At these prices, the first engagement should feel easy to try. Scope is based on the actual piece of work, how many decisions and reviewers are involved, and what happens if the work is wrong.</p>
+          <div>
+            <p class="eyebrow">Ways to start</p>
+            <h2>Something you can actually buy.</h2>
+            <p class="lede">Choose the depth that matches the work and the consequence. Each engagement begins with a bounded piece of work, not a vague transformation program.</p>
           </div>
-          <p class="section-note">The cheapest option is not automatically the right one. The point is to choose a review small enough to finish and serious enough to answer a real question.</p>
+          <p class="section-note">Scope and turnaround are confirmed before work begins. Recurring checkpoints are considered only after the first review reveals a real repeated need.</p>
         </div>
 
         <div class="pricing-grid">
           <article class="price-card reveal">
             <span class="price-label">Outside Read</span>
             <div class="price">$500</div>
-            <h3 class="price-title">One narrow piece of AI-assisted work.</h3>
-            <p>Best for a proposal, client deck, recommendation, claim set, or other bounded object approaching a real send or decision.</p>
-            <ul class="price-list">
-              <li>One narrow piece of work</li>
-              <li>Concise MOVE / NARROW / HOLD / ESCALATE readout</li>
-              <li>One follow-up call</li>
-              <li>Full $500 credited to a deeper review begun within 30 days</li>
-            </ul>
+            <h3>Know what holds up before a send or decision.</h3>
+            <p class="price-summary">Best for one narrow proposal, deck, recommendation, claim set, or other important piece of AI-assisted work.</p>
+            <dl class="price-detail">
+              <dt>You bring</dt><dd>One narrow piece of work and the available record behind it.</dd>
+              <dt>Good Remedy does</dt><dd>A focused outside pressure test of the load-bearing claims, assumptions, and open decisions.</dd>
+              <dt>You receive</dt><dd>A concise Supported / Needs Evidence / Decision Needed / Hold readout and one follow-up call.</dd>
+              <dt>Timing</dt><dd>Delivery window confirmed before the review begins.</dd>
+            </dl>
             <a class="btn btn-outline-light" href="mailto:hello@grmove.com?subject=Good%20Remedy%20Outside%20Read">Ask about an Outside Read</a>
           </article>
 
           <article class="price-card primary reveal">
             <span class="price-label">Focused Review</span>
             <div class="price">$1,250</div>
-            <h3 class="price-title">One important workflow, handoff, or implementation question.</h3>
-            <p>Best when the work involves a meaningful issue such as claim support, privacy posture, human decision boundaries, exceptions, or release ownership.</p>
-            <ul class="price-list">
-              <li>One consequential workflow or review lane</li>
-              <li>Focused source, claim, ownership, and exception review</li>
-              <li>Clear conditions for the next decision</li>
-              <li>Readout and follow-up discussion</li>
-            </ul>
+            <h3>Resolve one important workflow or handoff question.</h3>
+            <p class="price-summary">Best when the work involves meaningful claim support, implementation conditions, exceptions, privacy or data boundaries, or unclear decision ownership.</p>
+            <dl class="price-detail">
+              <dt>You bring</dt><dd>One important workflow, handoff, or implementation question and the materials another person is expected to rely on.</dd>
+              <dt>Good Remedy does</dt><dd>A focused review of the supporting record, the material claims, the open decisions, and the path through exceptions.</dd>
+              <dt>You receive</dt><dd>A clear repair path, a focused readout, and a follow-up discussion centered on the next responsible decision.</dd>
+              <dt>Timing</dt><dd>Delivery window confirmed before the review begins.</dd>
+            </dl>
             <a class="btn btn-gold" href="mailto:hello@grmove.com?subject=Good%20Remedy%20Focused%20Review">Ask about a Focused Review</a>
           </article>
 
           <article class="price-card reveal">
             <span class="price-label">Full Review</span>
             <div class="price">$2,500</div>
-            <h3 class="price-title">Complex work with several claims, sources, reviewers, or downstream consequences.</h3>
-            <p>Best when another responsible person needs a developed record without reconstructing the project from emails, drafts, prompts, and scattered decisions.</p>
-            <ul class="price-list">
-              <li>Developed review record</li>
-              <li>Multiple claims, sources, decisions, and reviewer needs</li>
-              <li>Unresolved questions and escalation path</li>
-              <li>Practical next-step plan</li>
-            </ul>
+            <h3>Return complex work in a condition another person can own.</h3>
+            <p class="price-summary">Best for work with several claims, sources, decision-makers, dependencies, or downstream consequences.</p>
+            <dl class="price-detail">
+              <dt>You bring</dt><dd>The substantive work, the available source record, the intended use, and the people who must review or decide.</dd>
+              <dt>Good Remedy does</dt><dd>A developed pressure test and repair of the load-bearing work wherever the supplied record permits.</dd>
+              <dt>You receive</dt><dd>The revised work, a developed readout, unresolved questions made visible, and a practical next-step plan.</dd>
+              <dt>Timing</dt><dd>Delivery window confirmed before the review begins.</dd>
+            </dl>
             <a class="btn btn-outline-light" href="mailto:hello@grmove.com?subject=Good%20Remedy%20Full%20Review">Ask about a Full Review</a>
           </article>
         </div>
 
-        <p class="pricing-note">Recurring checkpoints or ongoing control work are scoped only after the first object shows a real repeated need. Turnaround is confirmed before work begins.</p>
+        <p class="pricing-note">The full $500 Outside Read fee is credited toward a deeper review begun within 30 days. Good Remedy does not certify, legally clear, clinically clear, or automatically authorize work.</p>
       </div>
     </section>
 
-    <section class="section section-cream" id="boundary">
-      <div class="shell boundary-wrap">
-        <div class="boundary-lead reveal">
-          <p class="eyebrow ink">Private, bounded, owner-controlled</p>
-          <h2>Outside scrutiny without surrendering authority.</h2>
-          <p class="lede">Good Remedy helps the responsible owner see the decision burden clearly. It does not take the decision away from the people who actually have the authority to make it.</p>
-          <p class="boundary-alert"><strong>Important:</strong> reviewable does not mean approved. A Good Remedy readout does not confer legal, clinical, compliance, policy, technical, security, procurement, client, editorial, safety, or executive authority.</p>
-        </div>
-
-        <div class="boundary-list">
-          <article class="boundary-item reveal">
-            <h3>Private by default</h3>
-            <p>The readout is prepared for the owner and the reviewer lane they designate. It is not designed for uncontrolled circulation.</p>
-          </article>
-
-          <article class="boundary-item reveal">
-            <h3>Bounded by the piece of work</h3>
-            <p>The first review stays with the actual object. It does not expand into a giant transformation program unless repeated work shows a real need.</p>
-          </article>
-
-          <article class="boundary-item reveal">
-            <h3>Authority remains outside Good Remedy</h3>
-            <p>Good Remedy identifies support, alignment, ownership, exception, review, and release gaps from the supplied record. Authorized professionals decide what is substantively right or required.</p>
-          </article>
-
-          <article class="boundary-item reveal">
-            <h3>Not autopilot</h3>
-            <p>An AI, vendor, or agent output does not authorize action. The proper owner remains responsible for what moves and why.</p>
-          </article>
-
-          <article class="boundary-item reveal">
-            <h3>Not sensitive-data first</h3>
-            <p>Begin with non-sensitive, redacted, public, synthetic, or de-identified work unless a formal data and sharing boundary has been established.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="final-cta" id="contact">
-      <div class="shell cta-grid">
-        <div class="reveal">
-          <p class="eyebrow gold">Start a private review</p>
-          <h2>Bring the next important piece of AI work that is about to move.</h2>
-          <p class="lede">Tell us what it is supposed to accomplish, who owns the next decision, and what deadline or consequence is attached. Do not include sensitive information in the first message.</p>
-
-          <p class="message-template"><strong>A good first message:</strong><br>“I have an AI-assisted [proposal / workflow / deck / recommendation] that is supposed to [purpose]. It is approaching [client send / implementation / publication / approval]. The decision owner is [role], and the main concern is [brief concern].”</p>
-        </div>
-
-        <aside class="contact-box reveal" aria-label="Good Remedy contact information">
-          <h3>Start with the work story.</h3>
-          <p>Good Remedy will define the smallest useful review scope before any deeper material is shared.</p>
-          <div class="contact-actions">
-            <a class="btn btn-gold" href="mailto:hello@grmove.com?subject=Private%20Good%20Remedy%20review">Email hello@grmove.com</a>
-            <a class="btn btn-outline-light" href="tel:+19175545582">Call 917-554-5582</a>
+    <section class="section section-dark" id="founder">
+      <div class="shell founder-layout">
+        <figure class="portrait-frame reveal" id="portrait-frame">
+          <img id="founder-photo" src="benjamin-lopez.jpg" alt="Benjamin Lopez, founder of Good Remedy">
+          <div class="portrait-fallback" aria-hidden="true">
+            <div class="portrait-monogram">BL</div>
+            <p>Founder-led review</p>
           </div>
-        </aside>
+          <figcaption class="portrait-caption"><b>Benjamin Lopez</b>Founder, Good Remedy</figcaption>
+        </figure>
+
+        <div class="founder-copy reveal">
+          <p class="eyebrow gold">Founder-led, accountable review</p>
+          <h2>Good Remedy has a point of view—and a person behind it.</h2>
+          <blockquote class="founder-quote">“The scarce thing is no longer the artifact. It is knowing what another person can responsibly rely on.”</blockquote>
+          <p>I built Good Remedy after discovering that AI can make serious work look complete before anyone can responsibly rely on it. The company exists to examine that gap before the work reaches someone who has to own the consequence.</p>
+          <p>My background spans analytics, consultative sales, client service, and healthcare operations—environments where polished work still has to survive real deadlines, handoffs, decisions, and accountability.</p>
+
+          <div class="founder-meta" aria-label="Founder background">
+            <span class="founder-chip">Analytics &amp; client work</span>
+            <span class="founder-chip">Healthcare operations</span>
+            <span class="founder-chip">Founder-led review</span>
+          </div>
+
+          <button class="btn btn-outline-light" type="button" data-open-essay>Read Benjamin's founder essay</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="insights">
+      <div class="shell">
+        <div class="section-head single reveal">
+          <div>
+            <p class="eyebrow">Insights</p>
+            <h2>A problem companies are only beginning to name.</h2>
+            <p class="lede">The founder essay carries the human story. The field note is the deeper, versioned object for readers who want to inspect the vocabulary, examples, source notes, and limits.</p>
+          </div>
+        </div>
+
+        <div class="insights-grid">
+          <article class="insight-card featured reveal">
+            <span class="insight-type">Featured founder essay</span>
+            <h3>The Project Looked Finished. It Wasn't.</h3>
+            <p>“At some point, Good Remedy became very good at explaining why it was not yet proven.” What building the company taught Benjamin about false completion in AI-assisted work.</p>
+            <div class="insight-actions">
+              <button class="btn btn-gold" type="button" data-open-essay>Read the essay</button>
+            </div>
+            <span class="insight-foot">Benjamin Lopez · Good Remedy</span>
+          </article>
+
+          <article class="insight-card reveal">
+            <span class="insight-type">Deeper field note</span>
+            <h3>False Completion</h3>
+            <p><strong>Six Failure Modes in AI-Assisted Project Work.</strong> A source-bound field note with three specimens, a public diagnostic vocabulary, explicit limits, and a visible correction path.</p>
+            <div class="insight-actions">
+              <a class="btn btn-outline-dark" href="https://github.com/good-remedy/false-completion" target="_blank" rel="noopener">View the field note on GitHub</a>
+            </div>
+            <span class="insight-foot">Versioned field note · Sources, limits, and corrections</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact section-cream" aria-label="Good Remedy boundaries">
+      <div class="shell boundary-strip">
+        <article class="boundary-card reveal"><p class="eyebrow">Reviewable is not approved</p><h3>Good Remedy prepares the decision picture.</h3><p>The responsible owner and any required professional, legal, clinical, compliance, technical, editorial, or executive authority make the substantive decision.</p></article>
+        <article class="boundary-card reveal"><p class="eyebrow">Private by default</p><h3>Start without oversharing.</h3><p>Begin with a description, public material, redacted material, or a synthetic example until the sharing and data boundary is established.</p></article>
+        <article class="boundary-card reveal"><p class="eyebrow">Bounded on purpose</p><h3>One important piece of work first.</h3><p>The first review should finish a real question. It should not become another transformation program before the buyer has seen value.</p></article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="shell contact-layout">
+        <div class="contact-copy reveal">
+          <p class="eyebrow gold">Start a private conversation</p>
+          <h2>Before important AI work moves, make sure someone can responsibly rely on it.</h2>
+          <p class="lede">Start with one consequential draft, recommendation, decision, workflow, or unfinished project. Tell me what another person is being asked to rely on.</p>
+
+          <div class="contact-details">
+            <span><strong>Email:</strong> <a href="mailto:hello@grmove.com">hello@grmove.com</a></span>
+            <span><strong>Call:</strong> <a href="tel:+19175545582">917-554-5582</a></span>
+            <span><strong>Based in:</strong> Paterson, New Jersey</span>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contact-form">
+          <div class="form-field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" autocomplete="name" placeholder="Name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Your email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
+          </div>
+          <div class="form-field full">
+            <label for="work">What is the work?</label>
+            <textarea id="work" name="work" placeholder="A proposal, deck, recommendation, workflow, report, policy, or unfinished project..." required></textarea>
+          </div>
+          <div class="form-field full">
+            <label for="reliance">What is another person being asked to rely on?</label>
+            <textarea id="reliance" name="reliance" placeholder="What decision, commitment, send, implementation, publication, or action is approaching?" required></textarea>
+          </div>
+          <div class="form-field">
+            <label for="sources">What records are available?</label>
+            <input id="sources" name="sources" placeholder="Brief, source pack, policy, prior version...">
+          </div>
+          <div class="form-field">
+            <label for="owner">Who owns the decision?</label>
+            <input id="owner" name="owner" placeholder="Role or function">
+          </div>
+          <div class="form-field full">
+            <label for="deadline">When does something need to happen?</label>
+            <input id="deadline" name="deadline" placeholder="Deadline, meeting, client send, launch, or decision date">
+          </div>
+
+          <p class="form-note">Do not include confidential, privileged, regulated, client-identifying, health, financial, employment, or other sensitive information. This form does not upload files; it prepares an email in your mail application.</p>
+
+          <div class="form-actions">
+            <button class="btn btn-gold" type="submit">Prepare my review email</button>
+            <span class="form-status" id="form-status" aria-live="polite"></span>
+          </div>
+        </form>
       </div>
     </section>
   </main>
@@ -1416,25 +1542,97 @@
   <footer class="site-footer">
     <div class="shell footer-grid">
       <div>
-        <a class="brand" href="#top" aria-label="Good Remedy home">
+        <a class="brand footer-brand" href="#top" aria-label="Good Remedy home">
           <span class="brand-mark" aria-hidden="true">GR</span>
-          <span class="brand-name">Good Remedy</span>
+          <span class="brand-copy"><span class="brand-name">Good Remedy</span></span>
         </a>
-        <p class="footer-tagline">Make AI-assisted work reviewable before it moves.</p>
+        <p class="footer-tagline">Pressure-test consequential AI-assisted work before another person has to rely on it.</p>
       </div>
-
       <div class="footer-meta">
         <p><a href="mailto:hello@grmove.com">hello@grmove.com</a> · <a href="tel:+19175545582">917-554-5582</a></p>
-        <p>Benjamin Lopez · 198 Harrison St #303 · Paterson, NJ 07501</p>
-        <p>© 2026 Good Remedy.</p>
+        <p>Benjamin Lopez · Founder · Paterson, New Jersey</p>
+        <p>© 2026 Good Remedy. Reviewable does not mean approved.</p>
       </div>
     </div>
   </footer>
+
+  <dialog id="essay-dialog" aria-labelledby="essay-title">
+    <div class="dialog-shell">
+      <div class="dialog-top"><span>Good Remedy · Founder essay</span><button class="dialog-close" type="button" data-close-essay aria-label="Close essay">×</button></div>
+      <article class="essay-article">
+        <h1 id="essay-title">The Project Looked Finished. It Wasn't.</h1>
+        <p class="essay-sub">What building Good Remedy taught me about false completion in AI-assisted work</p>
+        <p class="essay-byline">Benjamin Lopez · Founder, Good Remedy</p>
+
+        <p>At some point, Good Remedy became very good at explaining why it was not yet proven.</p>
+        <p>We had plans for the proof, records of the proof, reviews of the records, dashboards, registers, and increasingly precise descriptions of what the test should measure. An internal assessment counted roughly 70 artifacts. The exact count mattered less than the pattern: we had built an elaborate system around the proof while the events that could actually complete it were still unresolved.</p>
+        <p>We still needed human review. We still needed someone outside the project to use the work. We still needed buyer contact, paid use, and a completed proof event.</p>
+        <p>The embarrassing part was not that the assessment was unfair.</p>
+        <p>It was that it was right.</p>
+        <p>I started Good Remedy to pressure-test consequential work against the reliance it asks people to place in it. Then I discovered that Good Remedy's own project could produce increasingly convincing signs of completion without completing the event that mattered.</p>
+        <p>That is what I mean by <strong>false completion</strong>.</p>
+        <p>False completion is what happens when work acquires the appearance or status of being finished before the condition that actually matters has been met.</p>
+        <p>AI makes this unusually hard to see because it can produce nearly everything we associate with progress. It can write the plan, revise it, summarize the meeting, build the tracker, draft the outreach, diagnose the bottleneck, and turn the whole history into a polished account of what supposedly happened.</p>
+        <p>Some of that work may be excellent.</p>
+        <p>The problem begins when it starts standing in for something else.</p>
+
+        <h2>Activity is not movement</h2>
+        <p>Once I saw the problem in the proof effort, I recognized it in another part of Good Remedy.</p>
+        <p>We were building a broad commercial outreach operation. There was no shortage of visible activity: company searches, prospect records, public contact routes, scheduled automations, and attempted sends. Every one of those things belonged somewhere in a real sales process.</p>
+        <p>But they were not the same state.</p>
+        <p>A company discovered is not a named buyer.</p>
+        <p>A named buyer is not a verified mailbox.</p>
+        <p>A public email listing is not proof of deliverability.</p>
+        <p>A send attempt is not delivery.</p>
+        <p>Delivery is not a reply.</p>
+        <p>A reply is not a meeting.</p>
+        <p>A meeting is not revenue.</p>
+        <p>Written out, the distinctions seem almost embarrassingly obvious. Inside a large AI-assisted project, they were much easier to blur.</p>
+        <p>The searches were real. The research was useful. The schedules existed. The attempted sends mattered. The error was not doing adjacent work. The error was allowing legitimate preparation to inherit the status of the result it was meant to produce.</p>
+        <p>Activity had begun to look like movement.</p>
+        <p>That matters because AI can generate so much legitimate adjacent work, so quickly, that the volume itself becomes persuasive. A project may be busy, detailed, and increasingly sophisticated while the real bottleneck remains exactly where it was.</p>
+
+        <h2>A polished sentence can outrun the facts</h2>
+        <p>The same failure can happen inside a single piece of writing.</p>
+        <p>Consider a <strong>synthetic</strong> example: a fictional non-medical home-care agency asks AI to draft a landing page. The draft says the agency is available 24/7, suggests that services may begin the same day, refers to participation in certain payer programs, describes support that could sound clinical, and invites families to submit an inquiry form.</p>
+        <p>All of those statements arrive in the same confident voice. They have not earned the same confidence.</p>
+        <p>“Available 24/7” might mean that someone answers the telephone, that scheduling staff are reachable, or that caregivers are actually available to begin service at any hour. A same-day start depends on assessment, staffing, location, and the support requested. Payer participation requires a current record. Language about medication, dementia, or help after a hospital stay needs a clear non-clinical boundary. An inquiry form raises a separate question about what information is collected, who sees it, and what happens to it.</p>
+        <p>AI can smooth those distinctions away. Better language can remove or qualify unsupported claims. It cannot create staffing capacity, payer status, privacy approval, or permission to publish.</p>
+        <p>The quality of the sentence does not determine the authority of the sentence.</p>
+
+        <h2>When the proof system became the project</h2>
+        <p>The most unsettling version was still the one inside Good Remedy.</p>
+        <p>Our proof system was not empty bureaucracy. Much of it was careful and useful. Each review could identify something the previous phase had missed. The project became more honest about its limits and more exact about what still needed to happen.</p>
+        <p>But the next thing that actually mattered kept turning into another internal artifact.</p>
+        <p>We had built a system that could tell us, with increasing accuracy, why the proof was not complete. For a while, our response to discovering that was to improve the system that told us so.</p>
+        <p>That was the turn.</p>
+        <p>The system meant to support the project had become the project.</p>
+        <p>The lesson is not that documentation is bad. Consequential work needs records. People need to know what happened, what changed, what remains open, and who is responsible for the next decision.</p>
+        <p>The failure comes when maintaining that apparatus becomes a substitute for the event it exists to serve.</p>
+        <p>AI is making finished-looking work cheap and abundant. The plan is easy to produce. So are the summary, the deck, the policy, the tracker, the recommendation, and the polished final answer.</p>
+        <p>The scarce thing is no longer the artifact.</p>
+        <p>It is knowing what another person can responsibly rely on.</p>
+        <p>Someone still has to decide whether the work can be sent, published, implemented, inherited, purchased, or acted upon. That person needs to know what supports it, what remains unresolved, who has reviewed it, who owns the decision, and what can responsibly happen next.</p>
+        <p>That is the problem Good Remedy exists to address.</p>
+        <p>The central idea is simpler:</p>
+        <p class="essay-line">The artifact is not the event.</p>
+        <p class="essay-line">The description is not the evidence.</p>
+        <p class="essay-line">Fluency is not authority.</p>
+        <p class="essay-line">And a project is not finished merely because it has become very good at explaining itself.</p>
+        <p class="essay-limit">The two Good Remedy examples are compressed from internal records, and the home-care example is synthetic. They illustrate the pattern; they do not show how common it is or prove that Good Remedy reliably prevents it.</p>
+        <p>Bring one consequential draft, recommendation, decision, or unfinished project and tell me what another person is being asked to rely on.</p>
+        <p><strong>Good Remedy pressure-tests consequential work against the reliance it asks people to place in it.</strong></p>
+      </article>
+    </div>
+  </dialog>
 
   <script>
     const body = document.body;
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.getElementById('primary-nav');
+    const essayDialog = document.getElementById('essay-dialog');
+    const founderPhoto = document.getElementById('founder-photo');
+    const portraitFrame = document.getElementById('portrait-frame');
 
     function closeMenu() {
       body.classList.remove('menu-open');
@@ -1454,6 +1652,68 @@
       if (event.key === 'Escape') closeMenu();
     });
 
+    founderPhoto.addEventListener('load', () => portraitFrame.classList.add('has-image'));
+    founderPhoto.addEventListener('error', () => portraitFrame.classList.remove('has-image'));
+    if (founderPhoto.complete && founderPhoto.naturalWidth) portraitFrame.classList.add('has-image');
+
+    document.querySelectorAll('[data-open-essay]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (typeof essayDialog.showModal === 'function') {
+          essayDialog.showModal();
+          body.classList.add('dialog-open');
+        }
+      });
+    });
+
+    document.querySelector('[data-close-essay]').addEventListener('click', () => essayDialog.close());
+    essayDialog.addEventListener('close', () => body.classList.remove('dialog-open'));
+    essayDialog.addEventListener('click', (event) => {
+      const rect = essayDialog.getBoundingClientRect();
+      const outside = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+      if (outside) essayDialog.close();
+    });
+
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(contactForm);
+      const name = String(data.get('name') || '').trim();
+      const email = String(data.get('email') || '').trim();
+      const work = String(data.get('work') || '').trim();
+      const reliance = String(data.get('reliance') || '').trim();
+      const sources = String(data.get('sources') || '').trim();
+      const owner = String(data.get('owner') || '').trim();
+      const deadline = String(data.get('deadline') || '').trim();
+
+      const subject = `Good Remedy review inquiry — ${work.slice(0, 55) || 'AI-assisted work'}`;
+      const message = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        '',
+        'What is the work?',
+        work,
+        '',
+        'What is another person being asked to rely on?',
+        reliance,
+        '',
+        'What sources or records are available?',
+        sources || 'Not yet specified',
+        '',
+        'Who owns the decision?',
+        owner || 'Not yet specified',
+        '',
+        'When does something need to happen?',
+        deadline || 'Not yet specified',
+        '',
+        'I have not included confidential, privileged, regulated, client-identifying, health, financial, employment, or other sensitive material in this initial message.'
+      ].join('\n');
+
+      formStatus.textContent = 'Opening your email application…';
+      window.location.href = `mailto:hello@grmove.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    });
+
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const revealElements = document.querySelectorAll('.reveal');
 
@@ -1467,7 +1727,7 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.08, rootMargin: '0px 0px -35px 0px' });
+      }, { threshold: 0.08, rootMargin: '0px 0px -38px 0px' });
 
       revealElements.forEach((el) => observer.observe(el));
     }
