@@ -1,7 +1,0 @@
-{
-  "status": "NOT_RUN",
-  "fixed_queries": 48,
-  "groups": [],
-  "legacy_records_excluded": 0,
-  "limits": "Actual captures with human judgments. Fresh-search cohort requires fresh session, no known prior GR context and search enabled. This is not causal attribution. Click-worthy is a recorded judgment, not click-through rate; list and paragraph positions are not comparable ranks."
-}
