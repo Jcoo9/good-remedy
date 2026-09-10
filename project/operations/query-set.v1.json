@@ -1,0 +1,170 @@
+[
+  {
+    "query_id": "GR-Q-01-01",
+    "query": "Who can help an AI automation agency scope complex client implementations?",
+    "audience": "Implementation partners",
+    "target_url": "https://grmove.com/guides/ai-implementation-partners/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-01-02",
+    "query": "AI implementation partner for software consulting firms",
+    "audience": "Implementation partners",
+    "target_url": "https://grmove.com/guides/ai-implementation-partners/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-01-03",
+    "query": "Help turning a client's AI agent request into an operating workflow",
+    "audience": "Implementation partners",
+    "target_url": "https://grmove.com/guides/ai-implementation-partners/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-01-04",
+    "query": "Work design and architecture partner for CRM implementation firms",
+    "audience": "Implementation partners",
+    "target_url": "https://grmove.com/guides/ai-implementation-partners/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-02-01",
+    "query": "Who can connect our existing AI tools into one business workflow?",
+    "audience": "Founders and operations leaders",
+    "target_url": "https://grmove.com/guides/connect-ai-tools-across-the-business/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-02-02",
+    "query": "AI operations implementation for a growing business",
+    "audience": "Founders and operations leaders",
+    "target_url": "https://grmove.com/guides/connect-ai-tools-across-the-business/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-02-03",
+    "query": "Help connecting sales onboarding and delivery with AI",
+    "audience": "Founders and operations leaders",
+    "target_url": "https://grmove.com/guides/connect-ai-tools-across-the-business/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-02-04",
+    "query": "AI implementation using our existing software",
+    "audience": "Founders and operations leaders",
+    "target_url": "https://grmove.com/guides/connect-ai-tools-across-the-business/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-03-01",
+    "query": "AI customer onboarding implementation consultant",
+    "audience": "Client service and operations teams",
+    "target_url": "https://grmove.com/guides/ai-customer-onboarding/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-03-02",
+    "query": "Automate customer intake document review and service handoff",
+    "audience": "Client service and operations teams",
+    "target_url": "https://grmove.com/guides/ai-customer-onboarding/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-03-03",
+    "query": "How to connect customer onboarding to service delivery using AI",
+    "audience": "Client service and operations teams",
+    "target_url": "https://grmove.com/guides/ai-customer-onboarding/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-03-04",
+    "query": "AI onboarding workflow with human approvals",
+    "audience": "Client service and operations teams",
+    "target_url": "https://grmove.com/guides/ai-customer-onboarding/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-04-01",
+    "query": "AI sales research workflow implementation",
+    "audience": "Sales and revenue operations",
+    "target_url": "https://grmove.com/guides/ai-sales-research-and-handoffs/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-04-02",
+    "query": "Turn company news signals into qualified account research",
+    "audience": "Sales and revenue operations",
+    "target_url": "https://grmove.com/guides/ai-sales-research-and-handoffs/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-04-03",
+    "query": "AI prospecting research and CRM handoff consultant",
+    "audience": "Sales and revenue operations",
+    "target_url": "https://grmove.com/guides/ai-sales-research-and-handoffs/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-04-04",
+    "query": "Automate account research with human reviewed outreach",
+    "audience": "Sales and revenue operations",
+    "target_url": "https://grmove.com/guides/ai-sales-research-and-handoffs/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-05-01",
+    "query": "Consultant to fix AI workflows that lose context",
+    "audience": "Teams with existing AI workflows",
+    "target_url": "https://grmove.com/guides/fix-ai-workflow-handoffs/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-05-02",
+    "query": "AI automation keeps forgetting corrections and decisions",
+    "audience": "Teams with existing AI workflows",
+    "target_url": "https://grmove.com/guides/fix-ai-workflow-handoffs/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-05-03",
+    "query": "Repair AI workflow handoffs between teams",
+    "audience": "Teams with existing AI workflows",
+    "target_url": "https://grmove.com/guides/fix-ai-workflow-handoffs/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-05-04",
+    "query": "Help fixing an AI pilot that needs constant manual intervention",
+    "audience": "Teams with existing AI workflows",
+    "target_url": "https://grmove.com/guides/fix-ai-workflow-handoffs/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-06-01",
+    "query": "How to choose an AI implementation company for my business",
+    "audience": "Business owners and department leaders",
+    "target_url": "https://grmove.com/guides/choose-ai-implementation-help/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-06-02",
+    "query": "Affordable AI implementation using existing business systems",
+    "audience": "Business owners and department leaders",
+    "target_url": "https://grmove.com/guides/choose-ai-implementation-help/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-06-03",
+    "query": "AI implementation provider for connected business operations",
+    "audience": "Business owners and department leaders",
+    "target_url": "https://grmove.com/guides/choose-ai-implementation-help/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  },
+  {
+    "query_id": "GR-Q-06-04",
+    "query": "What should an AI implementation engagement deliver?",
+    "audience": "Business owners and department leaders",
+    "target_url": "https://grmove.com/guides/choose-ai-implementation-help/",
+    "status": "HYPOTHESIS_NOT_VOLUME_VALIDATED"
+  }
+]

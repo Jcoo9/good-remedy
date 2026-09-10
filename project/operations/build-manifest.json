@@ -1,0 +1,83 @@
+{
+  "state": "BUILT_NOT_PUBLISHED",
+  "origin": "https://grmove.com",
+  "baseline_home_sha256": "1f51606be8f138413edd275b90d335283a401d45a188fc7664f4017a1938cc28",
+  "files": [
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "articles/does-ai-have-a-hidden-agenda/index.html",
+      "sha256": "77f9c5c0967701cc4b8657400cb07ef156c63d623befb1140a8fa646ff812469"
+    },
+    {
+      "path": "articles/index.html",
+      "sha256": "e61775cd739990db64315c126e46a14fbb9ef0b5e76c467f6492e4610fd2962c"
+    },
+    {
+      "path": "articles/is-ai-conscious/index.html",
+      "sha256": "551e3a083f6f309cd8e6ba8e7988c33d69e8f597bf24a90bd331dde5a8a05b91"
+    },
+    {
+      "path": "articles/is-ai-lying/index.html",
+      "sha256": "4a167bc53ce42efc1cecdc54f12e44bde7b61dd21c56090e505ba9d5abd0dfbd"
+    },
+    {
+      "path": "articles/use-ai-to-define-work-and-build-an-operating-system/index.html",
+      "sha256": "48973aa45c340bfc28dbaa7db332c5ae98703b8e91fff722d68958b64fd9e90d"
+    },
+    {
+      "path": "articles/why-ai-drifts/index.html",
+      "sha256": "3707719a7acd833dc42caaf2181f80bbeba8cd48c4d4d760fb0f8367ff1cb2e1"
+    },
+    {
+      "path": "articles/why-ai-hallucinates/index.html",
+      "sha256": "36efe9509f06572f5b6bce70823af3e1e38affd17587eab1c1524e86d4db82fe"
+    },
+    {
+      "path": "c8ce41ec8ad3270b108c758c2b2e460f.txt",
+      "sha256": "03d4cd47995585d72cf4470cc3925aac2593884eeab0c9e9097a986070817c46"
+    },
+    {
+      "path": "guides/ai-customer-onboarding/index.html",
+      "sha256": "c1796f5086d5dfff74410fa094fa0d72a808856c8fd7ace9544638b0d921db72"
+    },
+    {
+      "path": "guides/ai-implementation-partners/index.html",
+      "sha256": "bc51de2f4e547062a7e9b1511967fcc5258880d6373aec267fb094de7b20ff69"
+    },
+    {
+      "path": "guides/ai-sales-research-and-handoffs/index.html",
+      "sha256": "bfa72d7c9868cdb41fa2af78371c8f256b89fa128b34900d938b8e666f6392e3"
+    },
+    {
+      "path": "guides/choose-ai-implementation-help/index.html",
+      "sha256": "f587339f94ea8260956a61d3c2768ef60027eaad1979c1f53cdcd3d115706583"
+    },
+    {
+      "path": "guides/connect-ai-tools-across-the-business/index.html",
+      "sha256": "9a5db1d419e407714c64f1cd7f7e37e726ef8f813c972cb323546e543203efac"
+    },
+    {
+      "path": "guides/fix-ai-workflow-handoffs/index.html",
+      "sha256": "5644d0f9a73d1f6f83228a90a1915de3a51fb32d4c8a4b61860adb495c5aa662"
+    },
+    {
+      "path": "guides/index.html",
+      "sha256": "f9f5f0923f992b07e4cba4550b34413c448c77c4e77ffd107495212eea0c8c47"
+    },
+    {
+      "path": "index.html",
+      "sha256": "0d2ca6379c4082c16773f2d886b1039711b4d07230f287a15c86fa711f370de0"
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "e56c726fb23b9954aff945dd3ab4277ef59bca9e6acc17d5cf51cb9fa82e7a1a"
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "4421b9671c1db46a3ebff5e18d8f8e36352681f767e421c32c8ce343ae45434b"
+    }
+  ]
+}

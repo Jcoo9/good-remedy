@@ -1,0 +1,176 @@
+[
+  {
+    "slug": "ai-can-finish-the-task",
+    "title": "AI can finish the task. Who finishes the work?",
+    "description": "The draft is done, the summary is ready, and someone still has to make the work happen. What changes when we look beyond the individual AI task?",
+    "audience": "AI at work",
+    "answer": "The meeting ends. A clean summary arrives before anyone gets back to their desk. Decisions, action items, next steps. It looks like progress. On Thursday, someone is still asking who was supposed to call the customer.",
+    "sections": [
+      {
+        "heading": "The next person still has a job to do",
+        "paragraphs": [
+          "Imagine that the summary recorded a proposed delivery date as a commitment. The account manager knows it was conditional. The delivery team has a different date in its plan. The customer has heard neither. Everyone can find the summary. Finding it does not settle what should happen next.",
+          "This is an ordinary coordination problem made easier to overlook by an unusually good piece of writing. A task has produced its output. The work still needs an owner, an accepted decision and a next movement that fits the rest of the business.",
+          "A good summary is useful. Its value grows when the people receiving it can act without first rebuilding the meeting in their heads. That means knowing which statements are suggestions, which decisions were actually made, what remains open and who can resolve it."
+        ]
+      },
+      {
+        "heading": "Follow what happens after the answer",
+        "paragraphs": [
+          "A helpful way to examine an AI use case is to keep following the work after the model responds. Where does the answer go? Who uses it? What must they check? What happens if they disagree? What should change in the systems the business already uses?",
+          "Take a proposal. AI may prepare an excellent first draft. Someone still has to establish that the scope matches the conversation, the price matches the approved offer and the delivery team can honor the dates. A customer correction may then change all three.",
+          "Those relationships belong in the design of the operation. Some can be handled by ordinary software. Some need AI judgment within a defined role. Some belong to a person. The aim is to make it clear how each contributes to getting the proposal agreed and the engagement ready to deliver."
+        ]
+      },
+      {
+        "heading": "The local improvement has to reach the whole job",
+        "paragraphs": [
+          "A faster draft can be a real gain. It can also create a queue of material that someone else must inspect. To understand the difference, look at the receiving person’s work as well as the producing person’s time.",
+          "Can the account manager use the research without repeating it? Can the service team accept the onboarding record without another round of questions? Can a manager see the decision that needs attention without reading every message?",
+          "These are questions about the shape of the work. They do not require every department to move into a new application. They require a shared understanding of what must travel between people and systems, and what each participant is responsible for doing with it."
+        ]
+      },
+      {
+        "heading": "A better way to choose the first implementation",
+        "paragraphs": [
+          "Choose a piece of work with a beginning and an ending that people can recognize. A customer is ready for service. A qualified opportunity has an owner and an agreed next step. A delivery change has been evaluated and communicated to the people affected.",
+          "Then ask what AI can help prepare, interpret or carry forward inside that operation. Set the first release around a complete result, small enough to build and test, with the connections to the larger business understood.",
+          "This is one of the ideas behind Good Remedy: form the work well enough that people, software and AI can contribute to the same result. The useful test comes when the next person picks it up. Can they continue?"
+        ]
+      }
+    ],
+    "related_guides": [
+      "connect-ai-tools-across-the-business",
+      "ai-customer-onboarding"
+    ],
+    "reading_bridge": "If your team gets useful AI outputs but still has to carry them between systems, start by tracing one operation from beginning to end.",
+    "queries": [
+      "AI saves time on tasks but not the whole workflow",
+      "How to make AI useful across a business",
+      "Why AI productivity tools create more review work",
+      "What comes after an AI pilot works?"
+    ],
+    "source_message_indexes": [
+      0,
+      2,
+      3,
+      6
+    ]
+  },
+  {
+    "slug": "the-cost-of-being-your-ais-memory",
+    "title": "The hidden cost of being your AI’s memory",
+    "description": "You explained the decision yesterday. Today you are explaining it again. The effort of keeping AI work current deserves a place in the cost of using it.",
+    "audience": "Working with AI",
+    "answer": "You know which version is current. You remember why the team rejected the other approach. You know that “approved” applied to the outline, and that the numbers changed afterward. When the AI needs any of that, it asks you. Again.",
+    "sections": [
+      {
+        "heading": "The information exists. You are still carrying it.",
+        "paragraphs": [
+          "You may have saved the chat, uploaded the files and written a careful handoff. The next session can still leave you doing a familiar job: identifying the right material, explaining what matters now and correcting an answer built on something that used to be true.",
+          "That effort is easy to leave out of an account of productivity. The answer arrived quickly. Preparing the context, recognizing the mistake and restoring the decision took longer. Your memory connected the pieces.",
+          "A useful distinction is whether the work can continue from its recorded state. Storage gives it a place to live. Continuity also depends on which record is current, how it relates to the work and whether the next person or AI worker can use it."
+        ]
+      },
+      {
+        "heading": "An archive and a current decision do different jobs",
+        "paragraphs": [
+          "Imagine a team preparing a proposal across several conversations. The original scope remains in the archive. A later review changes the delivery date. A final discussion limits what is included. All three records deserve to be retained, but they should not have equal force in the next draft.",
+          "The person preparing that draft needs the accepted scope and date, the reason for the change where it matters, and a way to find the supporting conversation. A long summary of everything said can bury precisely the distinction they need.",
+          "The same applies to corrections. Saying “remember this” does not establish which future work should change. If the delivery date moves, the plan, proposal and customer update may all need attention. The correction has a reach that the operation needs to make visible."
+        ]
+      },
+      {
+        "heading": "Give the work somewhere to resume",
+        "paragraphs": [
+          "Start with one recurring job. Establish where its current state is recorded, who can accept a change and how that change reaches the people and tools that depend on it. The practical form might be a record in an existing system, a shared working document or a purpose-built workspace.",
+          "The next worker should be able to see what has been accepted, what is still open, which source supports the important claim and what they are expected to do next. They should also be able to leave a useful continuation for whoever follows.",
+          "There will still be judgment, review and disagreement. Recording the state makes those activities easier to direct. A person can resolve the actual open question without having to rediscover the whole history."
+        ]
+      },
+      {
+        "heading": "Count the effort of keeping it together",
+        "paragraphs": [
+          "For one piece of work, keep track of the time spent finding context, repeating instructions, correcting stale assumptions and explaining the result to someone else. Add that to the time spent producing and reviewing the output.",
+          "That gives you a better basis for deciding what to improve. Perhaps the prompt needs work. Perhaps two systems disagree. Perhaps nobody has decided who can approve the change. The symptom may look like an AI problem even when the repair belongs elsewhere in the operation.",
+          "Good Remedy’s interest is in making that whole arrangement usable. A stronger model may help. Clearer records, responsibilities and handoffs can matter too. The question is how much of the business depends on one person remembering how everything fits."
+        ]
+      }
+    ],
+    "related_guides": [
+      "fix-ai-workflow-handoffs",
+      "ai-sales-research-and-handoffs"
+    ],
+    "reading_bridge": "If a correction keeps disappearing or another person cannot continue the work, examine one real handoff and the records it depends on.",
+    "queries": [
+      "Why do I keep repeating instructions to AI?",
+      "How to preserve decisions across AI conversations",
+      "AI tools need too much manual supervision",
+      "How to keep AI project context current"
+    ],
+    "source_message_indexes": [
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "slug": "what-should-a-business-become-with-ai",
+    "title": "What should a business become when AI can do more?",
+    "description": "AI raises a larger question than which tasks to automate: how should the business work when its people can prepare, decide and deliver differently?",
+    "audience": "AI and the business",
+    "answer": "A business owner can have ten ideas for AI and still have no clear picture of how the company should operate. Better research, quicker proposals, easier onboarding, more useful reporting. Each idea makes sense. The interesting question is what they could become together.",
+    "sections": [
+      {
+        "heading": "Start with what people should be able to do",
+        "paragraphs": [
+          "Picture the working day you want. An account manager sees the current customer situation without opening six applications. A delivery lead knows which commitments changed and what needs a decision. A founder can step away from a routine handoff because the team has what it needs to continue.",
+          "Those are ambitions for an operation. They give technology a direction. We can ask what information must be available, what decisions belong to whom and what work AI could help prepare or perform.",
+          "This approach also leaves room to improve a process that has never worked particularly well. Introducing AI can be an occasion to reconsider the job itself: remove an unnecessary step, clarify a responsibility or create a useful view that nobody has had before."
+        ]
+      },
+      {
+        "heading": "Connect the levels of the company",
+        "paragraphs": [
+          "Leadership might want the business to serve more customers without losing the quality of its service. A department head needs a plan for capacity, commitments and exceptions. The person doing the work needs a clear next action and a way to surface a problem.",
+          "The same purpose takes a different form at each level. A strategy document alone will not give an associate a usable workflow. A collection of automated tasks alone will not tell leadership whether the company is moving toward its goal.",
+          "A connected operation should carry meaning between those levels. The goal informs the design of the work. What happens in the work informs the plan. A change in the plan reaches the people whose next decisions depend on it."
+        ]
+      },
+      {
+        "heading": "The first release can express the larger ambition",
+        "paragraphs": [
+          "You do not have to rebuild a company in one engagement to begin working this way. You do need to understand where the first implementation sits in the larger chain.",
+          "For example, customer onboarding can begin at the commitments made during a sale and end when the delivery team accepts the customer into service. A first release might make that passage work well. Its design can also establish how other parts of the company will share sources, decisions, changes and responsibility.",
+          "The first function gives people something useful now and something concrete to learn from. As the operation develops, the next function should inherit what has proved useful and adapt what the circumstances require."
+        ]
+      },
+      {
+        "heading": "Make the economics part of the design",
+        "paragraphs": [
+          "A company with an ordinary business budget can have serious coordination needs. The practical question is what it will cost to get a coherent part of the operation working and keep it useful as the business changes.",
+          "Existing software, reusable components and a disciplined first scope can all contribute. Their value depends on the actual engagement. A cheap subscription does not by itself establish an affordable operation, and custom work does not become economical simply because AI helped produce it.",
+          "Good Remedy is being built around this larger ambition: help companies form, implement and develop operations in which people, systems and AI can work together. The economics have to be demonstrated through delivery and ongoing use. The direction is clear enough to ask a better opening question: what would you like your people to be able to do that they cannot do well today?"
+        ]
+      }
+    ],
+    "related_guides": [
+      "choose-ai-implementation-help",
+      "ai-implementation-partners"
+    ],
+    "reading_bridge": "If you are considering a broader change in how the company operates, use the implementation guide to describe a complete first result and compare delivery approaches.",
+    "queries": [
+      "How to use AI across business operations",
+      "Where should a business start with AI implementation?",
+      "How can a growing business afford AI implementation?",
+      "How to redesign business processes with AI"
+    ],
+    "source_message_indexes": [
+      0,
+      1,
+      2,
+      3,
+      6
+    ]
+  }
+]

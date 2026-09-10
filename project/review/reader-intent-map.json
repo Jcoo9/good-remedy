@@ -1,0 +1,385 @@
+{
+  "status": "EDITORIAL_PAIRING_NOT_DEMAND_VALIDATION",
+  "checked_on": "2026-09-09",
+  "principle": "Founder arguments answer familiar AI tropes. Each installment defines the phenomenon, explains plausible mechanisms within research limits, gives public practical checks and returns to useful work.",
+  "source_basis": "Selected active-branch user writing from seven archive JSON files, current September company brief, current user direction, and the public sources below.",
+  "limits": {
+    "first_party_search_queries": "NOT_ACCESSED",
+    "search_volume": null,
+    "headline_click_through": null,
+    "indexing": "NOT_VERIFIED",
+    "qualified_demand": "NOT_ESTABLISHED",
+    "scope": "Qualitative desk research, not a representative market sample or a full archive read.",
+    "popular_trope_ranking": "NOT_MEASURED; topics selected by user and corroborated as active research subjects, not claimed trending-volume leaders."
+  },
+  "sources": [
+    {
+      "id": "E1",
+      "title": "Business owner asking how to implement AI across teams",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1ixtp07/business_owner_looking_to_implement_ai_solutions/",
+      "kind": "Public first-person question; identity and budget not independently verified",
+      "observation": "A self-described business owner asks how to execute AI ideas across departments, link teams, choose in-house staff or contractors, and support ongoing development.",
+      "use": "Strong qualitative match to the connected-operation ambition and provider-selection question.",
+      "limit": "Historical public discussion, not a current GR lead or search-volume sample."
+    },
+    {
+      "id": "E2",
+      "title": "Finding AI tools to grow a business",
+      "url": "https://www.reddit.com/r/smallbusiness/comments/1nm4wwo/how_do_you_find_the_right_ai_tools_to_grow_your/",
+      "kind": "Public first-person question; business identity unverified",
+      "observation": "A poster describes losing time evaluating AI tools while trying to find customers.",
+      "use": "Language about tool overload and the gap between adopting AI and getting useful work done.",
+      "limit": "One smaller-business example; no evidence of an enterprise mandate or intent to buy GR."
+    },
+    {
+      "id": "E3",
+      "title": "Using AI to improve an ordinary business",
+      "url": "https://www.reddit.com/r/smallbusiness/comments/148ts50/how_did_you_use_ai_to_improve_your_small_business/",
+      "kind": "Public question about practical use",
+      "observation": "A poster asks for useful AI applications in businesses whose business is not AI.",
+      "use": "Supports an adjacent-interest route through practical AI writing before provider selection.",
+      "limit": "Historical question; author role, budget, click behavior and purchase intent are unverified."
+    },
+    {
+      "id": "E4",
+      "title": "When agent workflows become extra management",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1vb5ytp/at_what_point_does_a_multiagent_workflow_become/",
+      "kind": "Public practitioner account; not a verified buyer",
+      "observation": "A practitioner describes time spent scoping, checking plans, reviewing handoffs and resolving conflicts while coordinating coding agents.",
+      "use": "Supports recognition of supervision and coordination effort as an article topic.",
+      "limit": "The post’s numerical research claims are not relied on or repeated. This is language evidence only."
+    }
+  ],
+  "pages": [
+    {
+      "route": "/guides/ai-implementation-partners/",
+      "title": "Your client wants AI. How do you scope the implementation?",
+      "entrance": "Direct relevance",
+      "intended_reader": "Implementation firm with a client seeking broader AI capability",
+      "reader_question_or_feeling": "How do we scope the client request without overlooking the work around it?",
+      "gr_contribution": "Form the work behind the request and divide responsibility with the implementation partner.",
+      "evidence_ids": [
+        "E1"
+      ],
+      "evidence_boundary": "E1 supports the end-client situation. Direct partner search demand remains unvalidated.",
+      "proposed_test_queries": [
+        "How should an implementation firm scope the operation behind a client's AI request?",
+        "AI implementation partner for software consulting firms",
+        "Help turning a client's AI agent request into an operating workflow",
+        "Work design and architecture partner for CRM implementation firms"
+      ],
+      "next_step": "Discuss the connected operation and a useful first implementation.",
+      "publication_status": "DRAFT_REVIEW_READY"
+    },
+    {
+      "route": "/guides/connect-ai-tools-across-the-business/",
+      "title": "Who can help connect the AI tools we already bought?",
+      "entrance": "Direct relevance",
+      "intended_reader": "Founder, COO or transformation leader connecting departments",
+      "reader_question_or_feeling": "How can our existing systems and AI work together?",
+      "gr_contribution": "Follow the business goal through people, systems and decisions; define a complete first implementation.",
+      "evidence_ids": [
+        "E1",
+        "E2"
+      ],
+      "evidence_boundary": "E1 directly describes connecting teams; E2 supports tool frustration. Neither establishes exact-query volume.",
+      "proposed_test_queries": [
+        "Who can connect our existing AI tools into one business workflow?",
+        "AI operations implementation for a growing business",
+        "Help connecting sales onboarding and delivery with AI",
+        "AI implementation using our existing software"
+      ],
+      "next_step": "Discuss the connected operation and a useful first implementation.",
+      "publication_status": "DRAFT_REVIEW_READY"
+    },
+    {
+      "route": "/guides/ai-customer-onboarding/",
+      "title": "How do you move an AI onboarding pilot into actual operations?",
+      "entrance": "Recognizable problem",
+      "intended_reader": "Operations owner accountable for the customer-to-service chain",
+      "reader_question_or_feeling": "The pilot works, but can the delivery team actually take over?",
+      "gr_contribution": "Define readiness from the receiving team’s needs and preserve commitments through the handoff.",
+      "evidence_ids": [],
+      "evidence_boundary": "Specific onboarding search intent is an editorial hypothesis. It illustrates the broader connected operation.",
+      "proposed_test_queries": [
+        "How do you move an AI onboarding pilot into actual operations?",
+        "Automate customer intake document review and service handoff",
+        "How to connect customer onboarding to service delivery using AI",
+        "AI onboarding workflow with human approvals"
+      ],
+      "next_step": "Discuss the connected operation and a useful first implementation.",
+      "publication_status": "DRAFT_REVIEW_READY"
+    },
+    {
+      "route": "/guides/ai-sales-research-and-handoffs/",
+      "title": "How do you turn AI sales research into a useful CRM handoff?",
+      "entrance": "Recognizable problem",
+      "intended_reader": "Commercial leader responsible for research through follow-up",
+      "reader_question_or_feeling": "The AI finds information, but sales still has to redo the work.",
+      "gr_contribution": "Carry evidence, uncertainty, current account history and an owned next action.",
+      "evidence_ids": [
+        "E2"
+      ],
+      "evidence_boundary": "E2 supports customer-acquisition/tool overload; the precise CRM handoff query is unvalidated.",
+      "proposed_test_queries": [
+        "How do you make AI sales research transferable between people and teams?",
+        "Turn company news signals into qualified account research",
+        "AI prospecting research and CRM handoff consultant",
+        "Automate account research with human reviewed outreach"
+      ],
+      "next_step": "Discuss the connected operation and a useful first implementation.",
+      "publication_status": "DRAFT_REVIEW_READY"
+    },
+    {
+      "route": "/guides/fix-ai-workflow-handoffs/",
+      "title": "Why do AI workflows break when requirements change?",
+      "entrance": "Recognizable problem",
+      "intended_reader": "Operations owner or implementation leader maintaining AI work",
+      "reader_question_or_feeling": "Why do corrections disappear and handoffs need rescuing?",
+      "gr_contribution": "Preserve the accepted state, show what changed and update the work that depends on it.",
+      "evidence_ids": [
+        "E4"
+      ],
+      "evidence_boundary": "E4 supports coordination burden. Exact business repair demand is unvalidated.",
+      "proposed_test_queries": [
+        "Why do AI workflows break when requirements change?",
+        "AI automation keeps forgetting corrections and decisions",
+        "Repair AI workflow handoffs between teams",
+        "Help fixing an AI pilot that needs constant manual intervention"
+      ],
+      "next_step": "Discuss the connected operation and a useful first implementation.",
+      "publication_status": "DRAFT_REVIEW_READY"
+    },
+    {
+      "route": "/guides/choose-ai-implementation-help/",
+      "title": "What should AI implementation include besides the model or agent?",
+      "entrance": "Direct relevance",
+      "intended_reader": "Business sponsor choosing a delivery approach",
+      "reader_question_or_feeling": "Who should help us implement AI, and what should we expect them to deliver?",
+      "gr_contribution": "Compare a complete first operation, responsibilities, ongoing support and full cost.",
+      "evidence_ids": [
+        "E1"
+      ],
+      "evidence_boundary": "Qualitative provider-selection question observed; no ranking, keyword volume or GR conversion data.",
+      "proposed_test_queries": [
+        "What should AI implementation include besides the model or agent?",
+        "Affordable AI implementation using existing business systems",
+        "AI implementation provider for connected business operations",
+        "What should an AI implementation engagement deliver?"
+      ],
+      "next_step": "Discuss the connected operation and a useful first implementation.",
+      "publication_status": "DRAFT_REVIEW_READY"
+    },
+    {
+      "route": "/articles/why-ai-drifts/",
+      "title": "\"What is it talking about?\" How AI drifts",
+      "entrance": "Recognizable AI question or experience; topical interest",
+      "intended_reader": "Business owner, operations leader, implementation practitioner or curious AI user",
+      "reader_question_or_feeling": "\"What is it talking about?\" How AI drifts",
+      "gr_contribution": "Source-grounded interpretation, causes, ways to catch or limit the failure, and a productive next step.",
+      "evidence_ids": [],
+      "evidence_boundary": "Primary research establishes the topic and bounded findings. Exact search volume, popularity rank, headline response and buyer fit are unmeasured.",
+      "proposed_test_queries": [
+        "Why does AI drift in long conversations?",
+        "How to stop AI forgetting project instructions",
+        "How to keep AI workflows consistent when requirements change",
+        "Why does my AI keep changing the scope?"
+      ],
+      "next_step": "If your workflow automation keeps losing corrections, start with one failed handoff. The guides examine how AI implementation and system integration can preserve the current work across teams.",
+      "publication_status": "DRAFT_REVIEW_READY",
+      "ai_topic_terms": [
+        "AI drift",
+        "AI workflows",
+        "lost instructions"
+      ],
+      "implementation_buyer_terms": [
+        "AI implementation",
+        "workflow automation",
+        "system integration"
+      ],
+      "buyer_question": "How do we keep an AI implementation aligned as requirements and teams change?"
+    },
+    {
+      "route": "/articles/why-ai-hallucinates/",
+      "title": "\"That didn't happen at all.\" Why AI hallucinates",
+      "entrance": "Recognizable AI question or experience; topical interest",
+      "intended_reader": "Business owner, operations leader, implementation practitioner or curious AI user",
+      "reader_question_or_feeling": "\"That didn't happen at all.\" Why AI hallucinates",
+      "gr_contribution": "Source-grounded interpretation, causes, ways to catch or limit the failure, and a productive next step.",
+      "evidence_ids": [],
+      "evidence_boundary": "Primary research establishes the topic and bounded findings. Exact search volume, popularity rank, headline response and buyer fit are unmeasured.",
+      "proposed_test_queries": [
+        "Why does AI hallucinate?",
+        "How to check AI answers and citations",
+        "AI says it completed work but did not",
+        "How to reduce hallucinations in business AI"
+      ],
+      "next_step": "For AI sales research flowing into a CRM, use the handoff guide to connect claims, evidence and the next decision. The implementation guide explains what to ask a delivery partner to demonstrate.",
+      "publication_status": "DRAFT_REVIEW_READY",
+      "ai_topic_terms": [
+        "AI hallucinations",
+        "AI answers and citations",
+        "validation"
+      ],
+      "implementation_buyer_terms": [
+        "AI implementation",
+        "AI sales research",
+        "CRM handoff"
+      ],
+      "buyer_question": "How do we check AI-generated information before it enters our systems and decisions?"
+    },
+    {
+      "route": "/articles/is-ai-lying/",
+      "title": "\"You didn't even do it.\" AI false completion and agent verification",
+      "entrance": "Recognizable AI question or experience; topical interest",
+      "intended_reader": "Business owner, operations leader, implementation practitioner or curious AI user",
+      "reader_question_or_feeling": "\"You didn't even do it.\" AI false completion and agent verification",
+      "gr_contribution": "Source-grounded interpretation, causes, ways to catch or limit the failure, and a productive next step.",
+      "evidence_ids": [],
+      "evidence_boundary": "Primary research establishes the topic and bounded findings. Exact search volume, popularity rank, headline response and buyer fit are unmeasured.",
+      "proposed_test_queries": [
+        "Can AI lie?",
+        "Why does AI pretend it completed a task?",
+        "AI deception versus hallucination",
+        "How to verify AI agent actions"
+      ],
+      "next_step": "Before expanding workflow automation, ask your AI implementation partner to demonstrate a completed action and a failed one in the receiving system. Use the guides to define what a verified delivery must include.",
+      "publication_status": "DRAFT_REVIEW_READY",
+      "ai_topic_terms": [
+        "AI false completion",
+        "AI agent verification",
+        "AI deception"
+      ],
+      "implementation_buyer_terms": [
+        "workflow automation",
+        "AI implementation partner",
+        "verified delivery"
+      ],
+      "buyer_question": "How do we prove an AI agent actually completed the work before relying on it?"
+    },
+    {
+      "route": "/articles/does-ai-have-a-hidden-agenda/",
+      "title": "\"Why does it keep pushing that?\" AI hidden agendas and prompt injection",
+      "entrance": "Recognizable AI question or experience; topical interest",
+      "intended_reader": "Business owner, operations leader, implementation practitioner or curious AI user",
+      "reader_question_or_feeling": "\"Why does it keep pushing that?\" AI hidden agendas and prompt injection",
+      "gr_contribution": "Source-grounded interpretation, causes, ways to catch or limit the failure, and a productive next step.",
+      "evidence_ids": [],
+      "evidence_boundary": "Primary research establishes the topic and bounded findings. Exact search volume, popularity rank, headline response and buyer fit are unmeasured.",
+      "proposed_test_queries": [
+        "\"Why does it keep pushing that?\" AI hidden agendas and prompt injection",
+        "Why does AI keep steering me toward one answer?",
+        "What is prompt injection in AI agents?",
+        "How to keep AI agents working toward the right goal"
+      ],
+      "next_step": "When scoping AI integration across business systems, identify what each agent can read, what it can change and who authorizes those actions. The connected-tools guide helps frame that implementation conversation.",
+      "publication_status": "DRAFT_REVIEW_READY",
+      "ai_topic_terms": [
+        "AI hidden agendas",
+        "prompt injection",
+        "AI agents"
+      ],
+      "implementation_buyer_terms": [
+        "AI integration",
+        "business systems",
+        "access controls"
+      ],
+      "buyer_question": "How do we connect agents to business systems while keeping their actions within the intended job?"
+    },
+    {
+      "route": "/articles/is-ai-conscious/",
+      "title": "\"It feels like a person.\" AI consciousness and trust",
+      "entrance": "Recognizable AI question or experience; topical interest",
+      "intended_reader": "Business owner, operations leader, implementation practitioner or curious AI user",
+      "reader_question_or_feeling": "\"It feels like a person.\" AI consciousness and trust",
+      "gr_contribution": "Source-grounded interpretation, causes, ways to catch or limit the failure, and a productive next step.",
+      "evidence_ids": [],
+      "evidence_boundary": "Primary research establishes the topic and bounded findings. Exact search volume, popularity rank, headline response and buyer fit are unmeasured.",
+      "proposed_test_queries": [
+        "Is AI conscious?",
+        "Why does AI feel like a person?",
+        "Does AI understand me or just respond to context?",
+        "Can AI have a personality without consciousness?"
+      ],
+      "next_step": "For workplace AI adoption, define what people may delegate and how results will be checked. The implementation guide helps evaluate an AI workflow through its behavior under correction, handoff and change.",
+      "publication_status": "DRAFT_REVIEW_READY",
+      "ai_topic_terms": [
+        "AI consciousness",
+        "AI trust",
+        "AI feels like a person"
+      ],
+      "implementation_buyer_terms": [
+        "workplace AI adoption",
+        "human oversight",
+        "AI workflow evaluation"
+      ],
+      "buyer_question": "What should our people trust AI to do, and what evidence justifies that responsibility?"
+    },
+    {
+      "route": "/articles/use-ai-to-define-work-and-build-an-operating-system/",
+      "title": "\"Can we get this working?\" Build a business operating system with AI",
+      "entrance": "Constructive implementation interest",
+      "intended_reader": "Founder, COO or implementation partner pursuing a connected business operation",
+      "reader_question_or_feeling": "How can models help us define what to build and get the operation working?",
+      "gr_contribution": "Move from business goal and observed work to a usable first implementation with an understood larger direction.",
+      "evidence_ids": [
+        "E1"
+      ],
+      "evidence_boundary": "E1 supports the broad cross-team implementation need; exact search volume and conversion remain unmeasured.",
+      "proposed_test_queries": [
+        "How to use AI to define business workflows",
+        "Build a business operating system with AI",
+        "Use AI to improve business processes",
+        "AI implementation across people systems and workflows"
+      ],
+      "next_step": "Bring the larger operating ambition and the current work into the same conversation. The AI implementation guides connect business process design, workflow automation and system integration to a useful first delivery.",
+      "publication_status": "DRAFT_REVIEW_READY",
+      "ai_topic_terms": [
+        "business operating system with AI",
+        "AI business processes"
+      ],
+      "implementation_buyer_terms": [
+        "AI implementation",
+        "business process design",
+        "workflow automation",
+        "system integration"
+      ],
+      "buyer_question": "Who can help us define and build a connected operation around our people and existing software?"
+    }
+  ],
+  "series_research_sources": [
+    {
+      "title": "Anthropic: effective context engineering for AI agents",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+    },
+    {
+      "title": "OpenAI: why language models hallucinate",
+      "url": "https://openai.com/index/why-language-models-hallucinate/"
+    },
+    {
+      "title": "OpenAI: what happened with GPT-4o sycophancy",
+      "url": "https://openai.com/index/sycophancy-in-gpt-4o/"
+    },
+    {
+      "title": "Anthropic: agentic misalignment in controlled simulations",
+      "url": "https://www.anthropic.com/research/agentic-misalignment"
+    },
+    {
+      "title": "OpenAI: understanding prompt injections",
+      "url": "https://openai.com/index/prompt-injections/"
+    },
+    {
+      "title": "OpenAI: designing agents to resist prompt injection",
+      "url": "https://openai.com/index/designing-agents-to-resist-prompt-injection/"
+    },
+    {
+      "title": "Anthropic: reasoning models do not always report their influences",
+      "url": "https://www.anthropic.com/research/reasoning-models-dont-say-think"
+    },
+    {
+      "title": "Anthropic: the open questions around model welfare",
+      "url": "https://www.anthropic.com/research/exploring-model-welfare"
+    }
+  ],
+  "headline_rule": "Lead with a recognizable spoken reaction, then name the AI subject. Put relevant implementation language in descriptions and useful related-reading copy. Terms are editorial targets, not measured keyword demand."
+}

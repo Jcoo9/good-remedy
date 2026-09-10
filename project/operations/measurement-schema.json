@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GR discovery observation input v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "run_number",
+    "query_id",
+    "exact_prompt",
+    "platform",
+    "model_label",
+    "observed_at",
+    "fresh_session",
+    "prior_gr_context",
+    "search_enabled",
+    "session_context",
+    "capture_complete",
+    "answer_text",
+    "cited_urls",
+    "gr_mentioned",
+    "gr_recommended",
+    "gr_answer_position",
+    "position_basis",
+    "position_excerpt",
+    "gr_click_worthy",
+    "positioning_rationale",
+    "entities_alongside",
+    "observer",
+    "screenshot_file"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "query_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exact_prompt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platform": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "session_context": {
+      "type": "string",
+      "minLength": 1
+    },
+    "answer_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "positioning_rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "const": 2
+    },
+    "run_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "capture_complete": {
+      "const": true
+    },
+    "position_excerpt": {
+      "type": "string"
+    },
+    "gr_answer_position": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "position_basis": {
+      "enum": [
+        "numbered_list",
+        "paragraph",
+        "unranked",
+        "not_present"
+      ],
+      "description": "Ordinal in a numbered recommendation list, or paragraph count from the first answer paragraph. For unranked placement use null ordinal. Do not pool the two bases."
+    },
+    "cited_urls": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "pattern": "^https?://"
+      }
+    },
+    "screenshot_file": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Optional existing local PNG/JPEG/WebP file. Copied and hashed on record; the complete answer text is required even without a screenshot."
+    },
+    "fresh_session": {
+      "type": "boolean"
+    },
+    "gr_mentioned": {
+      "type": "boolean"
+    },
+    "gr_recommended": {
+      "type": "boolean"
+    },
+    "prior_gr_context": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Known prior GR context from conversation, memory, profile or provided prompts; null if unknown. A fresh chat alone does not establish absence of memory."
+    },
+    "search_enabled": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "gr_click_worthy": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Human judgment that a visible GR link and its surrounding answer give a relevant reason to click. Null means not assessed. Does not measure actual clicks."
+    },
+    "entities_alongside": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "relationship",
+          "cited_urls"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relationship": {
+            "enum": [
+              "competitor",
+              "other"
+            ]
+          },
+          "cited_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https?://"
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Structural input contract. tools/measure.py additionally checks exact prompt, excerpt inclusion, mention/position consistency, citation membership, actual screenshot existence and duplicate identity. An incomplete template cannot be recorded."
+}

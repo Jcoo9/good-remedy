@@ -1,0 +1,145 @@
+{
+  "status": "INTERNAL_EDITORIAL_PROVENANCE_NOT_PUBLIC",
+  "scope": "Targeted inspection of seven archive JSON files; selected material came from May/June business conversations. Not a full archive read or authorship attestation for pasted assistant text. Current September source governs company scope.",
+  "current_source": "07_CURRENT_COMPANY_AND_PRODUCT_BRIEF_v0_2.md, 8 September 2026, sections 1-16; visible current conversation corrections",
+  "source_messages": [
+    {
+      "file": "conversations-017(1).json",
+      "conversation_id": "6a0e49ea-1ef0-83ea-829d-9c8c1d0a9475",
+      "title": "AI Workflow Management",
+      "message_id": "01b48706-9a7b-4928-85a6-d11d3d5ea86c",
+      "time": 1779321346.647
+    },
+    {
+      "file": "conversations-017(1).json",
+      "conversation_id": "6a0e4770-12ec-83ea-bdcc-d868b95b5f33",
+      "title": "Erik Media Workflow Example",
+      "message_id": "c19e275f-102e-45d1-aa2b-7122eb3c3232",
+      "time": 1779321232.793
+    },
+    {
+      "file": "conversations-017(1).json",
+      "conversation_id": "6a1f25ad-8958-83ea-9555-248eda7168a5",
+      "title": "AI Review Bottleneck",
+      "message_id": "bbb21742-8338-4e22-9ea1-6ac4a4358ae3",
+      "time": 1780438075.24503
+    },
+    {
+      "file": "conversations-017(1).json",
+      "conversation_id": "6a1dee21-ff20-83ea-ae70-cc611490182e",
+      "title": "AI in Work Processes",
+      "message_id": "bbb216ea-905c-4214-b2d5-20834681b5ae",
+      "time": 1780346507.061881
+    },
+    {
+      "file": "conversations-015(1).json",
+      "conversation_id": "69fa5206-69e4-83ea-89df-92a55078d93d",
+      "title": "Retireed-Heavy/Final Archive Processor",
+      "message_id": "ac80a669-b255-410c-9162-76f327c3c4d7",
+      "time": 1779653369.031
+    },
+    {
+      "file": "conversations-015(1).json",
+      "conversation_id": "6a055f27-7168-83ea-a9f1-50a3dc87ae3b",
+      "title": "Improving Workflow Errors",
+      "message_id": "8abfac8c-ab15-4ede-9271-edd6330a4761",
+      "time": 1778737275.679
+    },
+    {
+      "file": "conversations-017(1).json",
+      "conversation_id": "6a13b4e3-8a80-83ea-8134-8fea7d8e67ac",
+      "title": "Background Processor Role",
+      "message_id": "ac587188-bc37-4f11-9bf0-9d85ebdd6c23",
+      "time": 1779679258.158
+    }
+  ],
+  "method": "Read active-branch user messages. Selected naturally worded business passages; adapted ideas into new public-candidate prose, not quotations. Private agreement generalized without names or terms. Source/root texts and raw archives excluded from public output.",
+  "changes": {
+    "ai-implementation-partners": [
+      "The request is a starting point",
+      "When the client asks for one piece",
+      "Follow the work through the people",
+      "What the shared work produces",
+      "How the responsibilities can fit",
+      "A useful first conversation"
+    ],
+    "connect-ai-tools-across-the-business": [
+      "Your people may already be the integration",
+      "Follow one job all the way through",
+      "What to inventory",
+      "What an initial implementation can contain",
+      "Keep the first release affordable",
+      "Keep the whole operation in view"
+    ],
+    "ai-customer-onboarding": [
+      "Define what complete means to the receiving team",
+      "Define what ready means",
+      "Follow the onboarding chain",
+      "What people should see",
+      "Move from demonstration to a supported release",
+      "What to test before use",
+      "Improve the work while introducing AI"
+    ],
+    "ai-sales-research-and-handoffs": [
+      "Transfer the judgment the next person needs",
+      "Give each signal a disposition",
+      "Do the associate-level research",
+      "Deliver a brief someone can act on",
+      "Test the handoff with someone new",
+      "What happens after a reply",
+      "Keep one account current as the conversation develops"
+    ],
+    "fix-ai-workflow-handoffs": [
+      "The file is there. The work still gets lost.",
+      "Start with one real failure",
+      "A correction should change what happens next",
+      "Inspect the whole handoff",
+      "Make the repair observable",
+      "How Good Remedy can help",
+      "Do not make the founder hold the system together"
+    ],
+    "choose-ai-implementation-help": [
+      "Buy the operation your people will use",
+      "Different providers can play different parts",
+      "Ask to see the deliverable",
+      "Compare the full cost",
+      "Start with an operation you can recognize",
+      "Affordability depends on delivery, too"
+    ]
+  },
+  "prior_guides_sha256": "7b7e080baf19234c5762eeb24d7f5c8a36eea47700fcdd959edafda706acaa55",
+  "publication": "Not authorized by this editorial revision",
+  "claims": "No universal reliability, quantified advantage, independent review, paid-client evidence or measured acquisition success claimed.",
+  "article_adaptations": [
+    {
+      "slug": "ai-can-finish-the-task",
+      "source_message_indexes": [
+        0,
+        2,
+        3,
+        6
+      ],
+      "method": "New editorial draft adapted from selected user ideas; not a quotation or a verified historical authored article. Examples generalized. Public publisher is Good Remedy; no founder byline asserted."
+    },
+    {
+      "slug": "the-cost-of-being-your-ais-memory",
+      "source_message_indexes": [
+        4,
+        5,
+        6
+      ],
+      "method": "New editorial draft adapted from selected user ideas; not a quotation or a verified historical authored article. Examples generalized. Public publisher is Good Remedy; no founder byline asserted."
+    },
+    {
+      "slug": "what-should-a-business-become-with-ai",
+      "source_message_indexes": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "method": "New editorial draft adapted from selected user ideas; not a quotation or a verified historical authored article. Examples generalized. Public publisher is Good Remedy; no founder byline asserted."
+    }
+  ]
+}

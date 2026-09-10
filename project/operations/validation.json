@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "pages": 15,
+  "queries": 48,
+  "homepage_original_content_preserved": true,
+  "brand_logo_every_content_page": "PASS",
+  "internal_links_and_metadata": "PASS",
+  "robot_access": "PASS",
+  "manifest_hashes": "PASS",
+  "indexnow_release_gates": "PASS",
+  "measurement_capture_hashes_duplicates_and_context_separation": "PASS",
+  "actual_recommendation_evaluation": "NOT_RUN",
+  "browser_visual_qa": "NOT_RUN"
+}

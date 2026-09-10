@@ -1,0 +1,62 @@
+{
+  "status": "INTERNAL_EDITORIAL_RECORD",
+  "private_source_comparison": "Held separately for founder; not included in this package.",
+  "source_scope": "Targeted inspection of seven archive JSON files; selected active user passages. Not a complete corpus read.",
+  "articles": [
+    {
+      "slug": "why-ai-drifts",
+      "source_keys": [
+        "U1",
+        "U3",
+        "U4"
+      ],
+      "method": "New adaptation of founder observations/questions plus cited primary research. Not a verbatim archived essay."
+    },
+    {
+      "slug": "why-ai-hallucinates",
+      "source_keys": [
+        "U2",
+        "U5"
+      ],
+      "method": "New adaptation of founder observations/questions plus cited primary research. Not a verbatim archived essay."
+    },
+    {
+      "slug": "is-ai-lying",
+      "source_keys": [
+        "U2",
+        "U5",
+        "U1"
+      ],
+      "method": "New adaptation of founder observations/questions plus cited primary research. Not a verbatim archived essay."
+    },
+    {
+      "slug": "does-ai-have-a-hidden-agenda",
+      "source_keys": [
+        "U6",
+        "U1",
+        "U4"
+      ],
+      "method": "New adaptation of founder observations/questions plus cited primary research. Not a verbatim archived essay."
+    },
+    {
+      "slug": "is-ai-conscious",
+      "source_keys": [
+        "U7",
+        "U8",
+        "U9"
+      ],
+      "method": "New adaptation of founder observations/questions plus cited primary research. Not a verbatim archived essay."
+    },
+    {
+      "slug": "use-ai-to-define-work-and-build-an-operating-system",
+      "source_keys": [
+        "U10",
+        "U11",
+        "U12"
+      ],
+      "method": "Adapted from original founder work-formation arguments and current company scope; newly written public explanation."
+    }
+  ],
+  "ip_screen": "Public explanations and general checks only. Internal grammar, prompts, source hierarchy, implementation algorithms and private context excluded. This is an editorial disclosure screen, not legal clearance.",
+  "publication": "NOT_PUBLISHED"
+}
