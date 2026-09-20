@@ -1,0 +1,262 @@
+[
+  {
+    "id": "001",
+    "slug": "manufacturer-warranty-recovery",
+    "name": "Manufacturer Warranty Recovery",
+    "description": "Good Remedy works old, denied, incomplete and missed manufacturer warranty claims for equipment dealers and charges only from money actually recovered.",
+    "first": "No upfront payment",
+    "standard": "15% of actual recovered dollars",
+    "category": "Recover money",
+    "keywords": "warranty warranty claims denied claims oem dealer manufacturer service department claim recovery aftermarket"
+  },
+  {
+    "id": "002",
+    "slug": "provider-enrollment",
+    "name": "Provider Enrollment",
+    "description": "Good Remedy handles provider enrollment applications, deficiencies and payer follow-up through a verified disposition.",
+    "first": "$495 first provider",
+    "standard": "$795 per new provider",
+    "category": "Get cleared",
+    "keywords": "credentialing provider enrollment payer enrollment caqh medicare medicaid clinician onboarding provider onboarding"
+  },
+  {
+    "id": "003",
+    "slug": "b2b-appointment-setting",
+    "name": "B2B Appointment Setting",
+    "description": "Good Remedy runs B2B outbound email from target definition through reply handling and qualified meetings on the calendar.",
+    "first": "$750 first-month base + $150 per held qualified meeting",
+    "standard": "$1,500/month + $150 per held qualified meeting",
+    "category": "Run the back office",
+    "keywords": "appointment setting outbound prospecting sales meetings lead generation cold email"
+  },
+  {
+    "id": "004",
+    "slug": "retail-deduction-recovery",
+    "name": "Retail Deduction Recovery",
+    "description": "Good Remedy works invalid retailer and distributor deductions for CPG brands and charges from verified recovery.",
+    "first": "No upfront payment",
+    "standard": "20% of actual recovered dollars",
+    "category": "Recover money",
+    "keywords": "retail deductions chargebacks distributor deductions cpg deductions retailer deductions"
+  },
+  {
+    "id": "005",
+    "slug": "ap-recovery-audit",
+    "name": "AP Recovery Audit",
+    "description": "Good Remedy reviews historical accounts payable for duplicate payments, unused vendor credits and other supportable overpayments.",
+    "first": "No upfront payment",
+    "standard": "15% of actual recovered dollars",
+    "category": "Recover money",
+    "keywords": "ap recovery duplicate payments vendor credits overpayments accounts payable audit recovery"
+  },
+  {
+    "id": "006",
+    "slug": "freight-invoice-recovery",
+    "name": "Freight Invoice Recovery",
+    "description": "Good Remedy audits freight invoices against rate and shipment records and works supported overcharges through credit or refund.",
+    "first": "No upfront payment",
+    "standard": "15% of actual credited or refunded dollars",
+    "category": "Recover money",
+    "keywords": "freight invoice freight audit shipping overcharges carrier invoice logistics recovery transportation invoice"
+  },
+  {
+    "id": "007",
+    "slug": "cam-lease-overcharge-recovery",
+    "name": "CAM / Lease Overcharge Recovery",
+    "description": "Good Remedy checks CAM and operating-expense reconciliations against the lease and works supportable billing corrections.",
+    "first": "No upfront payment",
+    "standard": "25% of verified recovered savings",
+    "category": "Recover money",
+    "keywords": "cam lease overcharge common area maintenance reconciliation operating expenses landlord lease audit"
+  },
+  {
+    "id": "008",
+    "slug": "business-license-renewals",
+    "name": "Business / Contractor License Renewals",
+    "description": "Good Remedy handles straightforward business and contractor license renewals, filing and follow-up.",
+    "first": "$79 first renewal",
+    "standard": "$149 per straightforward renewal",
+    "category": "Get cleared",
+    "keywords": "business license contractor license renewals license management filing renewal"
+  },
+  {
+    "id": "009",
+    "slug": "subcontractor-coi-compliance",
+    "name": "Subcontractor COI Compliance Desk",
+    "description": "Good Remedy collects, reviews and chases subcontractor insurance and compliance documents against client-defined requirements.",
+    "first": "$249 first month",
+    "standard": "$499/month up to 50 active vendors",
+    "category": "Get cleared",
+    "keywords": "coi certificate of insurance subcontractor compliance vendor insurance compliance certificates"
+  },
+  {
+    "id": "010",
+    "slug": "lease-abstraction-critical-dates",
+    "name": "Lease Abstraction & Critical Dates",
+    "description": "Good Remedy turns commercial leases and amendments into clean abstracts with critical dates and source references.",
+    "first": "$65 per lease for the first 5",
+    "standard": "$125 per lease",
+    "category": "Clean up the work",
+    "keywords": "lease abstraction critical dates lease summary lease data abstract"
+  },
+  {
+    "id": "011",
+    "slug": "marketplace-management",
+    "name": "Marketplace Management",
+    "description": "Good Remedy runs day-to-day Amazon and Walmart marketplace administration for small and mid-sized brands.",
+    "first": "$299 first month",
+    "standard": "$595/month for one marketplace",
+    "category": "Run the back office",
+    "keywords": "amazon walmart marketplace ecommerce marketplace seller central marketplace management"
+  },
+  {
+    "id": "012",
+    "slug": "ecommerce-catalog-management",
+    "name": "Ecommerce Catalog Management",
+    "description": "Good Remedy cleans and maintains ecommerce product catalogs using client-approved source data.",
+    "first": "$349 first cleanup",
+    "standard": "$699 one-time cleanup up to 500 SKUs",
+    "category": "Clean up the work",
+    "keywords": "catalog sku product catalog ecommerce catalog product data listings"
+  },
+  {
+    "id": "013",
+    "slug": "order-management-desk",
+    "name": "Order Management Desk",
+    "description": "Good Remedy runs a straightforward order inbox from receipt through entry, missing-information follow-up and exception routing.",
+    "first": "$625 first month",
+    "standard": "$1,250/month up to 500 straightforward orders",
+    "category": "Run the back office",
+    "keywords": "order entry order management sales orders customer orders inbox order processing"
+  },
+  {
+    "id": "014",
+    "slug": "supplier-onboarding",
+    "name": "Supplier Onboarding Desk",
+    "description": "Good Remedy chases and assembles supplier onboarding packets so procurement and AP handle approvals instead of paperwork.",
+    "first": "$249 first month",
+    "standard": "$499/month up to 20 new suppliers",
+    "category": "Run the back office",
+    "keywords": "supplier onboarding vendor onboarding procurement onboarding supplier packets vendor setup"
+  },
+  {
+    "id": "015",
+    "slug": "vendor-master-cleanup",
+    "name": "Vendor Master Cleanup",
+    "description": "Good Remedy cleans vendor masters by finding duplicates, stale records, missing data and records that need controlled review.",
+    "first": "$0.50 per vendor record, $375 minimum first cleanup",
+    "standard": "$1.00 per vendor record, $750 minimum",
+    "category": "Clean up the work",
+    "keywords": "vendor master cleanup duplicate vendors stale vendor records vendor data master data"
+  },
+  {
+    "id": "016",
+    "slug": "permit-expediting",
+    "name": "Permit Expediting",
+    "description": "Good Remedy handles the administrative permit path from a ready technical package through filing, correction routing and issuance tracking.",
+    "first": "From $295 for the first straightforward permit",
+    "standard": "From $595 for a straightforward single permit",
+    "category": "Get cleared",
+    "keywords": "permit expediting permits permit filing permit tracking construction permits"
+  },
+  {
+    "id": "017",
+    "slug": "saas-renewal-desk",
+    "name": "SaaS Renewal Desk",
+    "description": "Good Remedy runs the renewal queue for B2B software companies so customer-success teams can focus on the commercial conversation.",
+    "first": "$500 first month",
+    "standard": "$1,000/month up to 25 active renewals",
+    "category": "Run the back office",
+    "keywords": "saas renewals renewal desk customer success renewals subscription renewals"
+  },
+  {
+    "id": "018",
+    "slug": "crm-cleanup",
+    "name": "CRM Cleanup",
+    "description": "Good Remedy cleans CRM data by identifying duplicates, stale records, bad fields, ownership problems and review-required records.",
+    "first": "$375 first cleanup",
+    "standard": "$750 up to 5,000 records",
+    "category": "Clean up the work",
+    "keywords": "crm cleanup salesforce hubspot crm duplicates stale contacts data cleanup"
+  },
+  {
+    "id": "019",
+    "slug": "sop-process-documentation",
+    "name": "SOP & Process Documentation",
+    "description": "Good Remedy turns how a team actually works into clear SOPs with decisions, exceptions, roles and handoffs.",
+    "first": "$625 first package",
+    "standard": "$1,250 up to 5 SOPs",
+    "category": "Finish the work",
+    "keywords": "sop process documentation procedures workflow documentation standard operating procedures"
+  },
+  {
+    "id": "020",
+    "slug": "rfp-bid-response",
+    "name": "RFP & Bid Response Assembly",
+    "description": "Good Remedy turns an RFP plus client source material into a submission-ready response packet with compliance matrix and missing-item register.",
+    "first": "$625 first response",
+    "standard": "$1,250 up to 40 pages",
+    "category": "Finish the work",
+    "keywords": "rfp bid response proposal rfp response bid assembly procurement response tender"
+  },
+  {
+    "id": "021",
+    "slug": "ar-follow-up-desk",
+    "name": "AR Follow-up Desk",
+    "description": "Good Remedy runs routine B2B accounts-receivable follow-up, promise-to-pay tracking, missing-document requests and dispute routing.",
+    "first": "$499 first month",
+    "standard": "$999/month up to 100 open B2B invoices",
+    "category": "Run the back office",
+    "keywords": "accounts receivable ar follow up unpaid invoices collections follow up promise to pay b2b invoices"
+  },
+  {
+    "id": "022",
+    "slug": "data-migration-cleanup",
+    "name": "Data Migration & Cleanup",
+    "description": "Good Remedy cleans, maps and moves business data between systems with test batches and reconciliation before cutover.",
+    "first": "$499 first migration",
+    "standard": "$999 up to 5,000 records",
+    "category": "Clean up the work",
+    "keywords": "data migration cleanup data mapping system migration records cutover"
+  },
+  {
+    "id": "023",
+    "slug": "denial-appeal-management",
+    "name": "Denial & Appeal Management",
+    "description": "Good Remedy works administrative claim-denial and appeal queues from payer response through documented disposition, while clinical and coding judgments stay with the client.",
+    "first": "$750 first 30-day pilot up to 40 files",
+    "standard": "$1,500/month up to 75 active denial or appeal files",
+    "category": "Run the back office",
+    "keywords": "denials appeals claim denials denial management payer appeals healthcare claims rejected claims"
+  },
+  {
+    "id": "024",
+    "slug": "prior-authorization-administration",
+    "name": "Prior Authorization Administration",
+    "description": "Good Remedy runs the administrative prior-authorization queue: requirements, source-document collection, submission, status follow-up and exception routing.",
+    "first": "$750 first 30-day pilot up to 40 requests",
+    "standard": "$1,500/month up to 75 prior authorization requests",
+    "category": "Get cleared",
+    "keywords": "prior authorization prior auth preauthorization medical authorization payer authorization"
+  },
+  {
+    "id": "026",
+    "slug": "contract-abstraction",
+    "name": "Contract Abstraction",
+    "description": "Good Remedy turns business agreements into structured abstracts of key dates, obligations, notice terms, commercial fields and review flags.",
+    "first": "$500 first batch up to 8 straightforward contracts",
+    "standard": "$125 per contract, $750 minimum",
+    "category": "Finish the work",
+    "keywords": "contract abstraction agreement abstraction contract review key terms dates obligations"
+  },
+  {
+    "id": "027",
+    "slug": "ap-processing",
+    "name": "Accounts Payable Processing",
+    "description": "Good Remedy processes incoming vendor invoices against client rules, prepares approved-system entries, routes exceptions and keeps the AP queue current.",
+    "first": "$750 first month up to 250 invoices",
+    "standard": "$1,500/month up to 250 straightforward invoices",
+    "category": "Run the back office",
+    "keywords": "accounts payable ap processing invoices invoice processing vendor invoices invoice entry"
+  }
+]
